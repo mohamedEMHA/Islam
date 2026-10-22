@@ -1,0 +1,19 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(self), geolocation=(self), microphone=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-TMo242EKGbIawOLRri4d5LEy0amUUaSBv9twAqsAAO8=' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https://api.aladhan.com https://api.alquran.cloud https://api.quran.com https://api.qurancdn.com https://cdn.jsdelivr.net https://download.quranicaudio.com https://api.islamic.app https://mp3quran.net https://www.mp3quran.net https://backup.qurango.net https://qurango.net https://Qurango.net https://stream.radiojar.com https://nominatim.openstreetmap.org https://overpass-api.de https://overpass.kumi.systems https://world.openfoodfacts.org https://xaus.com https://raw.githubusercontent.com https://static.cloudflareinsights.com https://cloudflareinsights.com https://cdn-globecast.akamaized.net https://live.kwikmotion.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/brand/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/adhan/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/icons/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

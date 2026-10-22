@@ -1,0 +1,1143 @@
+{
+  "app": {
+    "name": "Islam",
+    "tagline": "Cara yang lebih tenang untuk beribadah"
+  },
+  "common": {
+    "openApp": "Buka Aplikasi",
+    "getApp": "Segera hadir",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "startJourney": "Mulai Perjalanan",
+    "viewAll": "Lihat semua",
+    "today": "Hari Ini",
+    "back": "Kembali",
+    "close": "Tutup",
+    "share": "Bagikan",
+    "search": "Cari",
+    "settings": "Pengaturan",
+    "loading": "Memuat...",
+    "remaining": "Tersisa",
+    "nextPrayer": "Shalat Berikutnya",
+    "yourLocation": "Lokasi Anda",
+    "collections": "Koleksi",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "downloadPng": "Unduh PNG",
+    "reportIssue": "Laporkan masalah",
+    "verifiedSource": "Sumber Terverifikasi",
+    "terms": "Ketentuan",
+    "privacy": "Privasi",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "skipToContent": "Lewati ke konten utama",
+    "mainNavigation": "Navigasi utama",
+    "navigationMenu": "Menu navigasi",
+    "pagination": {
+      "navLabel": "Paginasi",
+      "pageOf": "Halaman {{page}} dari {{total}}"
+    },
+    "on": "Aktif",
+    "off": "Nonaktif",
+    "retry": "Coba lagi",
+    "change": "Ubah",
+    "features": "Fitur",
+    "weekdays": {
+      "short": {
+        "sun": "Min",
+        "mon": "Sen",
+        "tue": "Sel",
+        "wed": "Rab",
+        "thu": "Kam",
+        "fri": "Jum",
+        "sat": "Sab"
+      }
+    },
+    "languages": "Bahasa",
+    "loadingPage": "Memuat halaman",
+    "contentEnglishOnly": "Terjemahan ditampilkan dalam bahasa Inggris.",
+    "timePeriod": {
+      "am": "AM",
+      "pm": "PM"
+    }
+  },
+  "cookieConsent": {
+    "title": "Preferensi privasi",
+    "body": "Kami menyimpan preferensi penting di perangkat Anda. Analitik opsional yang menghormati privasi membantu meningkatkan aplikasi dan hanya berjalan jika Anda menyetujui.",
+    "bodyEssential": "Kami menyimpan preferensi penting (tema, bahasa, pengaturan shalat) di perangkat Anda. Kami tidak menjual data dan tidak menampilkan iklan.",
+    "accept": "Terima analitik",
+    "reject": "Hanya yang penting",
+    "gotIt": "Mengerti"
+  },
+  "nav": {
+    "groups": {
+      "times": "Waktu & Arah",
+      "quran": "Al Quran & Hadis",
+      "ramadan": "Ramadan",
+      "tools": "Alat"
+    },
+    "items": {
+      "prayerTimes": "Waktu Shalat",
+      "qibla": "Kiblat",
+      "hijriCalendar": "Kalender Hijriah",
+      "events": "Acara Islami",
+      "quran": "Al Quran",
+      "tafsir": "Tafsir",
+      "hadith": "Hadis",
+      "names": "99 Nama",
+      "ramadanHub": "Pusat Ramadan",
+      "zakat": "Kalkulator Zakat",
+      "tasbeeh": "Penghitung Tasbih",
+      "duas": "Doa & Dzikir",
+      "hajj": "Haji & Umrah",
+      "babyNames": "Nama Bayi",
+      "live": "Siaran Langsung",
+      "mosqueFinder": "Pencari Masjid",
+      "search": "Cari",
+      "settings": "Pengaturan",
+      "shahada": "Al Shahada",
+      "adhan": "Audio Adzan",
+      "islamicRadio": "Radio Islami",
+      "halalVerification": "Verifikasi Halal",
+      "fatawa": "Pencarian Fatwa",
+      "moonSighting": "Rukyat Hilal",
+      "inheritance": "Warisan",
+      "islamicLibrary": "Perpustakaan Islam"
+    },
+    "desc": {
+      "prayerTimes": "Waktu akurat dengan kontrol metode",
+      "adhan": "Dengarkan dan pilih adzan Anda",
+      "islamicRadio": "Stasiun Quran dari MP3Quran",
+      "qibla": "Arah ke Ka'bah",
+      "hijriCalendar": "Tanggal kalender Islam",
+      "events": "Hari raya dan tanggal penting",
+      "quran": "Baca dan dengarkan Al Quran",
+      "tafsir": "Tafsir Al Quran",
+      "hadith": "Koleksi hadis terverifikasi",
+      "names": "Asma ul Husna",
+      "shahada": "Pengakuan iman",
+      "ramadanHub": "Sahur, berbuka, dan hitung mundur",
+      "zakat": "Hitung zakat Anda",
+      "tasbeeh": "Penghitung dzikir digital",
+      "duas": "Doa harian",
+      "hajj": "Panduan ibadah haji",
+      "babyNames": "Nama bayi Islami",
+      "live": "Siaran langsung Makkah & Madinah",
+      "mosqueFinder": "Temukan masjid terdekat",
+      "search": "Cari Al Quran, hadis, dan doa",
+      "settings": "Preferensi aplikasi",
+      "halalVerification": "Pindai barcode dan periksa status E-number halal",
+      "fatawa": "Jawaban ulama (sumber eksternal)",
+      "moonSighting": "Hilal dan kalender Hijriah",
+      "inheritance": "Kalkulator faraid sederhana",
+      "islamicLibrary": "Tautan Shamela, OpenITI, dll."
+    },
+    "bottom": {
+      "times": "Waktu",
+      "quran": "Al Quran",
+      "search": "Cari",
+      "ramadan": "Ramadan",
+      "more": "Lainnya"
+    }
+  },
+  "footer": {
+    "navigation": "Navigasi footer",
+    "practice": "Ibadah",
+    "learn": "Pelajari",
+    "tools": "Alat",
+    "app": "Aplikasi",
+    "home": "Beranda",
+    "share": "Kartu Berbagi",
+    "legal": "Informasi hukum",
+    "sources": "Sumber & Atribusi",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Ketentuan Layanan",
+    "blurb": "Proyek independen dan gratis. Kami tidak menjual data atau menampilkan iklan pada konten keagamaan.",
+    "copyright": "Semua konten keagamaan bersumber dari API terverifikasi dengan atribusi lengkap.",
+    "features": "Fitur"
+  },
+  "home": {
+    "statusLabel": "Ibadah hari ini",
+    "hero": "Ibadah harian Anda yang tenang",
+    "subtitle": "Waktu shalat, Al Quran, hadis, dan doa dalam satu ruang tenang tanpa iklan dengan sumber transparan.",
+    "bentoTitle": "Tindakan cepat",
+    "bentoSubtitle": "Semua yang paling sering Anda gunakan, satu ketuk saja.",
+    "quranTileTitle": "Al Quran Suci",
+    "quranTileDesc": "Baca dan dengarkan dengan berbagai terjemahan tanpa gangguan.",
+    "prayerTileTitle": "Waktu Shalat",
+    "prayerTileDesc": "Waktu akurat untuk lokasi Anda.",
+    "duasTileTitle": "Doa & Dzikir",
+    "duasTileDesc": "Doa harian untuk setiap momen.",
+    "qiblaTileTitle": "Kompas Kiblat",
+    "qiblaTileDesc": "Temukan arah Anda secara instan.",
+    "zakatTileTitle": "Kalkulator Zakat",
+    "zakatTileDesc": "Hitung kewajiban Anda dengan akurat.",
+    "hadithTileTitle": "Perpustakaan Hadis",
+    "hadithTileDesc": "Jelajahi koleksi terverifikasi.",
+    "shahadaTileTitle": "Al Shahada",
+    "shahadaTileDesc": "Pengakuan iman dalam Arab, transliterasi, dan terjemahan.",
+    "adhanTileTitle": "Audio Adzan",
+    "adhanTileDesc": "Dengarkan adzan dan pilih muadzin Anda.",
+    "discoveryTitle": "Penemuan terpandu",
+    "discoverySubtitle": "Jelajahi lebih dalam dengan kecepatan Anda sendiri.",
+    "discoveryRamadan": "Pusat Ramadan",
+    "discoveryRamadanDesc": "Alat sahur, berbuka, dan hitung mundur.",
+    "discoveryNames": "99 Nama Allah",
+    "discoveryNamesDesc": "Asma ul Husna dengan makna dan tulisan Arab.",
+    "discoveryHajj": "Haji & Umrah",
+    "discoveryHajjDesc": "Panduan ibadah haji langkah demi langkah.",
+    "discoveryLive": "Siaran Langsung",
+    "discoveryLiveDesc": "Tonton Makkah dan Madinah secara langsung.",
+    "bismillahTranslation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.",
+    "dailyReflection": "Renungan Harian",
+    "dailyFeed": {
+      "title": "Feed Spiritual Harian",
+      "subtitle": "Ayat, hadis, dan dzikir terpilih untuk hari ini via UmmahAPI. Jelajahi koleksi doa offline lengkap secara terpisah.",
+      "tabs": {
+        "verse": "Ayat",
+        "hadith": "Hadis",
+        "morningAdhkar": "Pagi",
+        "eveningAdhkar": "Petang",
+        "afterPrayer": "Setelah Salat"
+      },
+      "repeat": "Ulangi {{count}} kali",
+      "browseDuas": "Koleksi doa lengkap",
+      "error": "Tidak dapat memuat feed hari ini. Periksa koneksi Anda dan coba lagi.",
+      "readTafsir": "Baca tafsir",
+      "contentEnglishOnly": "Sebagian konten harian ditampilkan dalam bahasa Inggris."
+    },
+    "loadingReflection": "Memuat renungan...",
+    "trustedSources": "Sumber terpercaya",
+    "fallbackReflection": "Dan Dia menemukanmu dalam kebingungan, lalu memberimu petunjuk.",
+    "ayahReference": "Surah {{surah}}:{{ayah}}",
+    "searchPlaceholder": "Cari Quran, Hadis…",
+    "readQuran": "Baca Quran",
+    "useMyLocation": "Gunakan lokasi saya",
+    "defaultLocation": "Bawaan: {{city}}",
+    "continueTitle": "Lanjutkan dari posisi terakhir",
+    "continueSubtitle": "Lanjutkan bacaan terakhir Anda atau buka penanda.",
+    "continueCta": "Lanjutkan membaca",
+    "continueQuran": "Quran",
+    "continueHadith": "Hadith",
+    "continueBookmark": "Penanda",
+    "continueBookmarks": "Penanda",
+    "surahNumber": "Surah ke-{{number}}",
+    "ayahNumber": "Ayat {{number}}",
+    "seasonalLabel": "Akan datang",
+    "seasonalToday": "{{event}} berlangsung hari ini",
+    "seasonalDays": "{{event}} dalam {{days}} hari",
+    "discoveryTasbeeh": "Penghitung Tasbeeh",
+    "discoveryTasbeehDesc": "Penghitung dhikr digital dengan umpan balik getaran.",
+    "trustBadgeAria": "{{label}}, membuka sumber eksternal",
+    "faqTitle": "Mengapa aplikasi ini",
+    "faqSubtitle": "Jawaban jelas mengenai sumber, privasi, dan cara kerja waktu salat.",
+    "faq": {
+      "sources": {
+        "q": "Dari mana konten berasal?",
+        "a": "Waktu salat menggunakan AlAdhan. Teks dan audio Quran berasal dari Quran.com. Koleksi hadith menggunakan sunnah.com dan kumpulan data autentik terbuka. Duas dan banyak alat menggunakan data lokal terkurasi serta UmmahAPI. Setiap halaman utama menampilkan atribusi sumber."
+      },
+      "offline": {
+        "q": "Apakah dapat digunakan secara offline?",
+        "a": "Ya, untuk ibadah utama. PWA menyimpan waktu salat serta respons Quran dan hadith dalam cache agar Anda tetap dapat membaca ketika koneksi terputus."
+      },
+      "methods": {
+        "q": "Dapatkah saya mengubah metode perhitungan waktu salat?",
+        "a": "Ya. Pengaturan memungkinkan Anda memilih metode perhitungan, madhab, aturan lintang tinggi, dan menyesuaikan selisih waktu agar jadwal sesuai dengan ketentuan setempat."
+      },
+      "privacy": {
+        "q": "Apakah lokasi saya tetap pribadi?",
+        "a": "Koordinat yang Anda setujui disimpan secara lokal di browser. Saat Anda memakai waktu shalat, kiblat, pencari masjid, atau label lokasi, koordinat tersebut dikirim ke API shalat dan peta (misalnya AlAdhan, Nominatim, dan Overpass) untuk mengambil waktu dan tempat terdekat. Kami tidak menjual data dan aplikasi bebas iklan."
+      },
+      "ads": {
+        "q": "Apakah ada iklan atau pelacakan?",
+        "a": "Tanpa iklan. Produk ini dirancang sebagai ruang yang tenang dan bebas gangguan untuk ibadah sehari-hari."
+      }
+    },
+    "installTitle": "Aplikasi segera hadir",
+    "installSubtitle": "Aplikasi mobile khusus sedang dalam perjalanan. Sementara itu, gunakan Islam di browser.",
+    "installLearnMore": "Pelajari lebih lanjut"
+  },
+  "prayers": {
+    "Imsak": "Imsak",
+    "Fajr": "Subuh",
+    "Sunrise": "Terbit",
+    "Dhuhr": "Dzuhur",
+    "Asr": "Ashar",
+    "Maghrib": "Maghrib",
+    "Sunset": "Terbenam",
+    "Isha": "Isya",
+    "Midnight": "Tengah malam"
+  },
+  "offline": {
+    "message": "Anda sedang offline. Waktu shalat dan Al Quran yang tersimpan mungkin masih tersedia."
+  },
+  "pages": {
+    "prayerTimes": {
+      "title": "Waktu Shalat",
+      "schedule": "Jadwal Hari Ini",
+      "calculationSettings": "Pengaturan Perhitungan",
+      "method": "Metode",
+      "asrMethod": "Metode Fikih Asar",
+      "asrStandard": "Standar (Syafi'i, Hanbali, Maliki)",
+      "asrHanafi": "Hanafi",
+      "highLatitude": "Penyesuaian Lintang Tinggi",
+      "manualTune": "Penyesuaian waktu manual",
+      "monthlySchedule": "Jadwal bulanan",
+      "dailyInspiration": "Inspirasi Harian",
+      "methodHint": "Menyesuaikan waktu shalat berdasarkan konsensus ulama regional.",
+      "hijriDateLine": "Hijriah: {{day}} {{month}} {{year}}"
+    },
+    "qibla": {
+      "title": "Arah Kiblat",
+      "subtitle": "Temukan arah ke Ka'bah",
+      "bearingFromNorth": "Arah dari utara",
+      "distanceToMakkah": "{{distance}} km ke Makkah",
+      "compassPrompt": "Aktifkan kompas perangkat untuk arah Kiblat langsung di iOS.",
+      "enableCompass": "Aktifkan kompas",
+      "compassDenied": "Akses kompas ditolak. Izinkan akses gerakan di Pengaturan untuk arah langsung.",
+      "usingCompass": "Menggunakan kompas perangkat untuk rotasi langsung",
+      "compassUnavailable": "Data kompas tidak tersedia di perangkat ini. Jarum hanya menunjukkan arah Qibla dari utara.",
+      "noLocation": "Atur lokasi Anda di Pengaturan untuk menemukan arah Kiblat.",
+      "setLocation": "Atur lokasi"
+    },
+    "quran": {
+      "title": "Al Quran Suci",
+      "subtitle": "Baca, dengarkan, dan renungkan",
+      "tabs": {
+        "surah": "Surah",
+        "juz": "Juz",
+        "revelation": "Urutan pewahyuan"
+      },
+      "searchSurah": "Cari surah...",
+      "searchInJuz": "Cari surah dalam juz ini...",
+      "resultsCount": "{{count}} hasil",
+      "surahCount": "{{count}} surah",
+      "noResults": "Tidak ada surah yang cocok dengan pencarian Anda.",
+      "versesCount": "{{count}} ayat",
+      "allJuz": "Semua juz",
+      "juzLabel": "Juz ke-{{number}}",
+      "juzPartFallback": "Bagian {{number}}",
+      "surahRange": "Surah {{start}} sampai {{end}}",
+      "surahSingle": "Surah ke-{{number}}",
+      "juzHeader": "Juz {{juz}}: {{name}}",
+      "contentUnavailable": "Konten Surah tidak tersedia.",
+      "loadingWords": "Memuat kata...",
+      "wordBreakdownUnavailable": "Rincian kata tidak tersedia.",
+      "playAyah": "Putar ayat",
+      "viewTafsir": "Lihat tafsir",
+      "wordByWord": "Kata demi kata",
+      "shareAyah": "Bagikan ayat",
+      "miniPlayerPlay": "Putar",
+      "miniPlayerPause": "Jeda",
+      "miniPlayerPreviousAyah": "Ayat sebelumnya",
+      "miniPlayerNextAyah": "Ayat berikutnya",
+      "playbackProgress": "Progres pemutaran"
+    },
+    "tafsir": {
+      "title": "Tafsir",
+      "subtitle": "Tafsir Al Quran per surah dan ayat",
+      "searchPlaceholder": "Cari surah...",
+      "noResults": "Tidak ada surah yang cocok dengan pencarian Anda.",
+      "verses": "ayat",
+      "ayahLabel": "Ayat {{number}}",
+      "editionLabel": "Edisi tafsir",
+      "sourceEnglish": "Ibn Kathir (Ringkas) via Quran.com",
+      "sourceArabic": "Tafsir al Jalalayn (Arab)",
+      "sourceIndonesian": "Tafsir al Jalalayn (Indonesia)",
+      "unavailable": "Tafsir tidak tersedia untuk ayat ini.",
+      "showMore": "Tampilkan lebih banyak",
+      "showLess": "Tampilkan lebih sedikit",
+      "fallbackEnglish": "Tafsir ditampilkan dalam bahasa Inggris untuk bahasa ini."
+    },
+    "hadith": {
+      "title": "Koleksi Hadis",
+      "subtitle": "Koleksi terverifikasi dengan pencarian"
+    },
+    "duas": {
+      "title": "Doa & Dzikir",
+      "subtitle": "Doa harian dan dzikir",
+      "allCategories": "Semua kategori",
+      "readingMode": "Mode baca",
+      "exitReadingMode": "Keluar mode baca",
+      "readingProgress": "{{current}} / {{total}}",
+      "duaCount": "{{count}} doa",
+      "emptyCategory": "Tidak ada doa untuk kategori ini.",
+      "source": "Koleksi hadits sahih",
+      "contentEnglishOnly": "Terjemahan doa saat ini tersedia dalam bahasa Inggris.",
+      "categories": {
+        "morning": "Dzikir Pagi",
+        "evening": "Dzikir Petang",
+        "after_prayer": "Setelah Salat",
+        "sleep": "Doa Tidur",
+        "food": "Doa Makan",
+        "travel": "Doa Perjalanan",
+        "wudu": "Wudu & Penyucian",
+        "mosque": "Masjid & Toilet",
+        "home": "Doa Rumah",
+        "protection": "Perlindungan",
+        "distress": "Kesulitan & Kecemasan",
+        "forgiveness": "Memohon Ampunan",
+        "ramadan": "Doa Ramadan"
+      }
+    },
+    "settings": {
+      "title": "Pengaturan",
+      "subtitle": "Kelola preferensi aplikasi dan pengalaman tempat suci Anda.",
+      "hijriDateAdjustment": "Penyesuaian tanggal Hijriah (hari)",
+      "hijriAdjustmentDays": "{{count}} hari",
+      "adhanVoiceMuezzin": "Suara adzan (muadzin)",
+      "prayerCalculation": "Perhitungan Shalat",
+      "appearance": "Tampilan",
+      "darkMode": "Mode Gelap",
+      "arabicFontSize": "Ukuran Font Arab",
+      "language": "Bahasa",
+      "notifications": "Notifikasi",
+      "adhanReminders": "Pengingat Adzan",
+      "adhanRemindersDesc": "Terima notifikasi push saat waktu shalat tiba.",
+      "silentNotifications": "Hanya notifikasi (tanpa suara)",
+      "silentNotificationsDesc": "Tampilkan peringatan shalat tanpa memutar audio adzan saat waktu shalat.",
+      "silentNotificationsActive": "Pengingat tanpa suara aktif. Peringatan shalat akan muncul tanpa audio adzan.",
+      "dailyHadith": "Hadis Harian",
+      "dailyHadithDesc": "Pengingat pagi yang lembut dengan hadis pilihan.",
+      "whiteDays": "Puasa Hari Putih",
+      "whiteDaysDesc": "Pengingat untuk tanggal 13, 14, dan 15 setiap bulan Hijriah.",
+      "monThuFasting": "Puasa Senin & Kamis",
+      "monThuFastingDesc": "Pengingat puasa sunnah mingguan pada Senin dan Kamis.",
+      "notificationsBlocked": "Notifikasi diblokir di browser Anda. Aktifkan di pengaturan situs untuk menerima pengingat shalat.",
+      "notificationsPrompt": "Izinkan notifikasi saat diminta agar pengingat shalat dapat muncul.",
+      "notificationsUnsupported": "Browser ini tidak mendukung notifikasi.",
+      "previewAdhan": "Pratinjau Adzan",
+      "adhanLibrary": "Jelajahi audio adzan",
+      "legalAccount": "Legal & Akun",
+      "privacyPrefs": "Preferensi privasi",
+      "privacyPrefsDesc": "Pilih apakah analitik opsional boleh berjalan. Preferensi penting selalu tetap di perangkat Anda.",
+      "analyticsLabel": "Analitik yang menghormati privasi",
+      "analyticsDesc": "Sinyal penggunaan anonim melalui Cloudflare Web Analytics. Tanpa iklan dan tanpa penjualan data.",
+      "analyticsUnavailable": "Analitik opsional tidak dikonfigurasi pada deployment ini.",
+      "resetConsent": "Tampilkan banner persetujuan lagi",
+      "privacyPolicy": "Kebijakan Privasi",
+      "sourcesAttribution": "Sumber & Atribusi",
+      "termsOfService": "Ketentuan Layanan",
+      "location": "Lokasi",
+      "currentLocation": "Lokasi saat ini",
+      "useMyLocation": "Gunakan lokasi saya",
+      "locating": "Mencari lokasi...",
+      "latitude": "Lintang",
+      "longitude": "Bujur",
+      "saveLocation": "Simpan lokasi"
+    },
+    "ramadan": {
+      "title": "Pusat Ramadan",
+      "subtitle": "Sahur, berbuka, dan doa harian",
+      "mubarak": "Ramadan Mubarak",
+      "kareem": "Ramadan Kareem",
+      "dayOf": "Hari {{day}} dari {{total}}",
+      "countdownTitle": "Hitung mundur menuju Ramadan",
+      "days": "Hari",
+      "hours": "Jam",
+      "minutes": "Menit",
+      "seconds": "Detik",
+      "ramadanYear": "Ramadan {{year}} H",
+      "today": "Hari ini",
+      "suhoor": "Suhoor (berhenti makan)",
+      "iftar": "Iftar (berbuka puasa)",
+      "imsakWarning": "Peringatan Imsak: {{time}}",
+      "fastingTimesHint": "Waktu Suhoor dan Iftar akan muncul menjelang Ramadan. Gunakan hitung mundur di atas untuk mempersiapkan diri.",
+      "calendarTitle": "Kalender Ramadan",
+      "calendarSubtitle": "Ramadan {{year}} H · tanggal Hijriah dan Masehi harian",
+      "duasTitle": "Duas Ramadan"
+    },
+    "zakat": {
+      "title": "Kalkulator Zakat",
+      "subtitle": "Hitung zakat wajib Anda",
+      "tabs": {
+        "zakat": "Zakat",
+        "fitr": "Zakat al Fitr"
+      },
+      "currency": "Mata uang",
+      "nisabStandard": "Standar nisab",
+      "nisabGold": "Emas (85 g)",
+      "nisabSilver": "Perak (595 g)",
+      "cash": "Tunai dan tabungan",
+      "goldGrams": "Emas (gram)",
+      "silverGrams": "Perak (gram)",
+      "stocks": "Saham dan investasi",
+      "businessGoods": "Barang dagang dan inventaris",
+      "liabilities": "Kewajiban yang dikurangi",
+      "results": "Hasil",
+      "nisab": "Ambang nisab",
+      "totalWealth": "Kekayaan zakatable bersih",
+      "zakatDue": "Zakat yang harus dibayar",
+      "rateNote": "{{rate}} dari kekayaan di atas nisab",
+      "belowNisab": "Kekayaan Anda di bawah nisab, zakat tidak wajib atas aset ini.",
+      "hawlNote": "Zakat hanya berlaku untuk kekayaan yang dipegang selama satu tahun qamari penuh (hawl).",
+      "metalPrices": "Harga logam yang digunakan",
+      "goldPrice": "Emas",
+      "silverPrice": "Perak",
+      "priceSource": "Harga dari {{source}} · {{date}}",
+      "pricesUnverified": "Harga logam tidak dapat diverifikasi dengan sumber kedua.",
+      "calculating": "Menghitung...",
+      "calculateError": "Tidak dapat menghitung zakat. Periksa koneksi dan coba lagi.",
+      "members": "Anggota rumah tangga",
+      "fitrDue": "Zakat al Fitr",
+      "fitrPerPerson": "{{amount}} {{currency}} per orang",
+      "attribution": "UmmahAPI · verifikasi harga logam via XAUS.com"
+    },
+    "tasbeeh": {
+      "count": "Hitungan",
+      "hapticsOn": "Haptik Aktif",
+      "hapticsOff": "Haptik Nonaktif",
+      "reset": "Atur Ulang",
+      "target": "Sasaran",
+      "ariaTapCount": "Ketuk untuk menghitung",
+      "ariaToggleHaptics": "Aktifkan atau nonaktifkan getaran",
+      "ariaResetCount": "Atur ulang hitungan",
+      "ariaSelectDhikr": "Pilih bacaan dhikr",
+      "phrases": {
+        "subhanAllah": "Subhanallah",
+        "alhamdulillah": "Alhamdulillah",
+        "allahuAkbar": "Allahu Akbar"
+      }
+    },
+    "names": {
+      "title": "99 Nama Allah",
+      "subtitle": "Asma ul Husna beserta maknanya",
+      "backToAll": "← Semua nama",
+      "loadError": "99 Nama tidak dapat dimuat. Periksa koneksi Anda lalu coba lagi."
+    },
+    "shahada": {
+      "title": "Al Shahada",
+      "subtitle": "Pengakuan iman",
+      "intro": "Syahadat adalah kesaksian dasar dalam Islam. Muslim menyatakan bahwa tidak ada tuhan yang berhak disembah selain Allah, dan Muhammad adalah utusan-Nya.",
+      "fullDeclaration": "Pengakuan lengkap",
+      "fullTransliteration": "Ash hadu an la ilaha illa Allah, wa ash hadu anna Muhammadan rasul Allah.",
+      "fullTranslation": "Aku bersaksi bahwa tidak ada tuhan yang berhak disembah selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah.",
+      "partsTitle": "Per bagian",
+      "partLabel": "Bagian {{number}}",
+      "part1Transliteration": "Ash hadu an la ilaha illa Allah.",
+      "part1Translation": "Aku bersaksi bahwa tidak ada tuhan yang berhak disembah selain Allah.",
+      "part2Transliteration": "Wa ash hadu anna Muhammadan rasul Allah.",
+      "part2Translation": "Dan aku bersaksi bahwa Muhammad adalah utusan Allah.",
+      "meaningTitle": "Apa artinya",
+      "meaningBody": "Syahadat menegaskan tauhid dan menerima Muhammad sebagai nabi terakhir. Ini adalah pintu masuk Islam, dibaca dalam shalat, saat masuk Islam, dan dalam dzikir harian."
+    },
+    "adhan": {
+      "title": "Audio Adzan",
+      "subtitle": "Dengarkan dan pilih muadzin",
+      "intro": "Dengarkan rekaman adzan dan pilih suara untuk pengingat shalat. Tekan putar; browser Anda mungkin memerlukan satu ketuk untuk mengaktifkan audio.",
+      "selected": "Dipilih",
+      "select": "Gunakan untuk pengingat",
+      "play": "Putar",
+      "stop": "Berhenti",
+      "selectedForReminders": "Digunakan untuk pengingat shalat",
+      "selectedForSilentReminders": "Muadzin dipilih (pengingat senyap aktif)",
+      "silentNotificationsTitle": "Hanya notifikasi (tanpa suara)",
+      "silentNotificationsOnDesc": "Pengingat shalat muncul tanpa audio adzan. Pratinjau tetap memutar suara.",
+      "silentNotificationsOffDesc": "Pengingat shalat memutar muadzin pilihan Anda bersama notifikasi.",
+      "remindersTitle": "Pengingat shalat",
+      "remindersBody": "Aktifkan pengingat adzan di Pengaturan untuk mendengar muadzin pilihan Anda saat waktu shalat.",
+      "openSettings": "Buka pengaturan notifikasi",
+      "loading": "Memuat…",
+      "playbackError": "Tidak dapat memutar adzan ini. Periksa koneksi Anda dan coba lagi.",
+      "playbackErrorShort": "Pemutaran gagal",
+      "muezzins": {
+        "mishary": "Mishary Rashid Alafasy",
+        "misharyDesc": "Bacaan jelas yang dikenal luas",
+        "makkah": "Gaya Makkah",
+        "makkahDesc": "Adzan tradisional dari Masjidil Haram",
+        "madinah": "Gaya Madinah",
+        "madinahDesc": "Adzan tradisional dari Masjid Nabawi"
+      }
+    },
+    "islamicRadio": {
+      "title": "Radio Islami",
+      "subtitle": "Stasiun Quran di seluruh dunia",
+      "intro": "Dengarkan radio Quran langsung dari MP3Quran.net.",
+      "filterPlaceholder": "Filter stasiun...",
+      "languageLabel": "Bahasa label stasiun",
+      "play": "Putar",
+      "stop": "Berhenti",
+      "loading": "Memuat…",
+      "playbackError": "Stream stasiun ini sedang offline. Coba stasiun lain.",
+      "playbackErrorShort": "Siaran offline",
+      "noStations": "Tidak ada stasiun yang cocok.",
+      "languages": {
+        "eng": "Inggris",
+        "ar": "Arab",
+        "fr": "Prancis",
+        "ur": "Urdu",
+        "id": "Indonesia"
+      }
+    },
+    "fatawa": {
+      "title": "Pencarian Fatwa",
+      "subtitle": "Jawaban ulama (segera)",
+      "notice": "Belum ada API fatwa gratis. Halaman ini menaut ke situs tepercaya.",
+      "placeholder": "Cari fatwa (segera)",
+      "search": "Cari",
+      "externalIslamqa": "Jelajahi IslamQA",
+      "externalDarAlIfta": "Fatwa resmi Dar Al Ifta"
+    },
+    "moonSighting": {
+      "title": "Rukyat Hilal",
+      "subtitle": "Konteks bulan Hijriah",
+      "intro": "Rukyat lokal dapat berbeda dari tanggal terhitung.",
+      "currentHijri": "Tanggal Hijriah hari ini (terhitung)",
+      "astronomicalTitle": "Perhitungan vs rukyat",
+      "astronomicalBody": "AlAdhan menyediakan tanggal Hijriah terhitung. Awal bulan bisa bergeser satu hari.",
+      "openHijriCalendar": "Buka kalender Hijriah"
+    },
+    "inheritance": {
+      "title": "Kalkulator Warisan",
+      "subtitle": "Perkiraan faraid sederhana",
+      "disclaimer": "Hanya untuk edukasi. Konsultasikan ulama untuk kasus kompleks.",
+      "estate": "Nilai harta",
+      "wives": "Istri",
+      "sons": "Anak laki laki",
+      "daughters": "Anak perempuan",
+      "father": "Ayah hidup",
+      "mother": "Ibu hidup",
+      "calculate": "Hitung bagian",
+      "heirs": {
+        "husband": "Suami",
+        "wife": "Istri",
+        "father": "Ayah",
+        "mother": "Ibu",
+        "son": "Anak laki laki",
+        "daughter": "Anak perempuan",
+        "residue": "Sisa"
+      },
+      "howItWorks": "Pilih jenis kelamin orang yang meninggal terlebih dahulu. Jika laki-laki, masukkan jumlah istri (0 sampai 4). Jika perempuan, tandai apakah suaminya masih hidup (hanya satu). Kemudian tambahkan anak laki-laki, anak perempuan, dan apakah ayah atau ibu masih hidup. Kalkulator menerapkan bagian tetap berdasarkan Quran (pasangan, orang tua, anak perempuan saja), memberikan sisa kepada anak laki-laki sebagai asaba (2 banding 1 dengan anak perempuan), menggunakan umariyyatayn ketika hanya orang tua dan pasangan yang tersisa, serta menerapkan awl atau radd ketika jumlah bagian tidak sama dengan seluruh harta warisan.",
+      "decedentSex": "Orang yang meninggal",
+      "decedentMale": "Laki-laki",
+      "decedentFemale": "Perempuan",
+      "husbandAlive": "Suami masih hidup",
+      "notes": {
+        "empty": "Tambahkan ahli waris untuk menghitung bagian. Alat ini hanya mencakup pasangan, orang tua, anak laki-laki, dan anak perempuan.",
+        "base": "Perkiraan edukatif berdasarkan faraid Sunni. Tidak mencakup saudara kandung, kakek nenek, utang, atau wasiyyah. Konsultasikan dengan ulama yang memenuhi syarat untuk harta warisan sebenarnya.",
+        "awl": "Awl diterapkan: jumlah bagian tetap melebihi harta warisan dan dikurangi secara proporsional.",
+        "radd": "Radd diterapkan: sisa dikembalikan kepada ahli waris sedarah dengan bagian tetap, tidak termasuk pasangan."
+      }
+    },
+    "islamicLibrary": {
+      "title": "Perpustakaan Islam",
+      "subtitle": "Perpustakaan teks klasik eksternal",
+      "intro": "Shamela dan OpenITI terlalu besar untuk disematkan di sini.",
+      "shamelaTitle": "Perpustakaan Shamela",
+      "shamelaDesc": "Perpustakaan Islam Arab besar",
+      "openitiTitle": "OpenITI",
+      "openitiDesc": "Korpus teks Arab terbuka",
+      "sunnahTitle": "Sunnah.com",
+      "sunnahDesc": "Koleksi hadits dengan grading",
+      "quranTitle": "Quran.com",
+      "quranDesc": "Bacaan Quran dan tafsir"
+    },
+    "live": {
+      "title": "Siaran Langsung Makkah & Madinah",
+      "subtitle": "Siaran langsung dari masjid suci",
+      "tabs": {
+        "makkah": "Makkah",
+        "madinah": "Madinah"
+      },
+      "makkahTitle": "Makkah Langsung",
+      "madinahTitle": "Madinah Langsung",
+      "makkahNote": "Saudi Quran TV, langsung dari Masjid al-Haram",
+      "madinahNote": "Saudi Sunnah TV, langsung dari Al-Masjid an-Nabawi",
+      "loading": "Menghubungkan ke siaran langsung…",
+      "unavailable": "Siaran langsung sementara tidak tersedia. Silakan coba lagi nanti.",
+      "emptySources": "Tidak ada sumber siaran yang tersedia saat ini.",
+      "playerLabel": "Pemutar siaran langsung"
+    },
+    "hajj": {
+      "title": "Panduan Haji & Umrah",
+      "subtitle": "Panduan ibadah haji langkah demi langkah",
+      "tabs": {
+        "hajj": "Hajj",
+        "umrah": "Umrah"
+      },
+      "expandStep": "Buka langkah",
+      "collapseStep": "Tutup langkah",
+      "steps": {
+        "hajj": {
+          "ihram": {
+            "title": "Ihram",
+            "content": "Masuk ke dalam Ihram di Miqat dengan niat Hajj dan bacalah Talbiyah."
+          },
+          "tawaf": {
+            "title": "Tawaf",
+            "content": "Kelilingi Kaaba tujuh kali berlawanan arah jarum jam."
+          },
+          "sai": {
+            "title": "Sa'i",
+            "content": "Berjalanlah tujuh kali antara Safa dan Marwah."
+          },
+          "wuquf": {
+            "title": "Wuquf di Arafah",
+            "content": "Laksanakan wuquf di Arafah sejak tengah hari hingga matahari terbenam pada tanggal 9 Dhul Hijjah."
+          },
+          "muzdalifah": {
+            "title": "Muzdalifah",
+            "content": "Laksanakan salat Maghrib dan Isha secara jamak, lalu kumpulkan kerikil."
+          },
+          "rami": {
+            "title": "Rami (melempar jumrah)",
+            "content": "Lemparkan tujuh kerikil pada setiap pilar Jamarat."
+          },
+          "sacrifice": {
+            "title": "Kurban dan Halq",
+            "content": "Laksanakan kurban dan potong rambut untuk keluar dari sebagian larangan Ihram."
+          },
+          "farewellTawaf": {
+            "title": "Tawaf perpisahan",
+            "content": "Laksanakan Tawaf al-Wada sebelum meninggalkan Makkah."
+          }
+        },
+        "umrah": {
+          "ihram": {
+            "title": "Ihram",
+            "content": "Masuk ke dalam Ihram di Miqat dengan niat Umrah."
+          },
+          "tawaf": {
+            "title": "Tawaf",
+            "content": "Laksanakan tujuh putaran mengelilingi Kaaba."
+          },
+          "sai": {
+            "title": "Sa'i",
+            "content": "Berjalanlah tujuh kali antara Safa dan Marwah."
+          },
+          "halq": {
+            "title": "Halq atau Taqsir",
+            "content": "Cukur atau potong rambut untuk menyelesaikan Umrah dan keluar dari Ihram."
+          },
+          "duasHaram": {
+            "title": "Duas di Masjid al-Haram",
+            "content": "Luangkan waktu untuk beribadah di Haram dan panjatkan dua dengan tulus."
+          },
+          "madinah": {
+            "title": "Mengunjungi Madinah (opsional)",
+            "content": "Banyak jemaah mengunjungi Masjid Nabawi setelah Umrah."
+          }
+        }
+      }
+    },
+    "babyNames": {
+      "title": "Nama Bayi Islami",
+      "subtitle": "Nama dengan makna dan tulisan Arab",
+      "searchPlaceholder": "Cari berdasarkan nama atau makna...",
+      "backToAll": "← Semua nama",
+      "gender": "Jenis kelamin",
+      "origin": "Asal",
+      "root": "Akar Arab",
+      "note": "Tentang nama ini",
+      "count": "{{count}} nama",
+      "noResults": "Tidak ada nama yang cocok dengan pencarian Anda.",
+      "filters": {
+        "all": "Semua",
+        "boy": "Laki laki",
+        "girl": "Perempuan"
+      },
+      "genders": {
+        "male": "Laki laki",
+        "female": "Perempuan"
+      }
+    },
+    "hijriCalendar": {
+      "title": "Kalender Hijriah",
+      "subtitle": "Jelajahi bulan dan tahun Islam",
+      "today": "Hari ini",
+      "prevMonth": "Bulan sebelumnya",
+      "nextMonth": "Bulan berikutnya",
+      "holiday": "Hari raya Islam",
+      "ah": "H"
+    },
+    "events": {
+      "title": "Acara Islami",
+      "subtitle": "Tanggal penting Hijriah {{year}}",
+      "loadingDate": "Memuat tanggal…",
+      "dateTbd": "Menunggu",
+      "hijriYearSuffix": "{{year}} H",
+      "nextYearNote": "Pelaksanaan berikutnya (Hijriah {{year}})",
+      "loadError": "Tanggal acara tidak dapat dimuat. Periksa koneksi Anda lalu coba lagi."
+    },
+    "search": {
+      "title": "Cari",
+      "subtitle": "Cari Al Quran, Hadis, dan Doa",
+      "placeholder": "Cari...",
+      "noResults": "Tidak ada hasil ditemukan",
+      "hint": "Ketik untuk mencari di Quran, Hadith, dan Duas.",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "duas": "Duas"
+    },
+    "share": {
+      "title": "Kartu Bagikan",
+      "subtitle": "Bagikan ayat atau hadis sebagai gambar",
+      "brand": "Islam Sanctuary",
+      "exportError": "Gambar tidak dapat dibuat. Coba lagi atau gunakan Bagikan.",
+      "ayahUnavailable": "Ayah tidak tersedia."
+    },
+    "sources": {
+      "title": "Sumber & Atribusi",
+      "subtitle": "Asal data kami",
+      "intro": "Kami menggunakan beberapa sumber independen dan memeriksanya silang jika memungkinkan. Jika Anda menemukan kesalahan, gunakan tombol laporan pada halaman mana pun.",
+      "lastChecked": "Terakhir diperiksa: {{date}}",
+      "visit": "Kunjungi",
+      "cards": {
+        "aladhan": {
+          "category": "Salat dan Kalender",
+          "quote": "Waktu salat yang akurat, kalender Hijriah, dan 99 Nama Allah, diperiksa silang dengan metode perhitungan yang telah diakui."
+        },
+        "quran": {
+          "category": "Quran",
+          "quote": "Aksara Uthmani dan IndoPak, terjemahan, tafsir, uraian kata demi kata, dan lantunan audio dalam satu alur yang telah diverifikasi."
+        },
+        "fawaz": {
+          "category": "Hadis",
+          "quote": "Koleksi hadith terbuka dengan penilaian untuk pencarian dan rujukan cepat."
+        },
+        "duas": {
+          "name": "Duas dan Adhkar Terkurasi",
+          "category": "Doa",
+          "quote": "Doa autentik dari koleksi hadith, disertakan secara lokal untuk adhkar harian secara offline."
+        },
+        "sunnah": {
+          "category": "Hadis",
+          "quote": "Hadith terverifikasi dengan penilaian ulama, hierarki kitab dan bab, serta konteks perawi."
+        },
+        "ummah": {
+          "category": "Alat",
+          "quote": "Alat bantu zakat, nama bayi Islami, dan umpan spiritual harian berisi ayat, hadith, serta adhkar."
+        },
+        "xaus": {
+          "category": "Zakat",
+          "quote": "Harga spot emas dan perak terkini untuk pemeriksaan silang zakat logam."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Kebijakan Privasi",
+      "subtitle": "Cara kami menangani data Anda",
+      "intro": "Islam Sanctuary dirancang untuk berfungsi dengan data pribadi seminimal mungkin. Kami tidak menjual data atau menampilkan iklan pada konten keagamaan. Kebijakan ini menjelaskan data yang disimpan di peramban Anda dan data yang diminta dari layanan pihak ketiga ketika Anda menggunakan aplikasi.",
+      "lastUpdated": "Terakhir diperbarui: Agustus 2026",
+      "chatTitle": "Tanya jawab privasi",
+      "youLabel": "Anda",
+      "appLabel": "Islam Sanctuary",
+      "sections": {
+        "local": {
+          "title": "Data yang kami simpan secara lokal",
+          "question": "Data apa yang Anda simpan di perangkat saya?",
+          "items": [
+            "Preferensi perhitungan salat (metode, madhab, offset)",
+            "Tema, bahasa, pengaturan tampilan Quran, dan sakelar notifikasi",
+            "Koordinat lokasi yang Anda setujui saat onboarding (penyimpanan browser)",
+            "Hitungan tasbih saat Anda menggunakan fitur itu",
+            "Pilihan persetujuan cookie dan analitik"
+          ]
+        },
+        "cookies": {
+          "title": "Kuki dan penyimpanan serupa",
+          "question": "Apakah Anda menggunakan kuki?",
+          "items": [
+            "Penyimpanan lokal penting untuk pengaturan dan persetujuan (diperlukan agar aplikasi berfungsi)",
+            "Cloudflare Web Analytics opsional hanya setelah Anda menerima, tanpa cookie iklan",
+            "Anda dapat mengubah atau mengatur ulang pilihan ini kapan saja di Pengaturan"
+          ]
+        },
+        "thirdParty": {
+          "title": "Data yang dikirim kepada pihak ketiga",
+          "question": "Apakah Anda mengirim data kepada pihak ketiga?",
+          "bodyBefore": "Saat Anda memakai fitur lokasi atau pencarian, koordinat atau kueri dapat dikirim ke layanan pihak ketiga, termasuk AlAdhan (waktu shalat dan tanggal Hijriah), Nominatim dan Overpass/OpenStreetMap (geocoding balik dan masjid terdekat), OpenFoodFacts (pencarian produk), UmmahAPI, XAUS, Aloula, dan MP3Quran (siaran radio). Teks Quran, terjemahan, dan audio berasal dari fawazahmed0 Quran API dan CDN. Hadis dan doa dapat dimuat dari CDN publik yang tercantum di",
+          "bodyAfter": "Kami tidak menjual data Anda."
+        },
+        "notifications": {
+          "title": "Notifikasi",
+          "question": "Bagaimana notifikasi memengaruhi privasi saya?",
+          "body": "Pilihan pengingat Adhan dan puasa disimpan secara lokal. Notifikasi terjadwal memerlukan izin peramban dan mungkin belum diterapkan sepenuhnya pada setiap versi."
+        },
+        "contact": {
+          "title": "Kontak",
+          "question": "Bagaimana cara menghubungi Anda atau meminta penghapusan?",
+          "body": "Untuk pertanyaan atau permintaan penghapusan, gunakan tautan laporan pada halaman fitur mana pun atau opsi kontak di halaman Waktu Salat."
+        }
+      }
+    },
+    "terms": {
+      "title": "Ketentuan Layanan",
+      "subtitle": "Ketentuan penggunaan Islam Sanctuary",
+      "intro": "Dengan menggunakan Islam Sanctuary, Anda menyetujui ketentuan ini. Aplikasi menyediakan konten dan alat Islami untuk penggunaan spiritual pribadi. Aplikasi ini independen, gratis, dan transparan mengenai sumber.",
+      "lastUpdated": "Terakhir diperbarui: Agustus 2026",
+      "sections": {
+        "use": {
+          "title": "Penggunaan konten",
+          "body": "Teks Quran, hadith, dan dua disediakan untuk dibaca dan dijadikan rujukan pribadi. Patuhi lisensi dan persyaratan atribusi setiap penyedia sumber. Jangan mendistribusikan ulang konten hasil pengambilan data secara komersial tanpa izin penerbit aslinya.",
+          "bodySourcesBefore": "Konten bersumber dari API pihak ketiga yang tercantum di",
+          "bodySourcesAfter": "."
+        },
+        "accuracy": {
+          "title": "Pernyataan penyangkalan akurasi",
+          "body": "Waktu salat, perhitungan zakat, perkiraan warisan, dan alat lainnya merupakan perkiraan berdasarkan metode yang Anda pilih. Verifikasikan keputusan agama yang penting kepada ulama yang memenuhi syarat di komunitas Anda."
+        },
+        "availability": {
+          "title": "Ketersediaan",
+          "body": "Layanan disediakan sebagaimana adanya. Kami tidak menjamin akses tanpa gangguan ke API pihak ketiga atau siaran langsung."
+        },
+        "contact": {
+          "title": "Kontak",
+          "body": "Untuk pertanyaan mengenai ketentuan ini, gunakan tautan laporan pada halaman fitur mana pun."
+        }
+      },
+      "visual": {
+        "contentTypes": "Quran · Hadis · Doa",
+        "estimates": "Perkiraan",
+        "prayerTimes": "Waktu salat",
+        "zakat": "Zakat",
+        "inheritance": "Warisan",
+        "verifyScholars": "Verifikasikan keputusan penting kepada ulama yang memenuhi syarat",
+        "availabilityNote": "Layanan disediakan sebagaimana adanya · API pihak ketiga dapat berubah",
+        "reportAvailable": "Tersedia pada setiap halaman fitur"
+      }
+    },
+    "mosqueFinder": {
+      "title": "Pencari Masjid",
+      "subtitle": "Temukan masjid terdekat melalui OpenStreetMap",
+      "radius": "Radius pencarian",
+      "useMyLocation": "Gunakan lokasi saya",
+      "locating": "Menentukan lokasi...",
+      "mapView": "Peta",
+      "listView": "Daftar",
+      "resultCount": "{{count}} masjid ditemukan",
+      "noResults": "Tidak ada masjid dalam radius ini",
+      "geolocationDenied": "Akses lokasi ditolak. Menggunakan lokasi tersimpan dari Pengaturan.",
+      "networkError": "Tidak dapat memuat masjid. Periksa koneksi dan coba lagi.",
+      "timeoutError": "Layanan data peta habis waktu. Silakan coba lagi.",
+      "directions": "Petunjuk arah",
+      "viewOnOsm": "Lihat di OpenStreetMap",
+      "yourLocation": "Lokasi Anda",
+      "currentLocation": "lokasi Anda",
+      "mapLabel": "Peta masjid terdekat"
+    },
+    "welcome": {
+      "title": "Selamat Datang",
+      "subtitle": "Untuk waktu shalat dan arah kiblat yang akurat, kami membutuhkan lokasi Anda. Koordinat dikirim ke API shalat saat Anda memakai fitur tersebut, dan juga disimpan secara lokal di perangkat Anda.",
+      "enableLocation": "Aktifkan Lokasi",
+      "gettingLocation": "Mendapatkan lokasi...",
+      "continue": "Lanjutkan",
+      "useDifferent": "Gunakan lokasi lain",
+      "continueDefault": "Lanjutkan dengan lokasi bawaan",
+      "locationDetected": "Lokasi terdeteksi: {{location}}",
+      "resolving": "Menentukan lokasi..."
+    },
+    "halalVerification": {
+      "title": "Verifikasi Halal",
+      "subtitle": "Pindai barcode produk atau cari E-number aditif",
+      "tabs": {
+        "scan": "Pindai / Barcode",
+        "lookup": "Cari E-Number"
+      },
+      "barcodeInput": "Kode batang (UPC/EAN)",
+      "barcodePlaceholder": "Masukkan atau pindai barcode…",
+      "lookupProduct": "Cari produk",
+      "loading": "Mencari…",
+      "clear": "Hapus",
+      "scanCamera": "Pindai dengan kamera",
+      "stopCamera": "Hentikan kamera",
+      "cameraUnsupported": "Pemindaian barcode kamera tidak didukung di browser ini. Masukkan barcode secara manual.",
+      "cameraPermission": "Akses kamera ditolak. Izinkan kamera atau masukkan barcode manual.",
+      "cameraHint": "Arahkan kamera ke barcode produk",
+      "barcode": "Kode batang",
+      "productImage": "Gambar produk",
+      "overallVerdict": "Keputusan keseluruhan",
+      "halalLabelDetected": "Label halal pada produk",
+      "ingredients": "Bahan",
+      "additives": "Bahan tambahan bernomor E",
+      "noAdditives": "Tidak ada E-number terdeteksi pada produk ini.",
+      "eCodeInput": "Kode E-number",
+      "eCodePlaceholder": "E120, 471, e471…",
+      "eCodeNotFound": "Tidak ada E-number yang cocok di database kami.",
+      "searchResults": "E-number yang cocok",
+      "source": "Asal",
+      "localDatabase": "Database E-number halal lokal",
+      "status": {
+        "halal": "Halal",
+        "haram": "Haram",
+        "mushbooh": "Syubhat",
+        "unknown": "Tidak diketahui"
+      },
+      "errors": {
+        "notFound": "Produk tidak ditemukan di Open Food Facts. Coba barcode lain.",
+        "invalidBarcode": "Masukkan barcode UPC/EAN yang valid (8–14 digit).",
+        "network": "Tidak dapat terhubung ke Open Food Facts. Periksa koneksi Anda."
+      },
+      "scholarlyDisclaimer": "Alat ini hanya untuk panduan umum. Label produk, sertifikasi regional, dan pendapat ulama dapat berbeda. Jika ragu, konsultasikan dengan ulama yang memenuhi syarat atau lembaga halal setempat."
+    },
+    "getApp": {
+      "title": "Dapatkan Aplikasi",
+      "subtitle": "Pengalaman aplikasi native sedang dalam perjalanan",
+      "comingSoon": "Segera hadir",
+      "installTitle": "Segera hadir",
+      "message": "Aplikasi Islam belum siap. Kami sedang membangun pengalaman yang tenang dan offline-first. Sementara itu, gunakan web app lengkap di browser Anda.",
+      "alreadyInstalled": "Sudah terinstal",
+      "alreadyInstalledMessage": "Islam telah terinstal di perangkat ini. Buka aplikasi kapan saja dari layar utama.",
+      "iosInstructions": "Di iPhone atau iPad: ketuk Bagikan, lalu Tambahkan ke Layar Utama.",
+      "comingSoonMessage": "Aplikasi Islam belum siap. Kami sedang membangun pengalaman yang tenang dan offline-first. Sementara itu, gunakan web app lengkap di browser Anda."
+    },
+    "legal": {
+      "relatedTitle": "Dokumen terkait"
+    },
+    "notFound": {
+      "title": "Halaman tidak ditemukan",
+      "subtitle": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
+      "goHome": "Kembali ke beranda",
+      "helpfulLinks": "Tautan berguna"
+    }
+  },
+  "quranReader": {
+    "tafsir": "Tafsir",
+    "translationView": "Tampilan terjemahan",
+    "readingView": "Tampilan baca",
+    "readerSettings": "Pengaturan pembaca",
+    "remaining": "Tersisa",
+    "nextPrayer": "Shalat Berikutnya",
+    "meta": {
+      "ayah": "Ayat",
+      "page": "Halaman",
+      "juz": "Juz",
+      "hizbQuarter": "Hizb",
+      "manzil": "Manzil",
+      "ruku": "Ruku"
+    },
+    "modeLabel": "Mode pembaca",
+    "studyMode": "Pelajari",
+    "mushafMode": "Mushaf",
+    "translationOn": "Terjemahan aktif",
+    "translationOff": "Terjemahan nonaktif",
+    "editionLabel": "Edisi",
+    "scriptLabel": "Aksara",
+    "reciterLabel": "Qari",
+    "openTafsir": "Buka",
+    "contentUnavailable": "Konten Surah tidak tersedia.",
+    "surahLabel": "Surah",
+    "scripts": {
+      "uthmani": "Utsmani",
+      "indopak": "IndoPak"
+    }
+  },
+  "hadithReader": {
+    "backToCollections": "Kembali ke koleksi",
+    "backToBooks": "Kembali ke kitab",
+    "backToBook": "Kembali ke kitab",
+    "booksSubtitle": "Jelajahi kitab dalam koleksi ini",
+    "chaptersSubtitle": "Bab dan daftar hadits",
+    "chapters": "Bab",
+    "chapterNumber": "Bab {{number}}",
+    "hadithList": "Hadits dalam kitab ini",
+    "bookNumber": "Kitab {{number}}",
+    "searchPlaceholder": "Cari hadis...",
+    "searchResults": "Hasil pencarian",
+    "noSearchResults": "Tidak ada hadis yang cocok dengan pencarian Anda.",
+    "searchAllCollections": "Cari di semua koleksi",
+    "searchScopedHint": "Mencari di Sahih al-Bukhari. Aktifkan semua koleksi untuk pencarian lebih luas.",
+    "hadithCount": "{{count}} hadith",
+    "narrator": "Perawi",
+    "book": "Kitab",
+    "chapter": "Bab",
+    "chapterIntro": "Pengantar bab",
+    "references": "Referensi",
+    "inBookRef": "Kitab {{book}}, Hadits {{hadith}}",
+    "sunnahLink": "Lihat di Sunnah.com",
+    "isnad": "Sanad",
+    "booksCount": "{{count}} kitab",
+    "hadithsShort": "hadith",
+    "noBooks": "Tidak ada kitab yang ditemukan untuk koleksi ini.",
+    "jumpToChapter": "Buka bab",
+    "chapterOf": "{{current}} / {{total}}",
+    "allChapters": "Semua bab",
+    "filterChapter": "Saring",
+    "chapterHadithList": "Hadith dalam bab {{number}}",
+    "noHadithsInChapter": "Tidak ada hadith yang ditemukan dalam bab ini.",
+    "translationEnglishOnly": "Teks hadis saat ini tersedia dalam bahasa Inggris.",
+    "searchAllHint": "Cari di Bukhari, Muslim, dan semua koleksi lainnya."
+  },
+  "trust": {
+    "prayerTimes": "Waktu Shalat",
+    "quran": "Al Quran",
+    "hadith": "Hadis",
+    "duas": "Doa",
+    "zakat": "Zakat"
+  },
+  "errors": {
+    "prayerTimes": "Gagal memuat waktu shalat",
+    "hadithNotFound": "Hadis tidak ditemukan",
+    "generic": "Terjadi kesalahan",
+    "hijriCalendar": "Gagal memuat kalender Hijriah",
+    "ramadanCalendar": "Gagal memuat kalender Ramadan",
+    "qibla": "Gagal memuat arah Kiblat",
+    "unexpected": "Terjadi kesalahan yang tidak terduga.",
+    "boundaryTitle": "Terjadi kesalahan"
+  },
+  "events": {
+    "islamicNewYear": "Tahun Baru Hijriah",
+    "mawlid": "Maulid Nabi",
+    "israMiraj": "Isra Miraj",
+    "ramadanStart": "Awal Ramadan",
+    "laylatAlQadr": "Lailatul Qadar",
+    "eidAlFitr": "Idul Fitri",
+    "dayOfArafah": "Hari Arafah",
+    "eidAlAdha": "Idul Adha"
+  },
+  "hijriMonths": {
+    "muharram": "Muharram",
+    "safar": "Safar",
+    "rabiAlAwal": "Rabiul Awal",
+    "rabiAlThani": "Rabiul Akhir",
+    "jumadaAlAwwal": "Jumadil Awal",
+    "jumadaAlThani": "Jumadil Akhir",
+    "rajab": "Rajab",
+    "shaban": "Syaban",
+    "ramadan": "Ramadan",
+    "shawwal": "Syawal",
+    "dhulQadah": "Zulkaidah",
+    "dhulHijjah": "Zulhijah"
+  },
+  "notifications": {
+    "prayerTitle": "Salat {{prayer}}",
+    "prayerBody": "Waktunya salat {{prayer}} ({{time}})",
+    "whiteDaysTitle": "Puasa Ayyamul Bidh",
+    "whiteDaysBody": "Hari ini adalah hari yang dianjurkan untuk berpuasa (tanggal 13 sampai 15 Hijriah).",
+    "monThuTitle": "Puasa Sunnah",
+    "monThuBody": "Pengingat puasa Senin dan Kamis.",
+    "dailyHadithTitle": "Hadith Harian",
+    "dailyHadithFallback": "Luangkan waktu sejenak untuk merenungkan sebuah hadith hari ini."
+  },
+  "hadithCollections": {
+    "bukhari": {
+      "description": "Koleksi paling autentik"
+    },
+    "muslim": {
+      "description": "Koleksi paling autentik kedua"
+    },
+    "abudawud": {
+      "description": "Berfokus pada hadith hukum"
+    },
+    "tirmidhi": {
+      "description": "Dengan ulasan penilaian"
+    },
+    "nasai": {
+      "description": "Autentikasi yang ketat"
+    },
+    "ibnmajah": {
+      "description": "Salah satu dari enam kitab utama"
+    },
+    "malik": {
+      "description": "Koleksi tertulis paling awal"
+    },
+    "nawawi": {
+      "description": "Prinsip dasar iman"
+    },
+    "qudsi": {
+      "description": "Hadith suci dari Allah"
+    },
+    "dehlawi": {
+      "description": "Hadith pokok pilihan"
+    }
+  }
+}

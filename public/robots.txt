@@ -1,0 +1,35 @@
+# Served dynamically by the Cloudflare Worker (see worker/seo/llms.ts).
+# This static file is a fallback for local vite preview only.
+User-agent: *
+Allow: /
+Disallow: /settings
+Disallow: /share
+Disallow: /welcome
+Disallow: /search
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://islam.house/sitemap.xml

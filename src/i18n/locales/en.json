@@ -1,0 +1,1143 @@
+{
+  "app": {
+    "name": "Islam",
+    "tagline": "A calmer way to practice"
+  },
+  "common": {
+    "openApp": "Open App",
+    "getApp": "Coming Soon",
+    "learnMore": "Learn More",
+    "startJourney": "Start Journey",
+    "viewAll": "View all",
+    "today": "Today",
+    "back": "Back",
+    "close": "Close",
+    "share": "Share",
+    "search": "Search",
+    "settings": "Settings",
+    "loading": "Loading...",
+    "on": "On",
+    "off": "Off",
+    "retry": "Try again",
+    "remaining": "Remaining",
+    "nextPrayer": "Next Prayer",
+    "yourLocation": "Your location",
+    "change": "Change",
+    "weekdays": {
+      "short": {
+        "sun": "Sun",
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat"
+      }
+    },
+    "collections": "Collections",
+    "previous": "Previous",
+    "next": "Next",
+    "downloadPng": "Download PNG",
+    "reportIssue": "Report issue",
+    "verifiedSource": "Verified Source",
+    "terms": "Terms",
+    "features": "Features",
+    "privacy": "Privacy",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to main content",
+    "mainNavigation": "Main navigation",
+    "navigationMenu": "Navigation menu",
+    "languages": "Languages",
+    "loadingPage": "Loading page",
+    "pagination": {
+      "navLabel": "Pagination",
+      "pageOf": "Page {{page}} of {{total}}"
+    },
+    "contentEnglishOnly": "Translation shown in English.",
+    "timePeriod": {
+      "am": "AM",
+      "pm": "PM"
+    }
+  },
+  "notifications": {
+    "prayerTitle": "{{prayer}} Prayer",
+    "prayerBody": "It's time for {{prayer}} ({{time}})",
+    "whiteDaysTitle": "White Days Fasting",
+    "whiteDaysBody": "Today is a recommended fasting day (13th-15th Hijri).",
+    "monThuTitle": "Sunnah Fasting",
+    "monThuBody": "Monday/Thursday fasting reminder.",
+    "dailyHadithTitle": "Daily Hadith",
+    "dailyHadithFallback": "Take a moment to reflect on a hadith today."
+  },
+  "hadithCollections": {
+    "bukhari": {
+      "description": "The most authentic collection"
+    },
+    "muslim": {
+      "description": "Second most authentic collection"
+    },
+    "abudawud": {
+      "description": "Focus on legal hadith"
+    },
+    "tirmidhi": {
+      "description": "With grading commentary"
+    },
+    "nasai": {
+      "description": "Rigorous authentication"
+    },
+    "ibnmajah": {
+      "description": "One of the six major books"
+    },
+    "malik": {
+      "description": "Earliest written collection"
+    },
+    "nawawi": {
+      "description": "Essential principles of faith"
+    },
+    "qudsi": {
+      "description": "Sacred hadith from Allah"
+    },
+    "dehlawi": {
+      "description": "Selected foundational hadith"
+    }
+  },
+  "cookieConsent": {
+    "title": "Privacy preferences",
+    "body": "We store essential preferences on your device. Optional privacy-friendly analytics help us improve the app and only run if you accept.",
+    "bodyEssential": "We store essential preferences (theme, language, prayer settings) on your device. We do not sell data or run ads.",
+    "accept": "Accept analytics",
+    "reject": "Essential only",
+    "gotIt": "Got it"
+  },
+  "nav": {
+    "groups": {
+      "times": "Times & Direction",
+      "quran": "Quran & Hadith",
+      "ramadan": "Ramadan",
+      "tools": "Tools"
+    },
+    "items": {
+      "prayerTimes": "Prayer Times",
+      "qibla": "Qibla",
+      "hijriCalendar": "Hijri Calendar",
+      "events": "Islamic Events",
+      "quran": "Quran",
+      "tafsir": "Tafsir",
+      "hadith": "Hadith",
+      "names": "99 Names",
+      "ramadanHub": "Ramadan Hub",
+      "zakat": "Zakat Calculator",
+      "tasbeeh": "Tasbeeh Counter",
+      "duas": "Duas & Adhkar",
+      "hajj": "Hajj & Umrah",
+      "babyNames": "Baby Names",
+      "live": "Live Streams",
+      "mosqueFinder": "Mosque Finder",
+      "search": "Search",
+      "settings": "Settings",
+      "shahada": "Al Shahada",
+      "adhan": "Adhan Audio",
+      "islamicRadio": "Islamic Radio",
+      "halalVerification": "Halal Verification",
+      "fatawa": "Fatawa Search",
+      "moonSighting": "Moon Sighting",
+      "inheritance": "Inheritance",
+      "islamicLibrary": "Islamic Library"
+    },
+    "desc": {
+      "prayerTimes": "Accurate times with method control",
+      "adhan": "Listen and choose your adhan",
+      "islamicRadio": "Quran radio stations from MP3Quran",
+      "qibla": "Direction to the Kaaba",
+      "hijriCalendar": "Islamic calendar dates",
+      "events": "Holidays and important dates",
+      "quran": "Read and listen to the Quran",
+      "tafsir": "Quranic commentary",
+      "hadith": "Authenticated hadith collections",
+      "names": "Asma ul Husna",
+      "shahada": "Declaration of faith",
+      "ramadanHub": "Suhoor, Iftar, and countdown",
+      "zakat": "Calculate your Zakat",
+      "tasbeeh": "Digital dhikr counter",
+      "duas": "Daily supplications",
+      "hajj": "Pilgrimage guide",
+      "babyNames": "Islamic baby names",
+      "live": "Makkah & Madinah live",
+      "mosqueFinder": "Find nearby mosques",
+      "search": "Search Quran, hadith, and duas",
+      "settings": "App preferences",
+      "halalVerification": "Scan barcodes and check E-number halal status",
+      "fatawa": "Search scholarly answers (external sources)",
+      "moonSighting": "Hilal guidance and Hijri context",
+      "inheritance": "Sunni faraid for common heirs",
+      "islamicLibrary": "Links to Shamela, OpenITI, and more"
+    },
+    "bottom": {
+      "times": "Times",
+      "quran": "Quran",
+      "search": "Search",
+      "ramadan": "Ramadan",
+      "more": "More"
+    }
+  },
+  "footer": {
+    "navigation": "Footer navigation",
+    "practice": "Practice",
+    "learn": "Learn",
+    "tools": "Tools",
+    "app": "App",
+    "home": "Home",
+    "share": "Share Cards",
+    "legal": "Legal",
+    "sources": "Sources & Attribution",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "features": "Features",
+    "blurb": "An independent, free project. We do not sell data or run ads on religious content.",
+    "copyright": "All religious content is sourced from verified APIs with full attribution."
+  },
+  "home": {
+    "statusLabel": "Today's practice",
+    "hero": "Your grounded daily practice",
+    "subtitle": "Prayer times, Quran, hadith, and duas in one calm, ad free space with transparent sources.",
+    "searchPlaceholder": "Search Quran, Hadith…",
+    "readQuran": "Read Quran",
+    "useMyLocation": "Use my location",
+    "defaultLocation": "Default: {{city}}",
+    "continueTitle": "Continue where you left off",
+    "continueSubtitle": "Pick up your last reading or open a bookmark.",
+    "continueCta": "Continue reading",
+    "continueQuran": "Quran",
+    "continueHadith": "Hadith",
+    "continueBookmark": "Bookmark",
+    "continueBookmarks": "Bookmarks",
+    "surahNumber": "Surah {{number}}",
+    "ayahNumber": "Ayah {{number}}",
+    "seasonalLabel": "Coming up",
+    "seasonalToday": "{{event}} is today",
+    "seasonalDays": "{{event}} in {{days}} days",
+    "bentoTitle": "Quick actions",
+    "bentoSubtitle": "Everything you reach for most, one tap away.",
+    "quranTileTitle": "The Holy Quran",
+    "quranTileDesc": "Read and listen with multiple translations in a distraction free reader.",
+    "prayerTileTitle": "Prayer Times",
+    "prayerTileDesc": "Accurate times for your location with method control.",
+    "duasTileTitle": "Duas & Adhkar",
+    "duasTileDesc": "Daily supplications and remembrances for every moment.",
+    "qiblaTileTitle": "Qibla Compass",
+    "qiblaTileDesc": "Find your direction instantly with our precision compass.",
+    "zakatTileTitle": "Zakat Calculator",
+    "zakatTileDesc": "Calculate your obligations accurately and securely.",
+    "hadithTileTitle": "Hadith Library",
+    "hadithTileDesc": "Explore authenticated collections with advanced search.",
+    "shahadaTileTitle": "Al Shahada",
+    "shahadaTileDesc": "The declaration of faith in Arabic, transliteration, and translation.",
+    "adhanTileTitle": "Adhan Audio",
+    "adhanTileDesc": "Preview adhan voices and choose your muezzin.",
+    "discoveryTitle": "Guided discovery",
+    "discoverySubtitle": "Explore deeper at your own pace.",
+    "discoveryRamadan": "Ramadan Hub",
+    "discoveryRamadanDesc": "Suhoor, Iftar, and countdown tools for the blessed month.",
+    "discoveryNames": "99 Names of Allah",
+    "discoveryNamesDesc": "Asma ul Husna with meanings and Arabic script.",
+    "discoveryHajj": "Hajj & Umrah",
+    "discoveryHajjDesc": "Step by step pilgrimage guide and duas.",
+    "discoveryLive": "Live Streams",
+    "discoveryLiveDesc": "Watch Makkah and Madinah live from the holy mosques.",
+    "discoveryTasbeeh": "Tasbeeh Counter",
+    "discoveryTasbeehDesc": "Digital dhikr counter with vibration feedback.",
+    "bismillahTranslation": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
+    "dailyReflection": "Daily Reflection",
+    "dailyFeed": {
+      "title": "Daily Spiritual Feed",
+      "subtitle": "Verse, hadith, and adhkar selected for today via UmmahAPI. Browse the full offline duas collection separately.",
+      "tabs": {
+        "verse": "Verse",
+        "hadith": "Hadith",
+        "morningAdhkar": "Morning",
+        "eveningAdhkar": "Evening",
+        "afterPrayer": "After Salah"
+      },
+      "repeat": "Repeat {{count}} times",
+      "browseDuas": "Full duas collection",
+      "readTafsir": "Read tafsir",
+      "error": "Could not load today's feed. Check your connection and try again.",
+      "contentEnglishOnly": "Some daily content is shown in English."
+    },
+    "loadingReflection": "Loading reflection...",
+    "trustedSources": "Trusted sources",
+    "trustBadgeAria": "{{label}}, opens external source",
+    "fallbackReflection": "And He found you lost and guided [you].",
+    "ayahReference": "Surah {{surah}}:{{ayah}}",
+    "faqTitle": "Why this app",
+    "faqSubtitle": "Clear answers about sources, privacy, and how prayer times work.",
+    "faq": {
+      "sources": {
+        "q": "Where does the content come from?",
+        "a": "Prayer times use AlAdhan. Quran text and audio come from Quran.com. Hadith collections use sunnah.com and open authentic datasets. Duas and many tools use local curated data plus UmmahAPI. Every major page shows attribution."
+      },
+      "offline": {
+        "q": "Does it work offline?",
+        "a": "Yes for core practice. The PWA caches prayer times, Quran, and hadith responses so you can keep reading when connectivity drops."
+      },
+      "methods": {
+        "q": "Can I change the prayer calculation method?",
+        "a": "Yes. Settings lets you pick calculation method, madhab, high latitude rule, and fine tune offsets so times match your local convention."
+      },
+      "privacy": {
+        "q": "Is my location private?",
+        "a": "Coordinates you approve are stored locally in your browser. When you use prayer times, Qibla, mosque finder, or location labels, those coordinates are sent to prayer and map APIs (such as AlAdhan, Nominatim, and Overpass) to fetch times and nearby places. We do not sell data and the app is ad free."
+      },
+      "ads": {
+        "q": "Are there ads or tracking?",
+        "a": "No ads. The product is designed as a calm, distraction free space for daily practice."
+      }
+    },
+    "installTitle": "App coming soon",
+    "installSubtitle": "A dedicated mobile app is on the way. Until then, use Islam in your browser.",
+    "installLearnMore": "Learn more"
+  },
+  "prayers": {
+    "Imsak": "Imsak",
+    "Fajr": "Fajr",
+    "Sunrise": "Sunrise",
+    "Dhuhr": "Dhuhr",
+    "Asr": "Asr",
+    "Maghrib": "Maghrib",
+    "Sunset": "Sunset",
+    "Isha": "Isha",
+    "Midnight": "Midnight"
+  },
+  "offline": {
+    "message": "You are offline. Cached prayer times and Quran may still be available."
+  },
+  "events": {
+    "islamicNewYear": "Islamic New Year",
+    "mawlid": "Mawlid an-Nabi",
+    "israMiraj": "Isra & Mi'raj",
+    "ramadanStart": "Ramadan Start",
+    "laylatAlQadr": "Laylat al-Qadr",
+    "eidAlFitr": "Eid al-Fitr",
+    "dayOfArafah": "Day of Arafah",
+    "eidAlAdha": "Eid al-Adha"
+  },
+  "hijriMonths": {
+    "muharram": "Muharram",
+    "safar": "Safar",
+    "rabiAlAwal": "Rabi al-Awwal",
+    "rabiAlThani": "Rabi al-Thani",
+    "jumadaAlAwwal": "Jumada al-Awwal",
+    "jumadaAlThani": "Jumada al-Thani",
+    "rajab": "Rajab",
+    "shaban": "Shaban",
+    "ramadan": "Ramadan",
+    "shawwal": "Shawwal",
+    "dhulQadah": "Dhul Qadah",
+    "dhulHijjah": "Dhul Hijjah"
+  },
+  "pages": {
+    "prayerTimes": {
+      "title": "Prayer Times",
+      "schedule": "Today's Schedule",
+      "calculationSettings": "Calculation Settings",
+      "method": "Method",
+      "asrMethod": "Asr Juristic Method",
+      "asrStandard": "Standard (Shafii, Hanbali, Maliki)",
+      "asrHanafi": "Hanafi",
+      "highLatitude": "High Latitude Adj.",
+      "manualTune": "Manual tune offsets",
+      "monthlySchedule": "Monthly schedule",
+      "dailyInspiration": "Daily Inspiration",
+      "methodHint": "Adjusts prayer times based on regional scholarly consensus.",
+      "hijriDateLine": "Hijri: {{day}} {{month}} {{year}}"
+    },
+    "qibla": {
+      "title": "Qibla Direction",
+      "subtitle": "Find the direction to the Kaaba",
+      "bearingFromNorth": "Bearing from North",
+      "distanceToMakkah": "{{distance}} km to Makkah",
+      "compassPrompt": "Enable device compass for live Qibla direction on iOS.",
+      "enableCompass": "Enable compass",
+      "compassDenied": "Compass access denied. Allow motion access in Settings to use live direction.",
+      "usingCompass": "Using device compass for live rotation",
+      "compassUnavailable": "Compass data is not available on this device. The needle shows Qibla bearing from north only.",
+      "noLocation": "Set your location in Settings to find the Qibla direction.",
+      "setLocation": "Set location"
+    },
+    "quran": {
+      "title": "The Holy Quran",
+      "subtitle": "Read, listen, and reflect",
+      "tabs": {
+        "surah": "Surah",
+        "juz": "Juz",
+        "revelation": "Revelation order"
+      },
+      "searchSurah": "Search for surah...",
+      "searchInJuz": "Search surahs in this juz...",
+      "resultsCount": "{{count}} results",
+      "surahCount": "{{count}} surahs",
+      "noResults": "No surahs match your search.",
+      "versesCount": "{{count}} verses",
+      "allJuz": "All juz",
+      "juzLabel": "Juz {{number}}",
+      "juzPartFallback": "Part {{number}}",
+      "surahRange": "Surah {{start}} to {{end}}",
+      "surahSingle": "Surah {{number}}",
+      "juzHeader": "Juz {{juz}}: {{name}}",
+      "contentUnavailable": "Surah content unavailable.",
+      "loadingWords": "Loading words...",
+      "wordBreakdownUnavailable": "Word breakdown unavailable.",
+      "playAyah": "Play ayah",
+      "viewTafsir": "View tafsir",
+      "wordByWord": "Word by word",
+      "shareAyah": "Share ayah",
+      "miniPlayerPlay": "Play",
+      "miniPlayerPause": "Pause",
+      "miniPlayerPreviousAyah": "Previous ayah",
+      "miniPlayerNextAyah": "Next ayah",
+      "playbackProgress": "Playback progress"
+    },
+    "tafsir": {
+      "title": "Tafsir",
+      "subtitle": "Quranic commentary by surah and ayah",
+      "searchPlaceholder": "Search for surah...",
+      "noResults": "No surahs match your search.",
+      "verses": "verses",
+      "ayahLabel": "Ayah {{number}}",
+      "editionLabel": "Commentary edition",
+      "sourceEnglish": "Ibn Kathir (Abridged) via Quran.com",
+      "sourceArabic": "Tafsir al Jalalayn (Arabic)",
+      "sourceIndonesian": "Tafsir al Jalalayn (Indonesian)",
+      "unavailable": "Tafsir unavailable for this ayah.",
+      "showMore": "Show more",
+      "showLess": "Show less",
+      "fallbackEnglish": "Tafsir is shown in English for this language."
+    },
+    "hadith": {
+      "title": "Hadith Collections",
+      "subtitle": "Authenticated collections with search"
+    },
+    "duas": {
+      "title": "Duas & Adhkar",
+      "subtitle": "Daily supplications and remembrances",
+      "allCategories": "All categories",
+      "readingMode": "Reading mode",
+      "exitReadingMode": "Exit reading mode",
+      "readingProgress": "{{current}} / {{total}}",
+      "duaCount": "{{count}} duas",
+      "emptyCategory": "No duas available for this category.",
+      "source": "Authentic hadith collections",
+      "contentEnglishOnly": "Dua translations are currently available in English.",
+      "categories": {
+        "morning": "Morning Adhkar",
+        "evening": "Evening Adhkar",
+        "after_prayer": "After Prayer",
+        "sleep": "Sleep Duas",
+        "food": "Food Duas",
+        "travel": "Travel Duas",
+        "wudu": "Wudu & Purification",
+        "mosque": "Mosque & Restroom",
+        "home": "Home Duas",
+        "protection": "Protection",
+        "distress": "Distress & Anxiety",
+        "forgiveness": "Seeking Forgiveness",
+        "ramadan": "Ramadan Duas"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your app preferences and sanctuary experience.",
+      "hijriDateAdjustment": "Hijri date adjustment (days)",
+      "hijriAdjustmentDays": "{{count}} day(s)",
+      "adhanVoiceMuezzin": "Adhan voice (muezzin)",
+      "prayerCalculation": "Prayer Calculation",
+      "appearance": "Appearance",
+      "darkMode": "Dark Mode",
+      "arabicFontSize": "Arabic Font Size",
+      "language": "Language",
+      "notifications": "Notifications",
+      "adhanReminders": "Adhan Reminders",
+      "adhanRemindersDesc": "Receive a push notification when it's time to pray.",
+      "silentNotifications": "Notifications only (no sound)",
+      "silentNotificationsDesc": "Show prayer alerts without playing adhan audio at prayer time.",
+      "silentNotificationsActive": "Silent reminders are active. Prayer alerts will show without adhan audio.",
+      "dailyHadith": "Daily Hadith",
+      "dailyHadithDesc": "A gentle morning reminder with a selected Hadith.",
+      "whiteDays": "White Days Fasting",
+      "whiteDaysDesc": "Reminders for the 13th, 14th, and 15th of each Hijri month.",
+      "monThuFasting": "Monday & Thursday Fasting",
+      "monThuFastingDesc": "Weekly Sunnah fasting reminders on Mon and Thu.",
+      "notificationsBlocked": "Notifications are blocked in your browser. Enable them in site settings to receive prayer reminders.",
+      "notificationsPrompt": "Allow notifications when prompted so prayer reminders can appear.",
+      "notificationsUnsupported": "This browser does not support notifications.",
+      "previewAdhan": "Preview Adhan",
+      "adhanLibrary": "Browse adhan audio",
+      "location": "Location",
+      "currentLocation": "Current location",
+      "useMyLocation": "Use my location",
+      "locating": "Locating...",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "saveLocation": "Save location",
+      "legalAccount": "Legal & Account",
+      "privacyPrefs": "Privacy preferences",
+      "privacyPrefsDesc": "Choose whether optional analytics may run. Essential preferences always stay on your device.",
+      "analyticsLabel": "Privacy-friendly analytics",
+      "analyticsDesc": "Anonymous usage signals via Cloudflare Web Analytics. No ads and no sale of data.",
+      "analyticsUnavailable": "Optional analytics are not configured on this deployment.",
+      "resetConsent": "Show consent banner again",
+      "privacyPolicy": "Privacy Policy",
+      "sourcesAttribution": "Sources & Attribution",
+      "termsOfService": "Terms of Service"
+    },
+    "ramadan": {
+      "title": "Ramadan Hub",
+      "subtitle": "Suhoor, Iftar, and daily duas",
+      "mubarak": "Ramadan Mubarak",
+      "kareem": "Ramadan Kareem",
+      "dayOf": "Day {{day}} of {{total}}",
+      "countdownTitle": "Countdown to Ramadan",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "seconds": "Seconds",
+      "ramadanYear": "Ramadan {{year}} AH",
+      "today": "Today",
+      "suhoor": "Suhoor (stop eating)",
+      "iftar": "Iftar (break fast)",
+      "imsakWarning": "Imsak warning: {{time}}",
+      "fastingTimesHint": "Suhoor and Iftar times will appear closer to Ramadan. Use the countdown above to prepare.",
+      "calendarTitle": "Ramadan Calendar",
+      "calendarSubtitle": "Ramadan {{year}} AH · daily Hijri and Gregorian dates",
+      "duasTitle": "Ramadan Duas"
+    },
+    "zakat": {
+      "title": "Zakat Calculator",
+      "subtitle": "Calculate your obligatory charity",
+      "tabs": {
+        "zakat": "Zakat",
+        "fitr": "Zakat al Fitr"
+      },
+      "currency": "Currency",
+      "nisabStandard": "Nisab standard",
+      "nisabGold": "Gold (85g)",
+      "nisabSilver": "Silver (595g)",
+      "cash": "Cash & savings",
+      "goldGrams": "Gold (grams)",
+      "silverGrams": "Silver (grams)",
+      "stocks": "Stocks & investments",
+      "businessGoods": "Business goods & inventory",
+      "liabilities": "Liabilities to deduct",
+      "results": "Results",
+      "nisab": "Nisab threshold",
+      "totalWealth": "Net zakatable wealth",
+      "zakatDue": "Zakat due",
+      "rateNote": "{{rate}} of wealth above nisab",
+      "belowNisab": "Your wealth is below the nisab threshold, so Zakat is not due on these assets.",
+      "hawlNote": "Zakat applies only to wealth held for one full lunar year (hawl).",
+      "metalPrices": "Metal prices used",
+      "goldPrice": "Gold",
+      "silverPrice": "Silver",
+      "priceSource": "Prices from {{source}} · {{date}}",
+      "pricesUnverified": "Metal prices could not be cross checked with a second source.",
+      "calculating": "Calculating...",
+      "calculateError": "Could not calculate Zakat. Check your connection and try again.",
+      "members": "Household members",
+      "fitrDue": "Zakat al Fitr",
+      "fitrPerPerson": "{{amount}} {{currency}} per person",
+      "attribution": "UmmahAPI · XAUS.com metal price cross check"
+    },
+    "tasbeeh": {
+      "count": "Count",
+      "hapticsOn": "Haptics On",
+      "hapticsOff": "Haptics Off",
+      "reset": "Reset",
+      "target": "Target",
+      "ariaTapCount": "Tap to count",
+      "ariaToggleHaptics": "Toggle vibration",
+      "ariaResetCount": "Reset count",
+      "ariaSelectDhikr": "Select dhikr phrase",
+      "phrases": {
+        "subhanAllah": "SubhanAllah",
+        "alhamdulillah": "Alhamdulillah",
+        "allahuAkbar": "Allahu Akbar"
+      }
+    },
+    "names": {
+      "title": "99 Names of Allah",
+      "subtitle": "Asma ul Husna with meanings",
+      "backToAll": "← All names",
+      "loadError": "Could not load the 99 Names. Check your connection and try again."
+    },
+    "shahada": {
+      "title": "Al Shahada",
+      "subtitle": "The declaration of faith",
+      "intro": "The Shahada is the foundational testimony of Islam. Muslims declare that there is no deity worthy of worship except Allah, and that Muhammad is His messenger.",
+      "fullDeclaration": "Full declaration",
+      "fullTransliteration": "Ash hadu an la ilaha illa Allah, wa ash hadu anna Muhammadan rasul Allah.",
+      "fullTranslation": "I bear witness that there is no deity worthy of worship except Allah, and I bear witness that Muhammad is the messenger of Allah.",
+      "partsTitle": "By part",
+      "partLabel": "Part {{number}}",
+      "part1Transliteration": "Ash hadu an la ilaha illa Allah.",
+      "part1Translation": "I bear witness that there is no deity worthy of worship except Allah.",
+      "part2Transliteration": "Wa ash hadu anna Muhammadan rasul Allah.",
+      "part2Translation": "And I bear witness that Muhammad is the messenger of Allah.",
+      "meaningTitle": "What it means",
+      "meaningBody": "The Shahada affirms monotheism (tawhid) and acceptance of Muhammad as the final prophet. It is the gateway to Islam and is recited in prayer, conversion, and daily remembrance."
+    },
+    "adhan": {
+      "title": "Adhan Audio",
+      "subtitle": "Listen and choose your muezzin",
+      "intro": "Preview adhan recordings and select the voice used for prayer reminders. Tap play to listen; your browser may require one tap to unlock audio.",
+      "selected": "Selected",
+      "select": "Use for reminders",
+      "play": "Play",
+      "stop": "Stop",
+      "selectedForReminders": "Used for prayer reminders",
+      "selectedForSilentReminders": "Selected muezzin (silent reminders active)",
+      "silentNotificationsTitle": "Notifications only (no sound)",
+      "silentNotificationsOnDesc": "Prayer reminders appear without adhan audio. Preview still plays sound.",
+      "silentNotificationsOffDesc": "Prayer reminders play your chosen muezzin with the notification.",
+      "remindersTitle": "Prayer reminders",
+      "remindersBody": "Enable adhan reminders in Settings to hear your chosen muezzin at prayer time.",
+      "openSettings": "Open notification settings",
+      "loading": "Loading…",
+      "playbackError": "Could not play this adhan. Check your connection and try again.",
+      "playbackErrorShort": "Playback failed",
+      "muezzins": {
+        "mishary": "Mishary Rashid Alafasy",
+        "misharyDesc": "Clear, widely recognized recitation",
+        "makkah": "Makkah style",
+        "makkahDesc": "Traditional adhan from the Holy Mosque",
+        "madinah": "Madinah style",
+        "madinahDesc": "Traditional adhan from the Prophet's Mosque"
+      }
+    },
+    "islamicRadio": {
+      "title": "Islamic Radio",
+      "subtitle": "Quran radio stations worldwide",
+      "intro": "Stream live Quran radio from MP3Quran.net. Filter by reciter name or switch station language labels.",
+      "filterPlaceholder": "Filter stations...",
+      "languageLabel": "Station label language",
+      "play": "Play",
+      "stop": "Stop",
+      "loading": "Loading…",
+      "playbackError": "This station’s stream is offline or unreachable right now. Try another station.",
+      "playbackErrorShort": "Stream offline",
+      "noStations": "No stations matched your filter.",
+      "languages": {
+        "eng": "English",
+        "ar": "Arabic",
+        "fr": "French",
+        "ur": "Urdu",
+        "id": "Indonesian"
+      }
+    },
+    "fatawa": {
+      "title": "Fatawa Search",
+      "subtitle": "Scholarly answers from trusted external sources",
+      "notice": "A dedicated fatawa API is not wired yet. IslamQA and Dar Al Ifta do not offer a free public search API, so this page opens trusted external sites with your query.",
+      "placeholder": "Search fatawa…",
+      "search": "Search on IslamQA",
+      "externalIslamqa": "Browse fatwas on IslamQA",
+      "externalDarAlIfta": "Official fatwas from Dar Al Ifta Egypt"
+    },
+    "moonSighting": {
+      "title": "Moon Sighting",
+      "subtitle": "Hilal and Hijri month context",
+      "intro": "Local moon sighting can differ from calculated Hijri dates. Use this page alongside your local authority and the Hijri calendar.",
+      "currentHijri": "Today's Hijri date (calculated)",
+      "astronomicalTitle": "Astronomical vs sighting",
+      "astronomicalBody": "AlAdhan provides calculated Hijri dates. Official month start may shift by one day based on verified local hilal sighting. Adjust Hijri dates in Settings if your community follows a different sighting.",
+      "openHijriCalendar": "Open Hijri calendar"
+    },
+    "inheritance": {
+      "title": "Inheritance Calculator",
+      "subtitle": "Sunni faraid for common heirs",
+      "howItWorks": "Choose the sex of the deceased first. If the deceased is male, enter the number of wives (0–4). If female, mark whether the husband is alive (only one). Then add sons, daughters, and whether the father or mother is alive. The calculator applies Quranic fixed shares (spouse, parents, daughters alone), gives residue to sons as asaba (2:1 with daughters), uses umariyyatayn when only parents and a spouse remain, and applies awl or radd when shares do not add up to the full estate.",
+      "disclaimer": "Educational tool only. Does not cover siblings, grandparents, full hajb (blocking) rules, debts, wasiyyah, or unassigned residue beyond the spouse-only case shown here. Consult a qualified scholar for real cases.",
+      "decedentSex": "Deceased",
+      "decedentMale": "Male",
+      "decedentFemale": "Female",
+      "estate": "Estate value",
+      "husbandAlive": "Husband alive",
+      "wives": "Wives (0–4)",
+      "sons": "Sons",
+      "daughters": "Daughters",
+      "father": "Father alive",
+      "mother": "Mother alive",
+      "calculate": "Calculate shares",
+      "notes": {
+        "empty": "Add heirs to calculate shares. This tool covers spouse, parents, sons, and daughters only.",
+        "base": "Educational estimate (Sunni faraid). Does not cover siblings, grandparents, debts, or wasiyyah. Consult a qualified scholar for real estates.",
+        "awl": "Awl applied: fixed shares exceeded the estate and were reduced proportionally.",
+        "radd": "Radd applied: leftover returned to blood heirs with fixed shares (not the spouse)."
+      },
+      "heirs": {
+        "husband": "Husband",
+        "wife": "Wife",
+        "father": "Father",
+        "mother": "Mother",
+        "son": "Son",
+        "daughter": "Daughter",
+        "residue": "Residue"
+      }
+    },
+    "islamicLibrary": {
+      "title": "Islamic Library",
+      "subtitle": "External classical text libraries",
+      "intro": "Full Shamela and OpenITI corpora are too large to embed here. Use these trusted external libraries for classical Arabic texts.",
+      "shamelaTitle": "Shamela Library",
+      "shamelaDesc": "Large Arabic Islamic library (shamela.ws)",
+      "openitiTitle": "OpenITI",
+      "openitiDesc": "Open Arabic text corpus for research",
+      "sunnahTitle": "Sunnah.com",
+      "sunnahDesc": "Hadith collections with grading",
+      "quranTitle": "Quran.com",
+      "quranDesc": "Quran reading and tafsir"
+    },
+    "live": {
+      "title": "Makkah & Madinah Live",
+      "subtitle": "Live streams from the holy mosques",
+      "tabs": {
+        "makkah": "Makkah",
+        "madinah": "Madinah"
+      },
+      "makkahTitle": "Makkah Live",
+      "madinahTitle": "Madinah Live",
+      "makkahNote": "Saudi Quran TV, live from Masjid al-Haram",
+      "madinahNote": "Saudi Sunnah TV, live from Al-Masjid an-Nabawi",
+      "loading": "Connecting to live stream…",
+      "unavailable": "Live stream is temporarily unavailable. Please try again later.",
+      "emptySources": "No stream sources are available right now.",
+      "playerLabel": "Live stream player"
+    },
+    "hajj": {
+      "title": "Hajj & Umrah Guide",
+      "subtitle": "Step by step pilgrimage guide",
+      "tabs": {
+        "hajj": "Hajj",
+        "umrah": "Umrah"
+      },
+      "expandStep": "Expand step",
+      "collapseStep": "Collapse step",
+      "steps": {
+        "hajj": {
+          "ihram": {
+            "title": "Ihram",
+            "content": "Enter Ihram at the Miqat with intention for Hajj and recite the Talbiyah."
+          },
+          "tawaf": {
+            "title": "Tawaf",
+            "content": "Circle the Kaaba seven times counter-clockwise."
+          },
+          "sai": {
+            "title": "Sa'i",
+            "content": "Walk seven times between Safa and Marwah."
+          },
+          "wuquf": {
+            "title": "Wuquf at Arafah",
+            "content": "Stand at Arafah from noon until sunset on the 9th of Dhul Hijjah."
+          },
+          "muzdalifah": {
+            "title": "Muzdalifah",
+            "content": "Pray Maghrib and Isha combined; collect pebbles."
+          },
+          "rami": {
+            "title": "Rami (Stoning)",
+            "content": "Throw seven pebbles at each Jamarat pillar."
+          },
+          "sacrifice": {
+            "title": "Sacrifice & Halq",
+            "content": "Offer sacrifice and trim hair to exit partial Ihram."
+          },
+          "farewellTawaf": {
+            "title": "Farewell Tawaf",
+            "content": "Perform Tawaf al-Wada before leaving Makkah."
+          }
+        },
+        "umrah": {
+          "ihram": {
+            "title": "Ihram",
+            "content": "Enter Ihram at the Miqat with intention for Umrah."
+          },
+          "tawaf": {
+            "title": "Tawaf",
+            "content": "Perform seven circuits around the Kaaba."
+          },
+          "sai": {
+            "title": "Sa'i",
+            "content": "Walk seven times between Safa and Marwah."
+          },
+          "halq": {
+            "title": "Halq or Taqsir",
+            "content": "Shave or trim hair to complete Umrah and exit Ihram."
+          },
+          "duasHaram": {
+            "title": "Duas in Masjid al-Haram",
+            "content": "Spend time in worship at the Haram; make sincere dua."
+          },
+          "madinah": {
+            "title": "Visiting Madinah (optional)",
+            "content": "Many pilgrims visit the Prophet's Mosque after Umrah."
+          }
+        }
+      }
+    },
+    "babyNames": {
+      "title": "Islamic Baby Names",
+      "subtitle": "Names with meaning and Arabic script",
+      "searchPlaceholder": "Search by name or meaning...",
+      "backToAll": "← All names",
+      "gender": "Gender",
+      "origin": "Origin",
+      "root": "Arabic root",
+      "note": "About this name",
+      "count": "{{count}} names",
+      "noResults": "No names matched your search.",
+      "filters": {
+        "all": "All",
+        "boy": "Boy",
+        "girl": "Girl"
+      },
+      "genders": {
+        "male": "Boy",
+        "female": "Girl"
+      }
+    },
+    "hijriCalendar": {
+      "title": "Hijri Calendar",
+      "subtitle": "Navigate Islamic months and years",
+      "today": "Today",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "holiday": "Islamic holiday",
+      "ah": "AH"
+    },
+    "events": {
+      "title": "Islamic Events",
+      "subtitle": "Key dates for Hijri {{year}}",
+      "loadingDate": "Loading date…",
+      "dateTbd": "TBD",
+      "hijriYearSuffix": "{{year}} AH",
+      "nextYearNote": "Next occurrence (Hijri {{year}})",
+      "loadError": "Could not load event dates. Check your connection and try again."
+    },
+    "search": {
+      "title": "Search",
+      "subtitle": "Search Quran, Hadith, and Duas",
+      "placeholder": "Search...",
+      "noResults": "No results found",
+      "hint": "Type to search across Quran, Hadith, and Duas.",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "duas": "Duas"
+    },
+    "share": {
+      "title": "Share Card",
+      "subtitle": "Share ayah or hadith as an image",
+      "brand": "Islam Sanctuary",
+      "exportError": "Could not create the image. Try again or use Share.",
+      "ayahUnavailable": "Ayah unavailable."
+    },
+    "getApp": {
+      "title": "Get App",
+      "subtitle": "Native app experience is on the way",
+      "comingSoon": "Coming soon",
+      "installTitle": "Coming soon",
+      "message": "The Islam app is not ready yet. We are building a calm, offline-first experience. Meanwhile, you can use the full web app in your browser.",
+      "alreadyInstalled": "Already installed",
+      "alreadyInstalledMessage": "Islam is installed on this device. Open the app anytime from your home screen.",
+      "iosInstructions": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+      "comingSoonMessage": "The Islam app is not ready yet. We are building a calm, offline-first experience. Meanwhile, you can use the full web app in your browser."
+    },
+    "sources": {
+      "title": "Sources & Attribution",
+      "subtitle": "Where our data comes from",
+      "intro": "We use multiple independent sources and cross-check them wherever possible. If you spot an error, use the report button on any page.",
+      "lastChecked": "Last checked: {{date}}",
+      "visit": "Visit",
+      "cards": {
+        "aladhan": {
+          "category": "Prayer & Calendar",
+          "quote": "Accurate prayer times, Hijri calendar, and the 99 Names of Allah, cross checked against established calculation methods."
+        },
+        "quran": {
+          "category": "Quran",
+          "quote": "Uthmani and IndoPak scripts, translations, tafsir, word by word, and audio recitations in one verified pipeline."
+        },
+        "fawaz": {
+          "category": "Hadith",
+          "quote": "Open hadith collections with grading for search and quick lookup."
+        },
+        "duas": {
+          "name": "Curated Duas & Adhkar",
+          "category": "Duas",
+          "quote": "Authentic supplications from hadith collections, bundled locally for offline daily adhkar."
+        },
+        "sunnah": {
+          "category": "Hadith",
+          "quote": "Verified hadith with scholarly grading, book and chapter hierarchy, and narrator context."
+        },
+        "ummah": {
+          "category": "Tools",
+          "quote": "Zakat helpers, Islamic baby names, and a daily spiritual feed of verse, hadith, and adhkar."
+        },
+        "xaus": {
+          "category": "Zakat",
+          "quote": "Live gold and silver spot prices for metal zakat cross checks."
+        }
+      }
+    },
+    "legal": {
+      "relatedTitle": "Related documents"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "What stays on your device and what we fetch from trusted APIs",
+      "intro": "Islam Sanctuary is built to work with minimal personal data. We do not sell data or run ads on religious content. This policy explains what is stored in your browser and what is requested from third party services when you use the app.",
+      "lastUpdated": "Last updated: August 2026",
+      "chatTitle": "Privacy FAQ",
+      "youLabel": "You",
+      "appLabel": "Islam Sanctuary",
+      "sections": {
+        "local": {
+          "title": "Data we store locally",
+          "question": "What data do you store on my device?",
+          "items": [
+            "Prayer calculation preferences (method, madhab, tune offsets)",
+            "Theme, language, Quran display settings, and notification toggles",
+            "Location coordinates you approve during onboarding (browser storage)",
+            "Tasbeeh counts when you use that feature",
+            "Cookie and analytics consent choice"
+          ]
+        },
+        "cookies": {
+          "title": "Cookies and similar storage",
+          "question": "Do you use cookies?",
+          "items": [
+            "Essential local storage for settings and consent (required for the app to work)",
+            "Optional Cloudflare Web Analytics only after you accept, with no advertising cookies",
+            "You can change or reset this choice anytime in Settings"
+          ]
+        },
+        "thirdParty": {
+          "title": "Data sent to third parties",
+          "question": "Do you send any data to third parties?",
+          "bodyBefore": "When you use location or search features, coordinates or queries may be sent to third party services, including AlAdhan (prayer times and Hijri dates), Nominatim and Overpass/OpenStreetMap (reverse geocoding and nearby mosques), OpenFoodFacts (product lookups), UmmahAPI, XAUS, Aloula, and MP3Quran (radio streams). Quran text, translations, and audio come from the fawazahmed0 Quran API and CDN. Hadith and duas may load from public CDNs listed on our",
+          "bodyAfter": "We do not sell your data."
+        },
+        "notifications": {
+          "title": "Notifications",
+          "question": "How do notifications affect my privacy?",
+          "body": "Adhan and fasting reminder toggles are saved locally. Scheduled notifications need browser permission and may not be fully implemented in every build."
+        },
+        "contact": {
+          "title": "Contact",
+          "question": "How can I contact you or request deletion?",
+          "body": "Questions or deletion requests: use the report link on any feature page or the contact option on Prayer Times."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "How to use Islam Sanctuary respectfully and what we cannot guarantee",
+      "intro": "By using Islam Sanctuary you agree to these terms. The app provides Islamic content and tools for personal spiritual use. It is independent, free, and source transparent.",
+      "lastUpdated": "Last updated: August 2026",
+      "visual": {
+        "contentTypes": "Quran · Hadith · Duas",
+        "estimates": "Estimates",
+        "prayerTimes": "Prayer times",
+        "zakat": "Zakat",
+        "inheritance": "Inheritance",
+        "verifyScholars": "Verify important decisions with qualified scholars",
+        "availabilityNote": "Service provided as is · third party APIs may vary",
+        "reportAvailable": "Available on every feature page"
+      },
+      "sections": {
+        "use": {
+          "title": "Use of content",
+          "body": "Quran, hadith, and dua texts are provided for reading and personal reference. Respect the licenses and attribution requirements of each source provider. Do not redistribute scraped content commercially without permission from the original publishers.",
+          "bodySourcesBefore": "Content is sourced from third party APIs listed on our",
+          "bodySourcesAfter": "."
+        },
+        "accuracy": {
+          "title": "Accuracy disclaimer",
+          "body": "Prayer times, zakat calculations, inheritance estimates, and other tools are estimates based on methods you select. Verify important religious decisions with qualified scholars in your community."
+        },
+        "availability": {
+          "title": "Availability",
+          "body": "The service is provided as is. We do not guarantee uninterrupted access to third party APIs or live streams."
+        },
+        "contact": {
+          "title": "Contact",
+          "body": "Questions about these terms: use the report link on any feature page."
+        }
+      }
+    },
+    "mosqueFinder": {
+      "title": "Mosque Finder",
+      "subtitle": "Find nearby mosques using OpenStreetMap",
+      "radius": "Search radius",
+      "useMyLocation": "Use my location",
+      "locating": "Locating...",
+      "mapView": "Map",
+      "listView": "List",
+      "resultCount": "{{count}} mosques found",
+      "noResults": "No mosques found within this radius",
+      "geolocationDenied": "Location access denied. Set a location in Settings to search nearby mosques.",
+      "networkError": "Could not load mosques. Check your connection and try again.",
+      "timeoutError": "The map data service timed out. Please try again.",
+      "directions": "Directions",
+      "viewOnOsm": "View on OpenStreetMap",
+      "yourLocation": "Your location",
+      "currentLocation": "your location",
+      "mapLabel": "Map of nearby mosques"
+    },
+    "welcome": {
+      "title": "Welcome to Islam",
+      "subtitle": "To provide accurate prayer times and Qibla direction, we need your location. Coordinates are sent to prayer APIs when you use those features; they are also stored locally on your device.",
+      "enableLocation": "Enable Location",
+      "gettingLocation": "Getting location...",
+      "continue": "Continue",
+      "useDifferent": "Use a different location",
+      "continueDefault": "Continue with default location",
+      "locationDetected": "Location detected: {{location}}",
+      "resolving": "Resolving location..."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "subtitle": "The page you are looking for does not exist or has been moved.",
+      "goHome": "Back to home",
+      "helpfulLinks": "Helpful links"
+    },
+    "halalVerification": {
+      "title": "Halal Verification",
+      "subtitle": "Scan product barcodes or look up E-number additives",
+      "scholarlyDisclaimer": "This tool is for general guidance only. Product labels, regional certification, and scholarly opinions may differ. When in doubt, consult a qualified scholar or your local halal authority.",
+      "tabs": {
+        "scan": "Scan / Barcode",
+        "lookup": "E-Number Lookup"
+      },
+      "barcodeInput": "Barcode (UPC/EAN)",
+      "barcodePlaceholder": "Enter or scan barcode…",
+      "lookupProduct": "Look up product",
+      "loading": "Looking up…",
+      "clear": "Clear",
+      "scanCamera": "Scan with camera",
+      "stopCamera": "Stop camera",
+      "cameraUnsupported": "Camera barcode scanning is not supported in this browser. Enter the barcode manually.",
+      "cameraPermission": "Camera access was denied. Allow camera permission or enter the barcode manually.",
+      "cameraHint": "Point the camera at the product barcode",
+      "barcode": "Barcode",
+      "productImage": "Product image",
+      "overallVerdict": "Overall verdict",
+      "halalLabelDetected": "Halal label on product",
+      "ingredients": "Ingredients",
+      "additives": "E-number additives",
+      "noAdditives": "No E-number additives detected in this product.",
+      "eCodeInput": "E-number code",
+      "eCodePlaceholder": "E120, 471, e471…",
+      "eCodeNotFound": "No matching E-number in our database.",
+      "searchResults": "Matching E-numbers",
+      "source": "Origin",
+      "localDatabase": "Local E-number halal database",
+      "status": {
+        "halal": "Halal",
+        "haram": "Haram",
+        "mushbooh": "Mushbooh",
+        "unknown": "Unknown"
+      },
+      "errors": {
+        "notFound": "Product not found in Open Food Facts. Try another barcode.",
+        "invalidBarcode": "Enter a valid UPC/EAN barcode (8 to 14 digits).",
+        "network": "Could not reach Open Food Facts. Check your connection and try again."
+      }
+    }
+  },
+  "quranReader": {
+    "contentUnavailable": "Surah content unavailable.",
+    "surahLabel": "Surah",
+    "tafsir": "Tafsir",
+    "modeLabel": "Reader mode",
+    "studyMode": "Study",
+    "mushafMode": "Mushaf",
+    "translationView": "Translation",
+    "readingView": "Arabic",
+    "translationOn": "Translation on",
+    "translationOff": "Translation off",
+    "editionLabel": "Edition",
+    "scriptLabel": "Script",
+    "reciterLabel": "Reciter",
+    "openTafsir": "Open",
+    "readerSettings": "Reader settings",
+    "remaining": "Remaining",
+    "nextPrayer": "Next Prayer",
+    "meta": {
+      "ayah": "Ayah",
+      "page": "Page",
+      "juz": "Juz",
+      "hizbQuarter": "Hizb",
+      "manzil": "Manzil",
+      "ruku": "Ruku"
+    },
+    "scripts": {
+      "uthmani": "Uthmani",
+      "indopak": "IndoPak"
+    }
+  },
+  "hadithReader": {
+    "backToCollections": "Back to collections",
+    "backToBooks": "Back to books",
+    "backToBook": "Back to book",
+    "booksSubtitle": "Browse books in this collection",
+    "booksCount": "{{count}} books",
+    "hadithsShort": "hadiths",
+    "noBooks": "No books found for this collection.",
+    "chaptersSubtitle": "Chapters and hadith list",
+    "chapters": "Chapters (Bab)",
+    "jumpToChapter": "Jump to chapter",
+    "chapterOf": "{{current}} / {{total}}",
+    "chapterNumber": "Chapter {{number}}",
+    "allChapters": "All chapters",
+    "filterChapter": "Filter",
+    "chapterHadithList": "Hadith in chapter {{number}}",
+    "noHadithsInChapter": "No hadith found in this chapter.",
+    "hadithList": "Hadith in this book",
+    "bookNumber": "Book {{number}}",
+    "searchPlaceholder": "Search hadith...",
+    "searchResults": "Search results",
+    "noSearchResults": "No hadith matched your search.",
+    "searchAllCollections": "Search all collections",
+    "searchScopedHint": "Searching Sahih al-Bukhari. Enable all collections for a wider search.",
+    "hadithCount": "{{count}} hadiths",
+    "narrator": "Narrator",
+    "book": "Book",
+    "chapter": "Chapter",
+    "chapterIntro": "Chapter introduction",
+    "references": "References",
+    "inBookRef": "Book {{book}}, Hadith {{hadith}}",
+    "sunnahLink": "View on Sunnah.com",
+    "isnad": "Chain of narration",
+    "translationEnglishOnly": "Hadith text is currently available in English.",
+    "searchAllHint": "Search across Bukhari, Muslim, and all other collections."
+  },
+  "trust": {
+    "prayerTimes": "Prayer Times",
+    "quran": "Quran",
+    "hadith": "Hadith",
+    "duas": "Duas",
+    "zakat": "Zakat"
+  },
+  "errors": {
+    "prayerTimes": "Failed to load prayer times",
+    "hadithNotFound": "Hadith not found",
+    "generic": "Something went wrong",
+    "unexpected": "An unexpected error occurred.",
+    "boundaryTitle": "Something went wrong",
+    "hijriCalendar": "Failed to load Hijri calendar",
+    "ramadanCalendar": "Failed to load Ramadan calendar",
+    "qibla": "Failed to load Qibla direction"
+  }
+}

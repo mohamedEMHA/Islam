@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon_48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16.png" />
+    <link rel="apple-touch-icon" href="/apple_touch_icon.png" sizes="180x180" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon_192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Accurate prayer times, the full Quran, authenticated hadith, and daily duas, sourced transparently and free." />
+    <meta name="theme-color" content="#14532D" />
+    <link rel="canonical" href="https://islam.house/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Islam, Grounded Daily Practice" />
+    <meta property="og:description" content="Accurate prayer times, Quran, hadith, and Islamic tools. Ad free and source transparent." />
+    <meta property="og:url" content="https://islam.house/" />
+    <meta property="og:image" content="https://islam.house/og_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Islam, Grounded Daily Practice" />
+    <meta name="twitter:description" content="Accurate prayer times, Quran, hadith, and Islamic tools." />
+    <meta name="twitter:image" content="https://islam.house/og_image.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Islam",
+        "url": "https://islam.house/",
+        "description": "Accurate prayer times, the full Quran, authenticated hadith, and daily duas, sourced transparently and free.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Epilogue:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Islam, Grounded Daily Practice</title>
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('islam-settings');
+          var theme = 'light';
+          var language = 'en';
+          if (raw) {
+            var state = JSON.parse(raw).state;
+            if (state && state.theme) theme = state.theme;
+            if (state && state.language) language = state.language;
+          }
+          document.documentElement.classList.remove('light', 'dark');
+          document.documentElement.classList.add(theme);
+          document.documentElement.lang = language;
+          document.documentElement.dir = language === 'ar' || language === 'ur' ? 'rtl' : 'ltr';
+        } catch (e) {
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

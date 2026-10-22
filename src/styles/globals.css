@@ -1,0 +1,553 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-hosted so icons never depend on Google Fonts / SW cache / Brave Shields. */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('/fonts/material_symbols_outlined.woff2') format('woff2');
+}
+
+@theme {
+  --color-cream: #F7F3EA;
+  --color-cream-deep: #EFE8D8;
+  --color-paper: #FFFDF8;
+  --color-paper-white: #FFFDF8;
+  --color-green-deep: #14532D;
+  --color-green-mid: #1F7A45;
+  --color-green-soft: #E4EEE3;
+  --color-ink: #171512;
+  --color-ink-black: #171512;
+  --color-ink-soft: #3A362F;
+  --color-stone: #8A8374;
+  --color-hairline: #DDD5C2;
+  --color-caution: #A9762E;
+  --color-error: #A23B2E;
+  --color-surface: #fdf9f0;
+  --color-surface-container: #f1eee5;
+  --color-surface-container-high: #ece8df;
+  --color-surface-container-low: #f7f3ea;
+  --color-surface-container-highest: #e6e2d9;
+  --color-surface-variant: #e6e2d9;
+  --color-surface-dim: #dddad1;
+  --color-primary: #003b1b;
+  --color-primary-container: #14532d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #87c695;
+  --color-secondary: #086d39;
+  --color-on-secondary: #ffffff;
+  --color-surface-tint: #2e6a41;
+  --color-inverse-primary: #96d5a3;
+  --color-outline: #717970;
+  --color-outline-variant: #c0c9be;
+  --color-on-surface: #1c1c16;
+  --color-on-background: #1c1c16;
+  --color-on-surface-variant: #404941;
+  --color-tertiary: #482c00;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #664000;
+  --color-on-tertiary-container: #e7ac5f;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-dark-bg: #16150F;
+  --color-dark-surface: #201E17;
+  --color-dark-border: #322F26;
+  --color-dark-green: #4CA86B;
+  --color-dark-text: #F3EFE3;
+  --color-dark-text-secondary: #B3AB98;
+
+  --font-display: "Epilogue", serif;
+  --font-body: "Inter", sans-serif;
+  --font-arabic-quran: "Amiri Quran", "Noto Naskh Arabic", serif;
+  --font-arabic-ui: "Noto Naskh Arabic", serif;
+
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 64px;
+  --spacing-section-gap: 4rem;
+  --spacing-gutter: 24px;
+
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --z-sidebar: 40;
+  --z-mini-player: 60;
+  --z-sticky: 50;
+  --z-offline: 55;
+  --z-drawer: 80;
+  --z-cookie: 70;
+  --z-skip: 100;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --motion-fast: 300ms;
+  --motion-soft: 450ms;
+  --motion-section: 500ms;
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+    scroll-padding-top: 7rem;
+  }
+
+  html.dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-dark-border) 80%, transparent);
+  }
+
+  html.light {
+    @apply bg-surface-container-low text-ink-black;
+    color-scheme: light;
+  }
+
+  html.dark {
+    @apply bg-dark-bg text-dark-text;
+    color-scheme: dark;
+    --color-cream: #16150F;
+    --color-cream-deep: #322F26;
+    --color-paper: #201E17;
+    --color-paper-white: #201E17;
+    --color-green-soft: color-mix(in srgb, #4CA86B 18%, #201E17);
+    --color-ink: #F3EFE3;
+    --color-ink-black: #F3EFE3;
+    --color-ink-soft: #B3AB98;
+    --color-stone: #8A8374;
+    --color-hairline: #322F26;
+    --color-surface: #201E17;
+    --color-surface-dim: #16150F;
+    --color-surface-container: #16150F;
+    --color-surface-container-low: #16150F;
+    --color-surface-container-high: #322F26;
+    --color-surface-container-highest: #322F26;
+    --color-surface-variant: #322F26;
+    --color-primary: #4CA86B;
+    --color-primary-container: #4CA86B;
+    --color-on-primary-container: #16150F;
+    --color-secondary: #4CA86B;
+    --color-on-surface: #F3EFE3;
+    --color-on-background: #F3EFE3;
+    --color-on-surface-variant: #B3AB98;
+    --color-outline: #8A8374;
+    --color-outline-variant: #322F26;
+  }
+
+  html.dark .sidebar-link:hover {
+    background-color: color-mix(in srgb, var(--color-dark-border) 40%, var(--color-dark-surface));
+  }
+
+  body {
+    @apply font-body text-base leading-relaxed;
+  }
+
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  }
+
+  .material-symbols-outlined.fill {
+    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+  }
+}
+
+@layer utilities {
+  .font-display-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .font-display-h1-mobile {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .font-heading-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .font-heading-h3 {
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .font-body-lg {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .font-body-md {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .font-label-sm {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+  }
+
+  .text-label-sm { font-size: 0.8125rem; }
+  .text-body-lg { font-size: 1.125rem; line-height: 1.75; }
+  .text-body-md { font-size: 1rem; line-height: 1.6; }
+  .text-heading-h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+  .text-heading-h3 { font-size: 1.625rem; }
+  .text-display-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+  .text-display-h1-mobile { font-size: 2.5rem; }
+  .text-arabic-quran { font-size: clamp(1.25rem, 4vw, 1.5rem); line-height: 1.9; }
+
+  .px-margin-mobile { padding-left: var(--spacing-margin-mobile); padding-right: var(--spacing-margin-mobile); }
+  .px-margin-desktop { padding-left: var(--spacing-margin-desktop); padding-right: var(--spacing-margin-desktop); }
+  .py-section-gap { padding-top: var(--spacing-section-gap); padding-bottom: var(--spacing-section-gap); }
+
+  .pb-safe { padding-bottom: var(--safe-bottom); }
+  .pt-safe { padding-top: var(--safe-top); }
+
+  input[type="range"] {
+    height: 0.5rem;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    background: var(--color-secondary);
+    cursor: pointer;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--color-secondary);
+    cursor: pointer;
+  }
+
+  .py-section-y {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .py-section-y {
+      padding-top: var(--spacing-section-gap);
+      padding-bottom: var(--spacing-section-gap);
+    }
+  }
+
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-intro {
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  .progress-ring-circle {
+    /* Stroke animated by framer-motion; keep only orientation transform here. */
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  .compass-needle {
+    transition: transform var(--motion-section) var(--ease-out-soft);
+  }
+
+  @keyframes tap-ripple {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.45;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes route-fallback-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .route-fallback {
+    animation: route-fallback-fade var(--motion-fast) var(--ease-out-soft) 0.15s both;
+  }
+
+  .tap-ripple {
+    animation: tap-ripple 0.6s var(--ease-out-soft) forwards;
+  }
+
+  @keyframes skeleton-shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes sources-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes sources-marquee-rtl {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(50%);
+    }
+  }
+
+  .sources-marquee-track {
+    animation: sources-marquee 45s linear infinite;
+    width: max-content;
+  }
+
+  html[dir="rtl"] .sources-marquee-track {
+    animation-name: sources-marquee-rtl;
+  }
+
+  .sources-marquee:hover .sources-marquee-track,
+  .sources-marquee:focus-within .sources-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sources-marquee-track {
+      animation: none;
+    }
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-paper) 72%, transparent) 45%,
+      color-mix(in srgb, var(--color-paper) 88%, transparent) 55%,
+      transparent 100%
+    );
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  }
+
+  html.dark .skeleton-shimmer::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-dark-surface) 55%, transparent) 45%,
+      color-mix(in srgb, var(--color-dark-text) 12%, transparent) 55%,
+      transparent 100%
+    );
+  }
+
+  html[dir="rtl"] .skeleton-shimmer::after {
+    animation-name: skeleton-shimmer-rtl;
+  }
+
+  @keyframes skeleton-shimmer-rtl {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    transition:
+      transform var(--motion-fast) var(--ease-out-soft),
+      background-color var(--motion-fast) var(--ease-out-soft),
+      color var(--motion-fast) var(--ease-out-soft);
+  }
+
+  .sidebar-link:hover {
+    transform: translateX(0.25rem);
+    background-color: var(--color-cream-deep);
+  }
+
+  html.dark .sidebar-link:hover {
+    background-color: color-mix(in srgb, var(--color-dark-border) 40%, var(--color-dark-surface));
+  }
+
+  html[dir="rtl"] .sidebar-link:hover {
+    transform: translateX(-0.25rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after {
+    animation: none !important;
+  }
+
+  .route-fallback {
+    animation: none !important;
+  }
+
+  .tap-ripple {
+    animation: none !important;
+  }
+
+  .compass-needle {
+    transition: none !important;
+  }
+
+  .sidebar-link {
+    transition: none !important;
+  }
+
+  .sidebar-link:hover {
+    transform: none !important;
+  }
+
+  html[dir="rtl"] .sidebar-link:hover {
+    transform: none !important;
+  }
+
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-stone) 45%, transparent);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-stone) 70%, transparent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-stone) 55%, transparent) transparent;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-dark-border) 80%, transparent);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-border);
+}
+
+html.dark {
+  scrollbar-color: color-mix(in srgb, var(--color-dark-border) 80%, transparent) transparent;
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-stone) 55%, transparent) transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-stone) 45%, transparent);
+  border-radius: 999px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-stone) 70%, transparent);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.leaflet-container {
+  z-index: 0;
+  font-family: inherit;
+}
+
+.mosque-finder-user-marker,
+.mosque-finder-mosque-marker {
+  background: transparent;
+  border: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
