@@ -139,17 +139,38 @@ describe('schema and AI files', () => {
     expect(JSON.stringify(graph)).toContain('"Chapter"')
   })
 
-  it('exposes robots and llms text', () => {
-    expect(robotsTxt()).toContain('GPTBot')
-    expect(robotsTxt()).toContain('ChatGPT-User')
-    expect(robotsTxt()).toContain('PerplexityBot')
-    expect(robotsTxt()).toContain('ClaudeBot')
-    expect(robotsTxt()).toContain('Sitemap: https://islam.house/sitemap.xml')
+  it('exposes robots and llms text aligned with AI Crawl Control', () => {
+    const robots = robotsTxt()
+    expect(robots).toContain('User-agent: OAI-SearchBot\nAllow: /')
+    expect(robots).toContain('User-agent: ChatGPT-User\nAllow: /')
+    expect(robots).toContain('User-agent: PerplexityBot\nAllow: /')
+    expect(robots).toContain('User-agent: Claude-User\nAllow: /')
+    expect(robots).toContain('User-agent: Applebot\nAllow: /')
+    expect(robots).toContain('User-agent: GPTBot\nDisallow: /')
+    expect(robots).toContain('User-agent: ClaudeBot\nDisallow: /')
+    expect(robots).toContain('User-agent: CCBot\nDisallow: /')
+    expect(robots).toContain('User-agent: Bytespider\nDisallow: /')
+    expect(robots).toContain('Disallow: /*/share')
+    expect(robots).toContain('Disallow: /*/search')
+    expect(robots).toContain('Disallow: /*/settings')
+    expect(robots).toContain('Disallow: /*/welcome')
+    expect(robots).toContain('Disallow: /*/api/')
+    expect(robots).toContain('Sitemap: https://islam.house/sitemap.xml')
     expect(llmsTxt()).toContain('https://islam.house/quran')
   })
 
   it('builds Quotation schema for hadith entries', () => {
     const graph = buildJsonLdGraph(resolveSeo('/hadith/bukhari/1'))
     expect(JSON.stringify(graph)).toContain('"Quotation"')
+  })
+})
+
+describe('security.txt', () => {
+  it('exposes RFC 9116 security.txt with contact and expiry', async () => {
+    const { securityTxt } = await import('../../worker/seo/securityTxt')
+    const body = securityTxt()
+    expect(body).toContain('Contact: mailto:security@islam.house')
+    expect(body).toContain('Expires:')
+    expect(body).toContain('Canonical: https://islam.house/.well-known/security.txt')
   })
 })

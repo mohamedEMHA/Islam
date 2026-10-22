@@ -14,7 +14,10 @@
     "cf:dev": "wrangler dev",
     "merge_locales": "node scripts/merge_locales.mjs",
     "gen_e_numbers": "node scripts/gen_e_numbers.mjs",
-    "build_seo_excerpts": "node scripts/build_seo_excerpts.mjs"
+    "build_seo_excerpts": "node scripts/build_seo_excerpts.mjs",
+    "cf_security_check": "node scripts/cf_security_sync.mjs --check",
+    "cf_security_apply": "node scripts/cf_security_sync.mjs --apply",
+    "cf_security_report": "node scripts/cf_security_sync.mjs --report"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",

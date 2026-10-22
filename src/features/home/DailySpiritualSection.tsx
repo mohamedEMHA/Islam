@@ -146,6 +146,7 @@ export function DailySpiritualSection() {
           {feed && !isLoading && (
             <Link
               to={`/share?type=${shareType}&ref=${encodeURIComponent(shareReference)}`}
+              rel="nofollow"
               className="h-11 w-11 rounded-full border border-hairline dark:border-dark-border flex items-center justify-center text-ink-soft dark:text-dark-text-secondary hover:bg-paper-white dark:hover:bg-dark-bg transition-colors"
               aria-label={t('common.share')}
             >

@@ -1,0 +1,48 @@
+﻿{
+  "exportedAt": "2026-10-22T19:29:11.186Z",
+  "zoneId": "ececf04eb05bd2a31c704490a81df994",
+  "accountId": "b227e023e64516d914434b6a571e7133",
+  "note": "Pre Phase1 rollback. Restore custom rules via PUT /zones/{zone}/rulesets/{id} with rules from customRuleset.",
+  "customRuleset": {
+    "id": "09d9b4bee6234662b591d9f29ec23625",
+    "name": "default",
+    "phase": "http_request_firewall_custom",
+    "version": "5",
+    "rules": [
+      {
+        "id": "d5d4ab18a8984607ae758a2e404238e2",
+        "description": "AI Crawl Control - Block AI bots by User Agent",
+        "action": "block",
+        "expression": "(http.request.uri.path ne \"/robots.txt\" and (http.user_agent contains \"Amazonbot\") or (http.user_agent contains \"Anchor Browser\") or (http.user_agent contains \"Bytespider\") or (http.user_agent contains \"CCBot\") or (http.user_agent contains \"Claude-User\") or (http.user_agent contains \"ClaudeBot\") or (http.user_agent contains \"CloudflareBrowserRenderingCrawler\") or (http.user_agent contains \"FacebookBot\") or (http.user_agent contains \"Google-CloudVertexBot\") or (http.user_agent contains \"GPTBot\") or (http.user_agent contains \"meta-externalagent\") or (http.user_agent contains \"Novellum\") or (http.user_agent contains \"PetalBot\") or (http.user_agent contains \"ProRataInc\") or (http.user_agent contains \"TikTokSpider\") or (http.user_agent contains \"Timpibot\"))",
+        "enabled": true,
+        "ref": "[CF AI Audit]"
+      },
+      {
+        "id": "30c67b3ecd4c485cb6d4bc98b31f22a0",
+        "description": "Block Vulnerability Scanners",
+        "action": "block",
+        "expression": "(http.request.uri.path contains \"wp-admin\") or (http.request.uri.path contains \"wp-login.php\") or (http.request.uri.path contains \".env\") or (http.request.uri.path contains \".git\")",
+        "enabled": true,
+        "ref": "30c67b3ecd4c485cb6d4bc98b31f22a0"
+      }
+    ]
+  },
+  "bot": {
+    "enable_js": true,
+    "fight_mode": true,
+    "ai_bots_protection": "disabled",
+    "ai_training": "disabled",
+    "ai_search": "disabled",
+    "ai_user": "disabled"
+  },
+  "settings": [
+    {"id": "always_use_https", "value": "on"},
+    {"id": "browser_check", "value": "on"},
+    {"id": "challenge_ttl", "value": 1800},
+    {"id": "hotlink_protection", "value": "off"},
+    {"id": "security_level", "value": "medium"},
+    {"id": "ssl", "value": "strict"},
+    {"id": "waf", "value": "off"}
+  ],
+  "dnssec": {"status": "disabled"}
+}

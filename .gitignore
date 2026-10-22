@@ -11,6 +11,7 @@ dist-ssr
 !.env.example
 .dev.vars
 .wrangler/
+_responsive_audit/
 
 # Editor
 .vscode/*

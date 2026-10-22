@@ -1,0 +1,54 @@
+{
+  "zoneName": "islam.house",
+  "zoneId": "ececf04eb05bd2a31c704490a81df994",
+  "accountId": "b227e023e64516d914434b6a571e7133",
+  "chromeStable": 156,
+  "staleChromeLookback": 12,
+  "staleChromeMin": 100,
+  "datacenterAsns": [
+    16509, 14618, 15169, 396982, 8075, 14061, 24940, 16276, 63949, 20473,
+    45102, 132203, 136907, 51167, 31898, 9009, 212238, 60068, 202425
+  ],
+  "aiCrawlControl": {
+    "managedExternally": true,
+    "note": "Rule with ref [CF AI Audit] is owned by AI Crawl Control. Sync script preserves it.",
+    "allowAgents": [
+      "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User",
+      "Claude-SearchBot", "Claude-User", "Applebot", "DuckAssistBot"
+    ],
+    "blockTraining": [
+      "Amazonbot", "Anchor Browser", "Bytespider", "CCBot", "ClaudeBot",
+      "CloudflareBrowserRenderingCrawler", "FacebookBot", "Google-CloudVertexBot",
+      "GPTBot", "meta-externalagent", "Novellum", "PetalBot", "ProRataInc",
+      "TikTokSpider", "Timpibot"
+    ]
+  },
+  "scannerPaths": [
+    ".php", "/@fs/", "/.env", "/.git", "/.aws", "/.ssh", "wp-", "/cgi-bin",
+    "/vendor/", "/phpmyadmin", "/actuator", "/portal", "/webhooks",
+    "/api/system", "/config.json", "/server-status", "/xmlrpc"
+  ],
+  "toolUserAgents": [
+    "curl/", "python-requests", "python-httpx", "aiohttp", "Go-http-client",
+    "Scrapy", "HeadlessChrome", "PhantomJS", "masscan", "zgrab", "nikto", "sqlmap"
+  ],
+  "previewBotAllowlist": ["TelegramBot", "Discordbot", "Chrome-Lighthouse"],
+  "rateLimit": {
+    "requestsPerPeriod": 50,
+    "period": 10,
+    "mitigationTimeout": 10,
+    "excludePathPrefixes": ["/assets/", "/brand/", "/adhan/", "/icons/", "/fonts/"]
+  },
+  "zoneSettings": {
+    "hotlink_protection": "on"
+  },
+  "flags": {
+    "crawlhints_enabled": true
+  },
+  "reportThresholds": {
+    "workerRequestsPerDay": 50000,
+    "unmitigatedToRumRatio": 5,
+    "error5xxRate": 0.01,
+    "rateLimit429Rate": 0.02
+  }
+}

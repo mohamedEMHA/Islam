@@ -265,6 +265,7 @@ export function HadithReaderPage() {
         <div className="flex flex-wrap justify-end gap-2 mt-6">
           <LocalizedLink
             to={`/share?type=hadith&ref=${encodeURIComponent(`${hadith.collection} #${hadith.id}`)}&text=${encodeURIComponent(hadith.english)}`}
+            rel="nofollow"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-hairline text-stone hover:text-secondary hover:border-secondary/30 font-label-sm text-label-sm transition-colors dark:border-dark-border dark:text-dark-text-secondary dark:hover:text-dark-green dark:hover:border-dark-green/30"
           >
             <span className="material-symbols-outlined text-[18px]">share</span>

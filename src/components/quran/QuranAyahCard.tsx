@@ -102,6 +102,7 @@ export function QuranAyahCard({
           </button>
           <LocalizedLink
             to={shareUrl}
+            rel="nofollow"
             aria-label={t('pages.quran.shareAyah')}
             className={actionClass()}
           >

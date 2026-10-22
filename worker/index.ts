@@ -11,6 +11,7 @@ import { buildSecurityHeaders, SECURITY_HEADERS } from './securityHeaders'
 import { enrichHadithSeo, enrichSurahSeo } from './seo/enrich'
 import { injectSeo } from './seo/inject'
 import { llmsTxt, robotsTxt } from './seo/llms'
+import { securityTxt } from './seo/securityTxt'
 import {
   sitemapHadithXml,
   sitemapIndexXml,
@@ -19,8 +20,22 @@ import {
   sitemapTafsirXml,
   xmlResponse,
 } from './seo/sitemap'
+import { logSecurityEvent } from './securityLog'
 import { isHtmlNavigation, resolveSeo } from '../shared/seo/resolve'
 import { SEO_BUILD_ID } from './build_id'
+
+function requestMeta(request: Request): {
+  country: string | null
+  asn: number | null
+  userAgent: string | null
+} {
+  const cf = (request as Request & { cf?: IncomingRequestCfProperties }).cf
+  return {
+    country: typeof cf?.country === 'string' ? cf.country : null,
+    asn: typeof cf?.asn === 'number' ? cf.asn : null,
+    userAgent: request.headers.get('User-Agent'),
+  }
+}
 
 export type { ProxyRoute }
 export {
@@ -195,7 +210,20 @@ async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
 }
 
 async function handleSeoDocument(request: Request, env: Env): Promise<Response> {
-  return buildSeoDocument(request, env)
+  const response = await buildSeoDocument(request, env)
+  if (response.status === 404) {
+    const url = new URL(request.url)
+    const meta = requestMeta(request)
+    logSecurityEvent({
+      event: 'not_found',
+      path: url.pathname,
+      status: 404,
+      country: meta.country,
+      asn: meta.asn,
+      userAgent: meta.userAgent,
+    })
+  }
+  return response
 }
 
 export default {
@@ -210,6 +238,9 @@ export default {
 
     if (pathname === '/robots.txt') {
       return textResponse(robotsTxt(), 'text/plain; charset=utf-8')
+    }
+    if (pathname === '/.well-known/security.txt') {
+      return textResponse(securityTxt(), 'text/plain; charset=utf-8')
     }
     if (pathname === '/llms.txt') {
       return textResponse(llmsTxt(), 'text/plain; charset=utf-8')
@@ -239,13 +270,33 @@ export default {
 
     const { success } = await env.API_RATE_LIMITER.limit({ key: clientIp(request) })
     if (!success) {
+      const meta = requestMeta(request)
+      logSecurityEvent({
+        event: 'rate_limited',
+        path: pathname,
+        status: 429,
+        country: meta.country,
+        asn: meta.asn,
+        userAgent: meta.userAgent,
+      })
       return jsonError('Too many requests', 429)
     }
 
     const matched = matchProxyRoute(request.method, pathname, search)
     if (matched === 'invalid_path') return jsonError('Invalid path', 400)
     if (matched === 'method_not_allowed') return jsonError('Method not allowed', 405)
-    if (matched === 'not_found') return jsonError('Not found', 404)
+    if (matched === 'not_found') {
+      const meta = requestMeta(request)
+      logSecurityEvent({
+        event: 'not_found',
+        path: pathname,
+        status: 404,
+        country: meta.country,
+        asn: meta.asn,
+        userAgent: meta.userAgent,
+      })
+      return jsonError('Not found', 404)
+    }
 
     if (matched.service === 'sunnah') {
       if (!env.SUNNAH_API_KEY) return jsonError('Sunnah API not configured', 503)

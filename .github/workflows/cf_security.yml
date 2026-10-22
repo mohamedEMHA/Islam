@@ -1,0 +1,107 @@
+name: cf_security
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'security/**'
+      - 'scripts/cf_security_*.mjs'
+      - '.github/workflows/cf_security.yml'
+  schedule:
+    # Mondays 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: cf_security_${{ github.workflow }}_${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Expression unit tests
+        run: npm test -- --run src/test/cfSecurityExpressions.test.ts
+
+      - name: Refresh Chrome stable milestone
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: node scripts/cf_security_sync.mjs --refresh-chrome
+
+      - name: Apply desired Cloudflare security state
+        if: github.event_name != 'pull_request'
+        env:
+          CLOUDFLARE_SECURITY_TOKEN: ${{ secrets.CLOUDFLARE_SECURITY_TOKEN }}
+        run: node scripts/cf_security_sync.mjs --apply
+
+      - name: Drift check
+        env:
+          CLOUDFLARE_SECURITY_TOKEN: ${{ secrets.CLOUDFLARE_SECURITY_TOKEN }}
+        run: node scripts/cf_security_sync.mjs --check
+
+      - name: Weekly security report
+        id: report
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          CLOUDFLARE_SECURITY_TOKEN: ${{ secrets.CLOUDFLARE_SECURITY_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: node scripts/cf_security_sync.mjs --report
+        continue-on-error: true
+
+      - name: Open issue on anomalies
+        if: steps.report.outputs.has_anomalies == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const title = 'islam.house security anomaly (weekly report)';
+            const body = [
+              'Automated weekly `cf_security` report detected anomalies.',
+              '',
+              '```',
+              process.env.ANOMALIES || '(see workflow log)',
+              '```',
+              '',
+              'Follow [security/RUNBOOK.md](../blob/main/security/RUNBOOK.md).',
+            ].join('\n');
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'security',
+              per_page: 20,
+            });
+            const existing = issues.data.find((i) => i.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['security'],
+              });
+            }
+        env:
+          ANOMALIES: ${{ steps.report.outputs.anomalies }}

@@ -37,21 +37,40 @@ Do not invent citations; prefer linking to the canonical surah or hadith URL on 
 `
 }
 
-export function robotsTxt(): string {
-  const aiBots = [
-    'GPTBot',
-    'OAI-SearchBot',
-    'ChatGPT-User',
-    'PerplexityBot',
-    'ClaudeBot',
-    'Google-Extended',
-    'Bingbot',
-    'Googlebot',
-  ]
+/** Search / answer bots: allow. Training scrapers: disallow. Keep in sync with Cloudflare AI Crawl Control. */
+const ALLOW_BOTS = [
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Claude-SearchBot',
+  'Claude-User',
+  'Applebot',
+  'DuckAssistBot',
+  'Bingbot',
+  'Googlebot',
+] as const
 
-  const aiBlocks = aiBots
-    .map((bot) => `User-agent: ${bot}\nAllow: /`)
-    .join('\n\n')
+const DISALLOW_BOTS = [
+  'GPTBot',
+  'ClaudeBot',
+  'CCBot',
+  'Bytespider',
+  'Google-Extended',
+  'meta-externalagent',
+  'Google-CloudVertexBot',
+  'TikTokSpider',
+  'Timpibot',
+  'Novellum',
+  'ProRataInc',
+  'PetalBot',
+] as const
+
+export function robotsTxt(): string {
+  const allowBlocks = ALLOW_BOTS.map((bot) => `User-agent: ${bot}\nAllow: /`).join('\n\n')
+  const disallowBlocks = DISALLOW_BOTS.map((bot) => `User-agent: ${bot}\nDisallow: /`).join(
+    '\n\n',
+  )
 
   return `# islam.house robots
 User-agent: *
@@ -61,8 +80,15 @@ Disallow: /share
 Disallow: /welcome
 Disallow: /search
 Disallow: /api/
+Disallow: /*/settings
+Disallow: /*/share
+Disallow: /*/welcome
+Disallow: /*/search
+Disallow: /*/api/
 
-${aiBlocks}
+${allowBlocks}
+
+${disallowBlocks}
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `
