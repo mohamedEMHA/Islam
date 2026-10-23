@@ -30,7 +30,15 @@ const CONNECT_SRC = [
   'https://live.kwikmotion.com',
 ].join(' ')
 
-export function buildContentSecurityPolicy(nonce?: string): string {
+export interface SecurityHeaderOptions {
+  /** Allow iframe embedding (embed routes only). */
+  allowFraming?: boolean
+}
+
+export function buildContentSecurityPolicy(
+  nonce?: string,
+  options: SecurityHeaderOptions = {},
+): string {
   const scriptSrc = [
     "'self'",
     `'${THEME_SCRIPT_SHA256}'`,
@@ -46,21 +54,27 @@ export function buildContentSecurityPolicy(nonce?: string): string {
     "img-src 'self' data: blob: https:",
     "media-src 'self' blob: https:",
     `connect-src ${CONNECT_SRC}`,
-    "frame-ancestors 'none'",
+    options.allowFraming ? 'frame-ancestors *' : "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
   ].join('; ')
 }
 
-export function buildSecurityHeaders(nonce?: string): Record<string, string> {
-  return {
+export function buildSecurityHeaders(
+  nonce?: string,
+  options: SecurityHeaderOptions = {},
+): Record<string, string> {
+  const headers: Record<string, string> = {
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'DENY',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(self), geolocation=(self), microphone=()',
     'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
-    'Content-Security-Policy': buildContentSecurityPolicy(nonce),
+    'Content-Security-Policy': buildContentSecurityPolicy(nonce, options),
   }
+  if (!options.allowFraming) {
+    headers['X-Frame-Options'] = 'DENY'
+  }
+  return headers
 }
 
 /** Default headers for non-HTML / static responses (no nonce). */

@@ -174,4 +174,16 @@ describe('worker proxy allowlist', () => {
       ),
     ).toBe(413)
   })
+
+  it('rejects ummah POST without Content-Length (chunked bypass)', () => {
+    expect(
+      validateUmmahPost(
+        new Request('https://islam.house/api/ummah/zakat/calculate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: '{}',
+        }),
+      ),
+    ).toBe(411)
+  })
 })

@@ -50,18 +50,28 @@ export function clientIp(request: Request): string {
   return request.headers.get('CF-Connecting-IP') ?? 'unknown'
 }
 
+/** Shared API rate-limit gate (proxy + Sunnah SEO enrich). */
+export async function consumeApiRateLimit(
+  request: Request,
+  limiter: { limit: (opts: { key: string }) => Promise<{ success: boolean }> },
+): Promise<boolean> {
+  const { success } = await limiter.limit({ key: clientIp(request) })
+  return success
+}
+
 /** Returns null when the POST is allowed, otherwise an HTTP error status. */
-export function validateUmmahPost(request: Request): 413 | 415 | null {
+export function validateUmmahPost(request: Request): 411 | 413 | 415 | null {
   const contentType = request.headers.get('Content-Type')
   const mediaType = contentType?.split(';')[0]?.trim().toLowerCase() ?? ''
   if (mediaType !== 'application/json') return 415
 
+  // Require Content-Length so chunked bodies cannot bypass the byte cap.
   const lengthHeader = request.headers.get('Content-Length')
-  if (lengthHeader != null) {
-    const length = Number(lengthHeader)
-    if (!Number.isFinite(length) || length < 0 || length > UMMAH_POST_MAX_BYTES) {
-      return 413
-    }
+  if (lengthHeader == null) return 411
+
+  const length = Number(lengthHeader)
+  if (!Number.isFinite(length) || length < 0 || length > UMMAH_POST_MAX_BYTES) {
+    return 413
   }
 
   return null

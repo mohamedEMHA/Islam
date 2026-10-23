@@ -57,4 +57,17 @@ describe('security headers', () => {
     expect(csp).toContain("'nonce-test-nonce'")
     expect(buildSecurityHeaders('test-nonce')['Content-Security-Policy']).toBe(csp)
   })
+
+  it('denies framing by default', () => {
+    const headers = buildSecurityHeaders()
+    expect(headers['X-Frame-Options']).toBe('DENY')
+    expect(headers['Content-Security-Policy']).toContain("frame-ancestors 'none'")
+  })
+
+  it('allows framing only when allowFraming is set (embed)', () => {
+    const headers = buildSecurityHeaders(undefined, { allowFraming: true })
+    expect(headers['X-Frame-Options']).toBeUndefined()
+    expect(headers['Content-Security-Policy']).toContain('frame-ancestors *')
+    expect(headers['Content-Security-Policy']).not.toContain("frame-ancestors 'none'")
+  })
 })

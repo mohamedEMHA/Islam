@@ -1,5 +1,6 @@
 import {
   clientIp,
+  consumeApiRateLimit,
   isAllowedProxyContentType,
   isSafeRelativePath,
   matchProxyRoute,
@@ -7,12 +8,21 @@ import {
   type ProxyRoute,
 } from './allowlist'
 import { apexRedirectUrl } from './redirect'
-import { buildSecurityHeaders, SECURITY_HEADERS } from './securityHeaders'
+import {
+  buildSecurityHeaders,
+  SECURITY_HEADERS,
+  type SecurityHeaderOptions,
+} from './securityHeaders'
 import { enrichHadithSeo, enrichSurahSeo } from './seo/enrich'
+import { parseSeoFlags, shouldInjectRichHtml } from './seo/flags'
 import { injectSeo } from './seo/inject'
-import { llmsTxt, robotsTxt } from './seo/llms'
+import { INDEXNOW_KEY, indexNowKeyPath } from './seo/indexNow'
+import { llmsFullTxt, llmsTxt, robotsTxt, seoToMarkdown } from './seo/llms'
 import { securityTxt } from './seo/securityTxt'
 import {
+  sitemapCitiesXml,
+  sitemapDuasXml,
+  sitemapHadithEntriesXml,
   sitemapHadithXml,
   sitemapIndexXml,
   sitemapPagesXml,
@@ -21,7 +31,11 @@ import {
   xmlResponse,
 } from './seo/sitemap'
 import { logSecurityEvent } from './securityLog'
-import { isHtmlNavigation, resolveSeo } from '../shared/seo/resolve'
+import {
+  isHtmlNavigation,
+  resolveSeo,
+  type ResolvedSeo,
+} from '../shared/seo/resolve'
 import { SEO_BUILD_ID } from './build_id'
 
 function requestMeta(request: Request): {
@@ -53,21 +67,42 @@ export interface Env {
   SUNNAH_API_KEY?: string
   UMMAH_API_KEY?: string
   API_RATE_LIMITER: RateLimit
+  /** '1' = crawler-only rich surah/hadith HTML. Rollback: set '0'. */
+  SEO_RICH_HTML?: string
+  /** '1' = index city landing pages in sitemaps. Rollback: set '0' (noindex). */
+  SEO_CITY_PAGES?: string
 }
 
 const PROXY_TIMEOUT_MS = 15_000
-const SEO_HTML_TTL_SECONDS = 3_600
 
-function withSecurityHeaders(response: Response, nonce?: string): Response {
+function withSecurityHeaders(
+  response: Response,
+  nonce?: string,
+  options: SecurityHeaderOptions = {},
+): Response {
   const headers = new Headers(response.headers)
-  for (const [key, value] of Object.entries(buildSecurityHeaders(nonce))) {
+  for (const [key, value] of Object.entries(buildSecurityHeaders(nonce, options))) {
     headers.set(key, value)
+  }
+  // Assets/_headers may already set XFO; drop it when framing is allowed.
+  if (options.allowFraming) {
+    headers.delete('X-Frame-Options')
   }
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
     headers,
   })
+}
+
+/** Rate-limit Sunnah SEO enrich for both HTML and markdown Accept paths. */
+async function enrichHadithWithLimit(
+  seo: ResolvedSeo,
+  request: Request,
+  env: Pick<Env, 'API_RATE_LIMITER' | 'SUNNAH_API_KEY'>,
+): Promise<ResolvedSeo> {
+  if (!(await consumeApiRateLimit(request, env.API_RATE_LIMITER))) return seo
+  return enrichHadithSeo(seo, env.SUNNAH_API_KEY)
 }
 
 function createCspNonce(): string {
@@ -173,15 +208,37 @@ function textResponse(body: string, contentType: string): Response {
 
 async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url)
-  let seo = resolveSeo(url.pathname)
+  const flags = parseSeoFlags(env)
+  const richForCrawler = shouldInjectRichHtml(request, flags)
+  let seo = resolveSeo(url.pathname, { indexCityPages: flags.cityPages })
+  const allowFraming = seo.pathWithoutLocale.startsWith('/embed/')
+  const securityOpts: SecurityHeaderOptions = allowFraming ? { allowFraming: true } : {}
+
+  const accept = request.headers.get('Accept') ?? ''
+  if (accept.includes('text/markdown') && seo.status === 200 && !seo.noIndex) {
+    if (seo.kind === 'surah' || seo.kind === 'tafsir_surah') {
+      seo = await enrichSurahSeo(seo, { fullExcerpt: true })
+    } else if (seo.kind === 'hadith_entry') {
+      seo = await enrichHadithWithLimit(seo, request, env)
+    }
+    return withSecurityHeaders(
+      new Response(seoToMarkdown(seo), {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/markdown; charset=utf-8',
+          'Cache-Control': 'private, no-cache',
+          'X-SEO-Build': SEO_BUILD_ID,
+        },
+      }),
+      undefined,
+      securityOpts,
+    )
+  }
 
   if (seo.kind === 'surah' || seo.kind === 'tafsir_surah') {
-    seo = await enrichSurahSeo(seo)
+    seo = await enrichSurahSeo(seo, { fullExcerpt: richForCrawler })
   } else if (seo.kind === 'hadith_entry') {
-    const { success } = await env.API_RATE_LIMITER.limit({ key: clientIp(request) })
-    if (success) {
-      seo = await enrichHadithSeo(seo, env.SUNNAH_API_KEY)
-    }
+    seo = await enrichHadithWithLimit(seo, request, env)
   }
 
   // Fresh nonce per response; do not cache the final HTML (nonce must stay unique).
@@ -191,13 +248,11 @@ async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
     headers: { Accept: 'text/html' },
   })
   const assetResponse = await env.ASSETS.fetch(assetRequest)
-  const injected = injectSeo(assetResponse, seo, nonce)
+  const injected = injectSeo(assetResponse, seo, nonce, { richForCrawler })
   const headers = new Headers(injected.headers)
-  headers.set(
-    'Cache-Control',
-    `public, max-age=${SEO_HTML_TTL_SECONDS}, s-maxage=${SEO_HTML_TTL_SECONDS}, stale-while-revalidate=86400`,
-  )
+  headers.set('Cache-Control', 'private, no-cache')
   headers.set('X-SEO-Build', SEO_BUILD_ID)
+  if (richForCrawler) headers.set('X-SEO-Rich', '1')
 
   return withSecurityHeaders(
     new Response(injected.body, {
@@ -206,6 +261,7 @@ async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
       headers,
     }),
     nonce,
+    securityOpts,
   )
 }
 
@@ -236,6 +292,8 @@ export default {
     const url = new URL(request.url)
     const { pathname, search } = url
 
+    const flags = parseSeoFlags(env)
+
     if (pathname === '/robots.txt') {
       return textResponse(robotsTxt(), 'text/plain; charset=utf-8')
     }
@@ -245,8 +303,14 @@ export default {
     if (pathname === '/llms.txt') {
       return textResponse(llmsTxt(), 'text/plain; charset=utf-8')
     }
+    if (pathname === '/llms-full.txt') {
+      return textResponse(llmsFullTxt(), 'text/plain; charset=utf-8')
+    }
+    if (pathname === indexNowKeyPath() || pathname === `/${INDEXNOW_KEY}.txt`) {
+      return textResponse(INDEXNOW_KEY, 'text/plain; charset=utf-8')
+    }
     if (pathname === '/sitemap.xml') {
-      return withSecurityHeaders(xmlResponse(sitemapIndexXml()))
+      return withSecurityHeaders(xmlResponse(sitemapIndexXml(flags.cityPages)))
     }
     if (pathname === '/sitemap_pages.xml') {
       return withSecurityHeaders(xmlResponse(sitemapPagesXml()))
@@ -260,6 +324,20 @@ export default {
     if (pathname === '/sitemap_hadith.xml') {
       return withSecurityHeaders(xmlResponse(sitemapHadithXml()))
     }
+    if (pathname === '/sitemap_hadith_entries.xml') {
+      return withSecurityHeaders(xmlResponse(sitemapHadithEntriesXml()))
+    }
+    if (pathname === '/sitemap_duas.xml') {
+      return withSecurityHeaders(xmlResponse(sitemapDuasXml()))
+    }
+    if (pathname === '/sitemap_cities.xml') {
+      if (!flags.cityPages) {
+        return withSecurityHeaders(
+          new Response('City sitemaps disabled', { status: 404 }),
+        )
+      }
+      return withSecurityHeaders(xmlResponse(sitemapCitiesXml()))
+    }
 
     if (!pathname.startsWith('/api/')) {
       if (isHtmlNavigation(request)) {
@@ -268,8 +346,7 @@ export default {
       return withSecurityHeaders(await env.ASSETS.fetch(request))
     }
 
-    const { success } = await env.API_RATE_LIMITER.limit({ key: clientIp(request) })
-    if (!success) {
+    if (!(await consumeApiRateLimit(request, env.API_RATE_LIMITER))) {
       const meta = requestMeta(request)
       logSecurityEvent({
         event: 'rate_limited',
@@ -324,10 +401,13 @@ export default {
     if (request.method === 'POST') {
       const postError = validateUmmahPost(request)
       if (postError) {
-        return jsonError(
-          postError === 413 ? 'Payload too large' : 'Unsupported media type',
-          postError,
-        )
+        const message =
+          postError === 413
+            ? 'Payload too large'
+            : postError === 411
+              ? 'Length required'
+              : 'Unsupported media type'
+        return jsonError(message, postError)
       }
     }
     return proxyRequest(
