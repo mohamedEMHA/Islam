@@ -41,6 +41,7 @@ type StaticRouteKey =
   | 'share'
   | 'welcome'
   | 'search'
+  | 'embed_prayer_times'
   | 'not_found'
 
 const EN: Record<StaticRouteKey, PageSeoCopy> = {
@@ -58,10 +59,11 @@ const EN: Record<StaticRouteKey, PageSeoCopy> = {
     body: 'Add Islam to your home screen for quick access to prayer times, Quran, and hadith.',
   },
   sources: {
-    title: 'Sources and Attribution',
-    description: 'Transparent list of Quran, hadith, prayer time, and other data sources used by Islam.',
-    h1: 'Sources and Attribution',
-    body: 'Every feature cites its upstream sources so you can verify authenticity.',
+    title: 'Sources and Methodology',
+    description:
+      'Transparent list of Quran, hadith, prayer time sources and the islam.house methodology.',
+    h1: 'Sources and Methodology',
+    body: 'Every feature cites its upstream sources so you can verify authenticity. Brand: islam.house.',
   },
   privacy: {
     title: 'Privacy Policy',
@@ -243,6 +245,12 @@ const EN: Record<StaticRouteKey, PageSeoCopy> = {
     h1: 'Search',
     body: 'Find surahs, hadith, and features quickly.',
   },
+  embed_prayer_times: {
+    title: 'Prayer Times Embed',
+    description: 'Embeddable prayer times widget for mosque and community sites.',
+    h1: 'Prayer times embed',
+    body: 'Minimal iframe widget. Link back to islam.house for the full app.',
+  },
   not_found: {
     title: 'Page Not Found',
     description: 'The requested page does not exist on islam.house.',
@@ -257,6 +265,12 @@ const AR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     description: 'مواقيت صلاة دقيقة، القرآن كاملاً، أحاديث موثقة، وأدعية يومية، بمصادر شفافة ومجانية.',
     h1: 'إسلام، ممارسة يومية راسخة',
     body: 'مواقيت الصلاة والقرآن والحديث والأدعية والقبلة والزكاة وغيرها. بلا إعلانات ومصادر موثوقة.',
+  },
+  sources: {
+    title: 'المصادر والمنهجية',
+    description: 'قائمة شفافة بمصادر القرآن والحديث ومواقيت الصلاة ومنهجية islam.house.',
+    h1: 'المصادر والمنهجية',
+    body: 'كل ميزة تذكر مصدرها العلني للتحقق.',
   },
   prayer_times: {
     title: 'مواقيت الصلاة',
@@ -300,6 +314,48 @@ const AR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     h1: 'حاسبة الزكاة',
     body: 'قدّر الزكاة المستحقة على مالك.',
   },
+  mosque_finder: {
+    title: 'البحث عن المساجد',
+    description: 'اعثر على المساجد القريبة على الخريطة ببيانات جغرافية مفتوحة.',
+    h1: 'البحث عن المساجد',
+    body: 'حدد المساجد قرب موقعك الحالي.',
+  },
+  halal_verification: {
+    title: 'التحقق من الحلال',
+    description: 'تحقق من المواد المضافة والمكونات للشواغل الشائعة حول الحلال.',
+    h1: 'التحقق من الحلال',
+    body: 'ابحث عن أرقام E ومكونات المنتجات للتوجيه.',
+  },
+  inheritance: {
+    title: 'حاسبة الميراث الإسلامي',
+    description: 'قدّر أنصبة الميراث القرآنية وفق أحكام الشريعة.',
+    h1: 'حاسبة الميراث',
+    body: 'احسب أنصبة الورثة وفق القواعد الكلاسيكية.',
+  },
+  baby_names: {
+    title: 'أسماء إسلامية للأطفال',
+    description: 'تصفح أسماء إسلامية بمعانيها للأولاد والبنات.',
+    h1: 'أسماء إسلامية للأطفال',
+    body: 'ابحث عن أسماء ذات معنى من التراث العربي.',
+  },
+  ramadan: {
+    title: 'مركز رمضان',
+    description: 'أوقات السحور والإفطار وتقويم رمضان وأدعية الصيام.',
+    h1: 'مركز رمضان',
+    body: 'العد التنازلي وجدول الصيام وأدعية رمضان.',
+  },
+  hajj: {
+    title: 'دليل الحج والعمرة',
+    description: 'إرشاد عملي لمناسك الحج والعمرة والاستعداد.',
+    h1: 'الحج والعمرة',
+    body: 'الخطوات والأدعية والأساسيات للرحلة.',
+  },
+  names: {
+    title: 'أسماء الله الحسنى',
+    description: 'تعرّف على الأسماء الحسنى مع المعنى والنطق.',
+    h1: 'أسماء الله الحسنى',
+    body: 'الأسماء الحسنى مع النقل الحرفي ومعانٍ موجزة.',
+  },
   not_found: {
     title: 'الصفحة غير موجودة',
     description: 'الصفحة المطلوبة غير موجودة في islam.house.',
@@ -314,6 +370,12 @@ const UR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     description: 'درست نماز کے اوقات، مکمل قرآن، مستند احادیث اور دعائیں، شفاف ذرائع کے ساتھ مفت۔',
     h1: 'اسلام، روزمرہ عبادت',
     body: 'نماز کے اوقات، قرآن، حدیث، دعائیں، قبلہ اور زکوٰۃ۔ بغیر اشتہارات۔',
+  },
+  sources: {
+    title: 'ماخذ اور طریقہ کار',
+    description: 'قرآن، حدیث، نماز کے اوقات کے شفاف ماخذ اور islam.house کا طریقہ کار۔',
+    h1: 'ماخذ اور طریقہ کار',
+    body: 'ہر فیچر اپنے ماخذ کی وضاحت کرتا ہے۔',
   },
   prayer_times: {
     title: 'نماز کے اوقات',
@@ -333,6 +395,54 @@ const UR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     h1: 'حدیث کے مجموعے',
     body: 'درجہ بندی کے ساتھ احادیث تلاش کریں اور پڑھیں۔',
   },
+  qibla: {
+    title: 'قبلہ کی سمت',
+    description: 'اپنے مقام سے کعبہ کی سمت معلوم کریں۔',
+    h1: 'قبلہ کی سمت',
+    body: 'مکہ مکرمہ کی سمت آپ کے موجودہ مقام سے۔',
+  },
+  duas: {
+    title: 'دعائیں اور اذکار',
+    description: 'روزمرہ اسلامی دعائیں عربی اور ترجمہ کے ساتھ۔',
+    h1: 'دعائیں اور اذکار',
+    body: 'صبح، شام اور مواقع کی دعائیں مستند مصادر سے۔',
+  },
+  zakat: {
+    title: 'زکوٰۃ کیلکولیٹر',
+    description: 'واجب زکوٰۃ اور فطرانہ کا حساب لگائیں۔',
+    h1: 'زکوٰۃ کیلکولیٹر',
+    body: 'مال پر واجب زکوٰۃ کا تخمینہ۔',
+  },
+  mosque_finder: {
+    title: 'مسجد تلاش',
+    description: 'نقشے پر قریبی مساجد تلاش کریں۔',
+    h1: 'مسجد تلاش',
+    body: 'اپنے مقام کے قریب مساجد معلوم کریں۔',
+  },
+  halal_verification: {
+    title: 'حلال تصدیق',
+    description: 'اضافی اجزا اور اجزاء کی حلال رہنمائی۔',
+    h1: 'حلال تصدیق',
+    body: 'E نمبرز اور مصنوعات کے اجزاء دیکھیں۔',
+  },
+  inheritance: {
+    title: 'اسلامی وراثت کیلکولیٹر',
+    description: 'قرآنی وراثت کے حصوں کا تخمینہ۔',
+    h1: 'وراثت کیلکولیٹر',
+    body: 'کلاسیکی قواعد کے مطابق حصے حساب کریں۔',
+  },
+  baby_names: {
+    title: 'اسلامی بچوں کے نام',
+    description: 'معنی کے ساتھ لڑکوں اور لڑکیوں کے اسلامی نام۔',
+    h1: 'اسلامی بچوں کے نام',
+    body: 'عربی روایت سے بامعنی نام تلاش کریں۔',
+  },
+  ramadan: {
+    title: 'رمضان مرکز',
+    description: 'سحری، افطار، رمضان کیلنڈر اور روزے کی دعائیں۔',
+    h1: 'رمضان مرکز',
+    body: 'شمارِ معکوس، روزہ شیڈول اور رمضان دعائیں۔',
+  },
   not_found: {
     title: 'صفحہ نہیں ملا',
     description: 'درخواست کردہ صفحہ موجود نہیں۔',
@@ -348,6 +458,12 @@ const ID: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
       'Jadwal sholat akurat, Al-Quran lengkap, hadits terverifikasi, dan doa harian, bersumber transparan dan gratis.',
     h1: 'Islam, Praktik Harian yang Kokoh',
     body: 'Jadwal sholat, Quran, hadits, doa, kiblat, dan zakat. Tanpa iklan dan transparan sumbernya.',
+  },
+  sources: {
+    title: 'Sumber dan Metodologi',
+    description: 'Daftar transparan sumber Quran, hadits, jadwal sholat, dan metodologi islam.house.',
+    h1: 'Sumber dan Metodologi',
+    body: 'Setiap fitur mencantumkan sumber hulu untuk diverifikasi.',
   },
   prayer_times: {
     title: 'Jadwal Sholat',
@@ -367,6 +483,54 @@ const ID: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     h1: 'Koleksi Hadits',
     body: 'Cari dan baca hadits dengan penilaian.',
   },
+  qibla: {
+    title: 'Arah Kiblat',
+    description: 'Temukan arah Ka\'bah dari lokasi Anda dengan kompas.',
+    h1: 'Arah Kiblat',
+    body: 'Arah Makkah dari lokasi Anda saat ini.',
+  },
+  duas: {
+    title: 'Doa dan Dzikir',
+    description: 'Doa harian Islam dengan Arab dan terjemahan.',
+    h1: 'Doa dan Dzikir',
+    body: 'Doa pagi, sore, dan situasional dari sumber autentik.',
+  },
+  zakat: {
+    title: 'Kalkulator Zakat',
+    description: 'Hitung zakat wajib dan zakat fitrah.',
+    h1: 'Kalkulator Zakat',
+    body: 'Perkiraan zakat atas harta Anda.',
+  },
+  mosque_finder: {
+    title: 'Pencari Masjid',
+    description: 'Temukan masjid terdekat di peta dengan data geografis terbuka.',
+    h1: 'Pencari Masjid',
+    body: 'Lokasi masjid dekat Anda.',
+  },
+  halal_verification: {
+    title: 'Verifikasi Halal',
+    description: 'Periksa bahan tambahan untuk pedoman halal umum.',
+    h1: 'Verifikasi Halal',
+    body: 'Cari nomor E dan bahan produk.',
+  },
+  inheritance: {
+    title: 'Kalkulator Warisan Islam',
+    description: 'Perkiraan bagian warisan Quran sesuai hukum Islam.',
+    h1: 'Kalkulator Warisan',
+    body: 'Hitung bagian ahli waris menurut aturan klasik.',
+  },
+  baby_names: {
+    title: 'Nama Bayi Islam',
+    description: 'Jelajahi nama bayi Islam beserta artinya.',
+    h1: 'Nama Bayi Islam',
+    body: 'Cari nama bermakna dari tradisi Arab.',
+  },
+  ramadan: {
+    title: 'Pusat Ramadan',
+    description: 'Sahur, berbuka, kalender Ramadan, dan doa puasa.',
+    h1: 'Pusat Ramadan',
+    body: 'Hitungan mundur, jadwal puasa, dan doa Ramadan.',
+  },
   not_found: {
     title: 'Halaman Tidak Ditemukan',
     description: 'Halaman yang diminta tidak ada di islam.house.',
@@ -382,6 +546,12 @@ const FR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
       'Horaires de prière précis, Coran complet, hadiths authentifiés et invocations quotidiennes, sources transparentes et gratuites.',
     h1: 'Islam, pratique quotidienne ancrée',
     body: 'Prières, Coran, hadiths, duas, qibla et zakat. Sans publicité, sources transparentes.',
+  },
+  sources: {
+    title: 'Sources et méthodologie',
+    description: 'Liste transparente des sources Coran, hadiths, horaires et méthodologie islam.house.',
+    h1: 'Sources et méthodologie',
+    body: 'Chaque fonction cite sa source pour vérification.',
   },
   prayer_times: {
     title: 'Horaires de prière',
@@ -400,6 +570,54 @@ const FR: Partial<Record<StaticRouteKey, PageSeoCopy>> = {
     description: 'Hadiths authentifiés de Bukhari, Muslim et d\'autres collections majeures.',
     h1: 'Collections de hadiths',
     body: 'Recherchez et lisez des hadiths avec classification.',
+  },
+  qibla: {
+    title: 'Direction de la qibla',
+    description: 'Trouvez la direction de la Kaaba depuis votre position.',
+    h1: 'Direction de la qibla',
+    body: 'Cap vers La Mecque depuis votre position actuelle.',
+  },
+  duas: {
+    title: 'Duas et adhkars',
+    description: 'Invocations quotidiennes en arabe avec traduction.',
+    h1: 'Duas et adhkars',
+    body: 'Invocations du matin, du soir et situationnelles.',
+  },
+  zakat: {
+    title: 'Calculateur de zakat',
+    description: 'Calculez la zakat obligatoire et la zakat al-fitr.',
+    h1: 'Calculateur de zakat',
+    body: 'Estimez la zakat due sur vos biens.',
+  },
+  mosque_finder: {
+    title: 'Trouver une mosquée',
+    description: 'Trouvez les mosquées proches sur une carte ouverte.',
+    h1: 'Trouver une mosquée',
+    body: 'Localisez les masajid près de vous.',
+  },
+  halal_verification: {
+    title: 'Vérification halal',
+    description: 'Vérifiez additifs et ingrédients pour les questions halal courantes.',
+    h1: 'Vérification halal',
+    body: 'Recherchez les numéros E et les ingrédients.',
+  },
+  inheritance: {
+    title: 'Calculateur d\'héritage islamique',
+    description: 'Estimez les parts d\'héritage coraniques.',
+    h1: 'Calculateur d\'héritage',
+    body: 'Calculez les parts selon les règles classiques.',
+  },
+  baby_names: {
+    title: 'Prénoms islamiques',
+    description: 'Parcourez des prénoms islamiques avec leurs sens.',
+    h1: 'Prénoms islamiques',
+    body: 'Cherchez des noms significatifs de la tradition arabe.',
+  },
+  ramadan: {
+    title: 'Hub Ramadan',
+    description: 'Suhoor, iftar, calendrier de Ramadan et duas de jeûne.',
+    h1: 'Hub Ramadan',
+    body: 'Compte à rebours, calendrier de jeûne et duas de Ramadan.',
   },
   not_found: {
     title: 'Page introuvable',
@@ -452,6 +670,7 @@ export const STATIC_PATH_TO_KEY: Record<string, StaticRouteKey> = {
   '/share': 'share',
   '/welcome': 'welcome',
   '/search': 'search',
+  '/embed/prayer_times': 'embed_prayer_times',
 }
 
 export const NOINDEX_PATHS = new Set([
@@ -460,6 +679,7 @@ export const NOINDEX_PATHS = new Set([
   '/welcome',
   '/search',
   '/onboarding',
+  '/embed/prayer_times',
 ])
 
 export const INDEXABLE_STATIC_PATHS = Object.keys(STATIC_PATH_TO_KEY).filter(

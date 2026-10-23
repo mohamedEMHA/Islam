@@ -49,6 +49,13 @@ describe('cf_security_expressions', () => {
     expect(stale).not.toContain(`Chrome/${config.chromeStable - config.staleChromeLookback + 1}.`)
   })
 
+  it('excludes sitemap and robots from bad-client block so GSC can fetch them', () => {
+    const bad = buildBadClientsExpression(config)
+    expect(bad).toContain('starts_with(http.request.uri.path, "/sitemap")')
+    expect(bad).toContain('http.request.uri.path ne "/robots.txt"')
+    expect(bad).toContain('http.request.uri.path ne "/llms.txt"')
+  })
+
   it('merges AI Crawl Control rule ahead of owned rules', () => {
     const owned = buildOwnedRules(config)
     const merged = mergeCustomRules(

@@ -26,6 +26,7 @@ export function buildHeadExtras(seo: ResolvedSeo, nonce?: string): string {
     `<link rel="canonical" href="${escapeHtml(seo.canonicalUrl)}" />`,
     links,
     `<meta property="og:type" content="website" />`,
+    `<meta property="og:site_name" content="islam.house" />`,
     `<meta property="og:title" content="${escapeHtml(seo.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(seo.description)}" />`,
     `<meta property="og:url" content="${escapeHtml(seo.canonicalUrl)}" />`,
@@ -38,7 +39,12 @@ export function buildHeadExtras(seo: ResolvedSeo, nonce?: string): string {
   ].join('')
 }
 
-export function buildRootContent(seo: ResolvedSeo): string {
+export interface BuildRootOptions {
+  /** When true, include richText prominently for crawlers (Strategy A). */
+  richForCrawler?: boolean
+}
+
+export function buildRootContent(seo: ResolvedSeo, options: BuildRootOptions = {}): string {
   const home = localizedPath('/', seo.locale)
   const quran = localizedPath('/quran', seo.locale)
   const prayer = localizedPath('/prayer_times', seo.locale)
@@ -54,8 +60,26 @@ export function buildRootContent(seo: ResolvedSeo): string {
     })
     .join(' / ')
 
+  // Strategy A: crawlers get visible content. Browsers keep clipped stub so React hydrate has no FOUC.
+  const mainStyle = options.richForCrawler
+    ? 'font-family:system-ui,sans-serif;max-width:48rem;margin:1rem auto;padding:1rem;line-height:1.6'
+    : 'position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0'
+
+  const navExtra =
+    seo.kind === 'surah' && seo.surah
+      ? (() => {
+          const n = seo.surah!.number
+          const prev = n > 1 ? localizedPath(`/quran/${n - 1}`, seo.locale) : null
+          const next = n < 114 ? localizedPath(`/quran/${n + 1}`, seo.locale) : null
+          return [
+            prev ? `<li><a href="${escapeHtml(prev)}">Previous surah</a></li>` : '',
+            next ? `<li><a href="${escapeHtml(next)}">Next surah</a></li>` : '',
+          ].join('')
+        })()
+      : ''
+
   return [
-    `<main id="seo-content" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">`,
+    `<main id="seo-content" style="${mainStyle}">`,
     `<nav aria-label="Breadcrumb">${crumbs}</nav>`,
     `<h1>${escapeHtml(seo.h1)}</h1>`,
     `<p>${escapeHtml(seo.body)}</p>`,
@@ -66,6 +90,7 @@ export function buildRootContent(seo: ResolvedSeo): string {
     `<li><a href="${escapeHtml(prayer)}">Prayer Times</a></li>`,
     `<li><a href="${escapeHtml(quran)}">Quran</a></li>`,
     `<li><a href="${escapeHtml(hadith)}">Hadith</a></li>`,
+    navExtra,
     `</ul>`,
     `</nav>`,
     `</main>`,
@@ -114,7 +139,8 @@ class MetaStripHandler {
       property === 'og:url' ||
       property === 'og:image' ||
       property === 'og:image:width' ||
-      property === 'og:image:height'
+      property === 'og:image:height' ||
+      property === 'og:site_name'
     ) {
       element.remove()
     }
@@ -129,7 +155,6 @@ class LinkStripHandler {
       element.remove()
       return
     }
-    // Hero image is only used on the home page; drop global preload elsewhere.
     if (
       !this.keepHeroPreload &&
       rel === 'preload' &&
@@ -164,9 +189,14 @@ class RootHandler {
 }
 
 /** Rewrite SPA shell HTML with per-route SEO for crawlers and first paint. */
-export function injectSeo(response: Response, seo: ResolvedSeo, nonce?: string): Response {
+export function injectSeo(
+  response: Response,
+  seo: ResolvedSeo,
+  nonce?: string,
+  options: BuildRootOptions = {},
+): Response {
   const extras = buildHeadExtras(seo, nonce)
-  const rootHtml = buildRootContent(seo)
+  const rootHtml = buildRootContent(seo, options)
 
   let rewriter = new HTMLRewriter()
     .on('html', new HtmlLangHandler(seo.locale, seo.dir))

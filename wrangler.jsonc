@@ -37,6 +37,10 @@
       }
     }
   ],
+  "vars": {
+    "SEO_RICH_HTML": "1",
+    "SEO_CITY_PAGES": "1"
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 0.1,

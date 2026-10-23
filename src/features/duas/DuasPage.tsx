@@ -1,4 +1,5 @@
 ﻿import { useEffect, useMemo, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
@@ -27,8 +28,9 @@ const DUAS_PAGE_SIZE = 5
 
 export function DuasPage() {
   const { t, i18n } = useTranslation()
+  const { categoryId } = useParams<{ categoryId?: string }>()
   const [categories] = useState<DuaCategory[]>(getDuaCategories())
-  const [selected, setSelected] = useState<string | null>(null)
+  const [selected, setSelected] = useState<string | null>(categoryId ?? null)
   const [readingIndex, setReadingIndex] = useState(0)
   const [readingMode, setReadingMode] = useState(false)
   const showEnglishNotice = i18n.language.split('-')[0] !== 'en'
@@ -56,6 +58,12 @@ export function DuasPage() {
     () => categories.find((category) => category.id === selected) ?? null,
     [categories, selected],
   )
+
+  useEffect(() => {
+    if (categoryId && categories.some((c) => c.id === categoryId)) {
+      setSelected(categoryId)
+    }
+  }, [categoryId, categories])
 
   useEffect(() => {
     setReadingIndex(0)

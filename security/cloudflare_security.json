@@ -42,6 +42,10 @@
   "zoneSettings": {
     "hotlink_protection": "on"
   },
+  "botManagement": {
+    "fight_mode": false,
+    "note": "Bot Fight Mode blocks GSC sitemap fetch (HTTP 403). Keep off; rely on custom WAF + AI training block."
+  },
   "flags": {
     "crawlhints_enabled": true
   },

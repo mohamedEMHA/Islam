@@ -57,6 +57,13 @@ const MosqueFinderPage = lazyPage(
   () => import('@/features/mosque_finder/MosqueFinderPage'),
   'MosqueFinderPage',
 )
+const CityPrayerPage = lazyPage(() => import('@/features/city/CityPrayerPage'), 'CityPrayerPage')
+const CityQiblaPage = lazyPage(() => import('@/features/city/CityQiblaPage'), 'CityQiblaPage')
+const CityRamadanPage = lazyPage(() => import('@/features/city/CityRamadanPage'), 'CityRamadanPage')
+const PrayerTimesEmbedPage = lazyPage(
+  () => import('@/features/embed/PrayerTimesEmbedPage'),
+  'PrayerTimesEmbedPage',
+)
 const NotFoundPage = lazyPage(() => import('@/features/not_found/NotFoundPage'), 'NotFoundPage')
 
 preloadCoreRoutes([
@@ -87,9 +94,11 @@ const appChildren: RouteObject[] = [
   { path: 'app/terms', element: <TermsPage /> },
   { path: 'app/sources', element: <SourcesPage /> },
   { path: 'prayer_times', element: <PrayerTimesPage /> },
+  { path: 'prayer_times/:citySlug', element: <CityPrayerPage /> },
   { path: 'adhan', element: <AdhanPage /> },
   { path: 'islamic_radio', element: <IslamicRadioPage /> },
   { path: 'qibla', element: <QiblaPage /> },
+  { path: 'qibla/:citySlug', element: <CityQiblaPage /> },
   { path: 'quran', element: <QuranListPage /> },
   { path: 'quran/:surahId', element: <QuranReaderPage /> },
   { path: 'hadith', element: <HadithCollectionsPage /> },
@@ -97,8 +106,11 @@ const appChildren: RouteObject[] = [
   { path: 'hadith/:collection/books/:bookNumber', element: <HadithBookPage /> },
   { path: 'hadith/:collection/:id', element: <HadithReaderPage /> },
   { path: 'duas', element: <DuasPage /> },
+  { path: 'duas/:categoryId', element: <DuasPage /> },
   { path: 'settings', element: <SettingsPage /> },
   { path: 'ramadan', element: <RamadanPage /> },
+  { path: 'ramadan/:year/:citySlug', element: <CityRamadanPage /> },
+  { path: 'embed/prayer_times', element: <PrayerTimesEmbedPage /> },
   { path: 'zakat', element: <ZakatPage /> },
   { path: 'tasbeeh', element: <TasbeehPage /> },
   { path: 'names', element: <NamesPage /> },

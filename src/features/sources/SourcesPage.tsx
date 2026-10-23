@@ -149,6 +149,15 @@ export function SourcesPage() {
         {t('pages.sources.intro')}
       </p>
 
+      <section className="mb-10 max-w-3xl rounded-xl border border-hairline dark:border-dark-border p-5 md:p-6">
+        <h2 className="font-heading-h3 text-heading-h3 text-ink-black dark:text-dark-text mb-3">
+          {t('pages.sources.methodologyTitle')}
+        </h2>
+        <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary leading-relaxed">
+          {t('pages.sources.methodologyBody')}
+        </p>
+      </section>
+
       <section
         className="md:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5"
         aria-label={t('pages.sources.title')}

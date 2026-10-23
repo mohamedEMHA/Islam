@@ -1,7 +1,9 @@
+import { SEO_CITIES } from '../../shared/seo/cities.ts'
 import { SITE_URL } from '../../shared/seo/locale.ts'
+import type { ResolvedSeo } from '../../shared/seo/resolve.ts'
 
 export function llmsTxt(): string {
-  return `# Islam
+  return `# islam.house
 
 > Accurate prayer times, the full Quran, authenticated hadith, and daily duas.
 > Ad free, source transparent. Available at ${SITE_URL}/
@@ -16,7 +18,8 @@ export function llmsTxt(): string {
 - Qibla: ${SITE_URL}/qibla
 - Zakat calculator: ${SITE_URL}/zakat
 - Ramadan hub: ${SITE_URL}/ramadan
-- Sources: ${SITE_URL}/sources
+- Sources and methodology: ${SITE_URL}/sources
+- Embeddable prayer widget: ${SITE_URL}/embed/prayer_times
 
 ## Languages
 
@@ -29,12 +32,70 @@ English (default, unprefixed URLs), Arabic (/ar/...), Urdu (/ur/...), Indonesian
 - ${SITE_URL}/sitemap_quran.xml
 - ${SITE_URL}/sitemap_tafsir.xml
 - ${SITE_URL}/sitemap_hadith.xml
+- ${SITE_URL}/sitemap_hadith_entries.xml
+- ${SITE_URL}/sitemap_duas.xml
+- ${SITE_URL}/sitemap_cities.xml (when city pages are enabled)
+
+## Full map
+
+- ${SITE_URL}/llms-full.txt
 
 ## Notes
 
 Content is drawn from public Islamic APIs and CDNs listed on the sources page.
 Do not invent citations; prefer linking to the canonical surah or hadith URL on this site.
+Brand name: islam.house (domain islam.house). Not affiliated with islamhouse.com.
 `
+}
+
+export function llmsFullTxt(): string {
+  const cityLines = SEO_CITIES.slice(0, 40)
+    .map((c) => `- ${c.nameEn}: ${SITE_URL}/prayer_times/${c.slug}`)
+    .join('\n')
+
+  return `${llmsTxt()}
+## Example city prayer pages
+
+${cityLines}
+
+## Example Quran pages
+
+- Surah Al-Fatihah: ${SITE_URL}/quran/1
+- Surah Ya-Sin: ${SITE_URL}/quran/36
+- Surah Al-Mulk: ${SITE_URL}/quran/67
+
+## Example hadith
+
+- Sahih al-Bukhari: ${SITE_URL}/hadith/bukhari
+- Sahih Muslim: ${SITE_URL}/hadith/muslim
+- An-Nawawi forty: ${SITE_URL}/hadith/nawawi
+
+## Tools
+
+- Halal verification: ${SITE_URL}/halal_verification
+- Mosque finder: ${SITE_URL}/mosque_finder
+- Inheritance calculator: ${SITE_URL}/inheritance
+- Islamic baby names: ${SITE_URL}/baby_names
+`
+}
+
+/** Markdown representation of a resolved SEO page for Accept: text/markdown. */
+export function seoToMarkdown(seo: ResolvedSeo): string {
+  const lines = [
+    `# ${seo.h1}`,
+    '',
+    seo.description,
+    '',
+    seo.body,
+  ]
+  if (seo.richText) {
+    lines.push('', seo.richText)
+  }
+  lines.push('', `Canonical: ${seo.canonicalUrl}`, `Language: ${seo.locale}`)
+  if (seo.dateModified) {
+    lines.push(`Last modified: ${seo.dateModified}`)
+  }
+  return `${lines.join('\n')}\n`
 }
 
 /** Search / answer bots: allow. Training scrapers: disallow. Keep in sync with Cloudflare AI Crawl Control. */

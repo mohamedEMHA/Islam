@@ -17,7 +17,8 @@
     "build_seo_excerpts": "node scripts/build_seo_excerpts.mjs",
     "cf_security_check": "node scripts/cf_security_sync.mjs --check",
     "cf_security_apply": "node scripts/cf_security_sync.mjs --apply",
-    "cf_security_report": "node scripts/cf_security_sync.mjs --report"
+    "cf_security_report": "node scripts/cf_security_sync.mjs --report",
+    "ping_indexnow": "node scripts/ping_indexnow.mjs"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",

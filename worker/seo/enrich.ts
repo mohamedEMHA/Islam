@@ -16,14 +16,23 @@ interface SurahExcerpt {
 
 const EXCERPTS = surahExcerpts as Record<string, SurahExcerpt>
 
+export interface EnrichSurahOptions {
+  /** Include all excerpt ayahs (up to available) for crawler-rich mode. */
+  fullExcerpt?: boolean
+}
+
 /** Enrich surah SEO from build-time excerpts (no outbound fetch). */
-export async function enrichSurahSeo(seo: ResolvedSeo): Promise<ResolvedSeo> {
+export async function enrichSurahSeo(
+  seo: ResolvedSeo,
+  options: EnrichSurahOptions = {},
+): Promise<ResolvedSeo> {
   if (!seo.surah || (seo.kind !== 'surah' && seo.kind !== 'tafsir_surah')) return seo
 
   const excerpt = EXCERPTS[String(seo.surah.number)]
   if (!excerpt?.ar?.length) return seo
 
-  const parts = excerpt.ar.slice(0, 3).map((ayah) => {
+  const limit = options.fullExcerpt ? excerpt.ar.length : 3
+  const parts = excerpt.ar.slice(0, limit).map((ayah) => {
     const enText = excerpt.en?.find((a) => a.numberInSurah === ayah.numberInSurah)?.text
     const base = `${ayah.numberInSurah}. ${ayah.text}`
     return enText ? `${base} (${enText})` : base

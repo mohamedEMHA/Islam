@@ -157,6 +157,25 @@ async function ensureRateLimit(zoneId, config) {
   }
 }
 
+async function ensureBotManagement(zoneId, config) {
+  const desired = config.botManagement
+  if (!desired || typeof desired.fight_mode !== 'boolean') return { skipped: true }
+  const live = await cf('GET', `/zones/${zoneId}/bot_management`)
+  if (live.fight_mode === desired.fight_mode) {
+    return { fight_mode: 'ok', value: live.fight_mode }
+  }
+  await cf('PUT', `/zones/${zoneId}/bot_management`, {
+    fight_mode: desired.fight_mode,
+    enable_js: live.enable_js ?? true,
+    ai_training: live.ai_training ?? 'block',
+    ai_bots_protection: live.ai_bots_protection ?? 'disabled',
+    content_bots_protection: live.content_bots_protection ?? 'disabled',
+    crawler_protection: live.crawler_protection ?? 'disabled',
+    is_robots_txt_managed: live.is_robots_txt_managed ?? false,
+  })
+  return { fight_mode: 'updated', value: desired.fight_mode }
+}
+
 async function ensureSettings(zoneId, config) {
   const results = {}
   for (const [id, value] of Object.entries(config.zoneSettings || {})) {
@@ -211,6 +230,7 @@ async function runApply(config) {
   await putCustomEntrypoint(config.zoneId, desired)
   const rl = await ensureRateLimit(config.zoneId, config)
   const settings = await ensureSettings(config.zoneId, config)
+  const botManagement = await ensureBotManagement(config.zoneId, config)
   const verify = await getCustomEntrypoint(config.zoneId)
   console.log(
     JSON.stringify(
@@ -219,6 +239,7 @@ async function runApply(config) {
         rules: (verify.rules || []).map((r) => ({ ref: r.ref, action: r.action })),
         rateLimit: rl,
         settings,
+        botManagement,
       },
       null,
       2,

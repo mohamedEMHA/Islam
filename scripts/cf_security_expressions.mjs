@@ -32,8 +32,15 @@ export function buildAiTrainingExpression(blockTraining) {
 export function buildBadClientsExpression({ scannerPaths, toolUserAgents }) {
   const paths = scannerPaths.map((p) => `http.request.uri.path contains "${p}"`).join(' or ')
   const tools = toolUserAgents.map((u) => `http.user_agent contains "${u}"`).join(' or ')
+  // Allow SEO discovery paths even with empty/tool UA (GSC sitemap fetch is often not cf.client.bot).
   return assertSafeExpression(
-    `(not cf.client.bot) and (not starts_with(http.request.uri.path, "/.well-known/")) and (` +
+    `(not cf.client.bot)` +
+      ` and (not starts_with(http.request.uri.path, "/.well-known/"))` +
+      ` and (http.request.uri.path ne "/robots.txt")` +
+      ` and (http.request.uri.path ne "/llms.txt")` +
+      ` and (http.request.uri.path ne "/llms-full.txt")` +
+      ` and (not starts_with(http.request.uri.path, "/sitemap"))` +
+      ` and (` +
       `(${paths})` +
       ` or (http.user_agent eq "")` +
       ` or (${tools})` +

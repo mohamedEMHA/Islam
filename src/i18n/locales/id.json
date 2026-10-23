@@ -252,8 +252,8 @@
         "a": "Tanpa iklan. Produk ini dirancang sebagai ruang yang tenang dan bebas gangguan untuk ibadah sehari-hari."
       }
     },
-    "installTitle": "Aplikasi segera hadir",
-    "installSubtitle": "Aplikasi mobile khusus sedang dalam perjalanan. Sementara itu, gunakan Islam di browser.",
+    "installTitle": "Pasang islam.house",
+    "installSubtitle": "Tambahkan PWA gratis untuk jadwal sholat, Quran, dan hadits offline.",
     "installLearnMore": "Pelajari lebih lanjut"
   },
   "prayers": {
@@ -811,7 +811,9 @@
           "category": "Zakat",
           "quote": "Harga spot emas dan perak terkini untuk pemeriksaan silang zakat logam."
         }
-      }
+      },
+      "methodologyTitle": "Metodologi",
+      "methodologyBody": "islam.house menyusun API Islam publik dengan atribusi jelas. Kami tidak mengarang penilaian hadits atau teks Quran. Jadwal sholat memakai metode terbitan yang bisa diubah di Pengaturan. Laporkan masalah dari halaman mana pun. Merek: islam.house (tidak terkait islamhouse.com)."
     },
     "privacy": {
       "title": "Kebijakan Privasi",
@@ -988,6 +990,28 @@
       "subtitle": "Halaman yang Anda cari tidak ada atau telah dipindahkan.",
       "goHome": "Kembali ke beranda",
       "helpfulLinks": "Tautan berguna"
+    },
+    "cityPrayer": {
+      "title": "Jadwal sholat {{city}}",
+      "subtitle": "Sholat harian untuk {{city}} ({{country}}) dengan kiblat.",
+      "qibla": "Kiblat dari {{city}} sekitar {{degrees}}° dari utara.",
+      "linkQibla": "Kiblat kota ini",
+      "linkRamadan": "Jadwal Ramadan 2027",
+      "linkLive": "Gunakan lokasi saya"
+    },
+    "cityQibla": {
+      "title": "Kiblat dari {{city}}",
+      "subtitle": "Arah Ka'bah dari {{city}}.",
+      "body": "Arah perkiraan {{degrees}}°. Sekitar {{km}} km ke Makkah.",
+      "linkPrayer": "Jadwal sholat kota ini"
+    },
+    "cityRamadan": {
+      "title": "Ramadan {{year}} di {{city}}",
+      "subtitle": "Panduan sahur dan berbuka untuk {{city}} tahun {{year}}.",
+      "guide": "Gunakan Subuh sebagai panduan sahur dan Magrib untuk berbuka. Konfirmasi dengan masjid setempat.",
+      "suhoor": "Sahur (Subuh)",
+      "iftar": "Berbuka (Magrib)",
+      "linkPrayer": "Jadwal sholat lengkap"
     }
   },
   "quranReader": {

@@ -252,8 +252,8 @@
         "a": "Aucune publicité. Le produit est conçu comme un espace calme, sans distraction, pour la pratique quotidienne."
       }
     },
-    "installTitle": "Application bientôt disponible",
-    "installSubtitle": "Une application mobile dédiée arrive bientôt. En attendant, utilisez Islam dans le navigateur.",
+    "installTitle": "Installer islam.house",
+    "installSubtitle": "Ajoutez la PWA gratuite pour horaires, Coran et hadiths hors ligne.",
     "installLearnMore": "En savoir plus"
   },
   "prayers": {
@@ -811,7 +811,9 @@
           "category": "Zakat",
           "quote": "Cours au comptant de l'or et de l'argent en direct pour vérifier la zakat sur les métaux."
         }
-      }
+      },
+      "methodologyTitle": "Méthodologie",
+      "methodologyBody": "islam.house compile des API islamiques publiques avec attribution claire. Nous n'inventons pas les grades de hadith ni le texte coranique. Les horaires utilisent des méthodes publiées modifiables dans les réglages. Signalez les erreurs depuis toute page. Marque: islam.house (non affilié à islamhouse.com)."
     },
     "privacy": {
       "title": "Politique de confidentialité",
@@ -988,6 +990,28 @@
       "subtitle": "La page que vous recherchez n'existe pas ou a été déplacée.",
       "goHome": "Retour à l'accueil",
       "helpfulLinks": "Liens utiles"
+    },
+    "cityPrayer": {
+      "title": "Horaires de prière à {{city}}",
+      "subtitle": "Salat quotidienne pour {{city}} ({{country}}) avec référence qibla.",
+      "qibla": "La qibla depuis {{city}} est environ {{degrees}}° depuis le nord.",
+      "linkQibla": "Qibla pour cette ville",
+      "linkRamadan": "Calendrier Ramadan 2027",
+      "linkLive": "Utiliser ma position"
+    },
+    "cityQibla": {
+      "title": "Qibla depuis {{city}}",
+      "subtitle": "Direction de la Kaaba depuis {{city}}.",
+      "body": "Cap approximatif {{degrees}}°. Environ {{km}} km jusqu'à La Mecque.",
+      "linkPrayer": "Horaires de prière pour cette ville"
+    },
+    "cityRamadan": {
+      "title": "Ramadan {{year}} à {{city}}",
+      "subtitle": "Guide suhoor et iftar pour {{city}} en {{year}}.",
+      "guide": "Utilisez Fajr comme guide suhoor et Maghrib pour iftar. Confirmez avec votre mosquée.",
+      "suhoor": "Sahour (Fajr)",
+      "iftar": "Rupture du jeûne (Maghrib)",
+      "linkPrayer": "Horaires complets"
     }
   },
   "quranReader": {
