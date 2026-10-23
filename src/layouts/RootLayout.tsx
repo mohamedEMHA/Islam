@@ -9,7 +9,7 @@ import { useLanguageFromUrl } from '@/lib/hooks/useLanguageFromUrl'
 import { useMobileNavStore } from '@/lib/stores/mobileNavStore'
 import { scrollWindowToTop } from '@/lib/utils/scroll'
 
-const BASE_LAYOUT_IDS = new Set(['marketing', 'onboarding', 'app'])
+const BASE_LAYOUT_IDS = new Set(['marketing', 'onboarding', 'app', 'embed'])
 
 function baseLayoutId(id: string): string {
   return id.replace(/^(ar|ur|id|fr)-/, '')
@@ -91,11 +91,13 @@ export function RootLayout() {
     </motion.div>
   )
 
+  const isEmbed = layoutId === 'embed'
+
   return (
     <>
       {content}
-      <MobileMegaMenu open={menuOpen} onClose={closeMenu} />
-      <CookieConsentBanner />
+      {!isEmbed && <MobileMegaMenu open={menuOpen} onClose={closeMenu} />}
+      {!isEmbed && <CookieConsentBanner />}
     </>
   )
 }

@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, type RouteObject } from 'react-router-dom'
 import { MarketingLayout } from '@/layouts/MarketingLayout'
 import { AppLayout } from '@/layouts/AppLayout'
+import { EmbedLayout } from '@/layouts/EmbedLayout'
 import { OnboardingLayout } from '@/layouts/OnboardingLayout'
 import { RootLayout } from '@/layouts/RootLayout'
 import { HomePage } from '@/features/home/HomePage'
@@ -110,7 +111,6 @@ const appChildren: RouteObject[] = [
   { path: 'settings', element: <SettingsPage /> },
   { path: 'ramadan', element: <RamadanPage /> },
   { path: 'ramadan/:year/:citySlug', element: <CityRamadanPage /> },
-  { path: 'embed/prayer_times', element: <PrayerTimesEmbedPage /> },
   { path: 'zakat', element: <ZakatPage /> },
   { path: 'tasbeeh', element: <TasbeehPage /> },
   { path: 'names', element: <NamesPage /> },
@@ -132,6 +132,10 @@ const appChildren: RouteObject[] = [
   { path: 'halal_verification', element: <HalalVerificationPage /> },
 ]
 
+const embedChildren: RouteObject[] = [
+  { path: 'embed/prayer_times', element: <PrayerTimesEmbedPage /> },
+]
+
 function layoutTree(idPrefix: string): RouteObject[] {
   return [
     {
@@ -148,6 +152,11 @@ function layoutTree(idPrefix: string): RouteObject[] {
       id: `${idPrefix}app`,
       element: <AppLayout />,
       children: appChildren,
+    },
+    {
+      id: `${idPrefix}embed`,
+      element: <EmbedLayout />,
+      children: embedChildren,
     },
   ]
 }
