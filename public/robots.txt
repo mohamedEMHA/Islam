@@ -58,6 +58,9 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+User-agent: ElevenlabsCrawler
+Disallow: /
+
 Sitemap: https://islam.house/sitemap.xml
 
 # Also see /llms.txt and /llms-full.txt (served by Worker).

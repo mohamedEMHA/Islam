@@ -171,6 +171,35 @@ describe('sitemaps', () => {
     expect(sitemapDuasXml()).toContain('/duas/morning')
     expect(sitemapCitiesXml()).toContain('/prayer_times/london')
   })
+
+  it('emits well-formed XML with expected loc scale', () => {
+    const builders = [
+      sitemapIndexXml(true),
+      sitemapPagesXml(),
+      sitemapQuranXml(),
+      sitemapTafsirXml(),
+      sitemapHadithXml(),
+      sitemapHadithEntriesXml(),
+      sitemapDuasXml(),
+      sitemapCitiesXml(),
+    ]
+    for (const xml of builders) {
+      expect(xml.startsWith('<?xml')).toBe(true)
+      expect(xml).toContain('</')
+      expect(xml.includes('<loc>') || xml.includes('<sitemap>')).toBe(true)
+    }
+    // 114 surahs × 5 locales
+    expect((sitemapQuranXml().match(/<loc>/g) ?? []).length).toBe(570)
+    expect((sitemapTafsirXml().match(/<loc>/g) ?? []).length).toBe(570)
+    // 13 dua topics × 5 locales
+    expect((sitemapDuasXml().match(/<loc>/g) ?? []).length).toBe(65)
+    // cities × 3 paths × 5 locales
+    expect((sitemapCitiesXml().match(/<loc>/g) ?? []).length).toBe(SEO_CITIES.length * 3 * 5)
+    // hadith entries are large but bounded
+    const hadithLocs = (sitemapHadithEntriesXml().match(/<loc>/g) ?? []).length
+    expect(hadithLocs).toBeGreaterThan(3000)
+    expect(hadithLocs).toBeLessThan(4000)
+  })
 })
 
 describe('schema and AI files', () => {
@@ -193,6 +222,7 @@ describe('schema and AI files', () => {
     const robots = robotsTxt()
     expect(robots).toContain('User-agent: OAI-SearchBot\nAllow: /')
     expect(robots).toContain('User-agent: GPTBot\nDisallow: /')
+    expect(robots).toContain('User-agent: ElevenlabsCrawler\nDisallow: /')
     expect(robots).toContain('Sitemap: https://islam.house/sitemap.xml')
     expect(llmsTxt()).toContain('https://islam.house/quran')
     expect(llmsFullTxt()).toContain('llms-full')

@@ -25,7 +25,7 @@ See [ROLLBACK.md](./ROLLBACK.md).
 
 Allowed: OAI-SearchBot, ChatGPT-User, Perplexity*, Claude-SearchBot, Claude-User, Applebot, DuckAssistBot.
 
-Blocked: GPTBot, ClaudeBot, CCBot, Bytespider, Google-Extended, and other training scrapers.
+Blocked: GPTBot, ClaudeBot, CCBot, Bytespider, Google-Extended, ElevenlabsCrawler, and other training scrapers.
 
 - `https://islam.house/llms.txt`
 - `https://islam.house/llms-full.txt`

@@ -28,6 +28,7 @@ describe('cf_security_expressions', () => {
     const expr = buildAiTrainingExpression(config.aiCrawlControl.blockTraining)
     expect(expr.startsWith('(http.request.uri.path ne "/robots.txt") and (')).toBe(true)
     expect(expr).toContain('GPTBot')
+    expect(expr).toContain('ElevenlabsCrawler')
     expect(expr).not.toContain('Claude-User')
     expect(expr.length).toBeLessThanOrEqual(EXPR_MAX_LEN)
   })

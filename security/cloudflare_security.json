@@ -18,9 +18,9 @@
     ],
     "blockTraining": [
       "Amazonbot", "Anchor Browser", "Bytespider", "CCBot", "ClaudeBot",
-      "CloudflareBrowserRenderingCrawler", "FacebookBot", "Google-CloudVertexBot",
-      "GPTBot", "meta-externalagent", "Novellum", "PetalBot", "ProRataInc",
-      "TikTokSpider", "Timpibot"
+      "CloudflareBrowserRenderingCrawler", "ElevenlabsCrawler", "FacebookBot",
+      "Google-CloudVertexBot", "GPTBot", "meta-externalagent", "Novellum",
+      "PetalBot", "ProRataInc", "TikTokSpider", "Timpibot"
     ]
   },
   "scannerPaths": [

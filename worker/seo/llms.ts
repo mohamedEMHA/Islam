@@ -125,6 +125,7 @@ const DISALLOW_BOTS = [
   'Novellum',
   'ProRataInc',
   'PetalBot',
+  'ElevenlabsCrawler',
 ] as const
 
 export function robotsTxt(): string {
