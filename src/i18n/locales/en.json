@@ -1061,6 +1061,7 @@
       "title": "Prayer times in {{city}}",
       "subtitle": "Daily salah for {{city}} ({{country}}) with qibla reference.",
       "qibla": "Qibla from {{city}} is about {{degrees}}° from true north.",
+      "method": "Times use AlAdhan method 2 (ISNA) with standard Asr (school 0). Confirm with your local mosque when needed.",
       "linkQibla": "Qibla for this city",
       "linkRamadan": "Ramadan 2027 schedule",
       "linkLive": "Use my location instead"

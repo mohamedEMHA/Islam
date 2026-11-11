@@ -261,10 +261,10 @@ export function PrayerTimesPage() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-black/60 to-transparent flex items-end p-4">
-
-                <span className="font-label-sm text-label-sm text-white">{t('pages.prayerTimes.dailyInspiration')}</span>
-
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-black/80 via-ink-black/35 to-transparent flex items-end p-4">
+                <span className="font-label-sm text-label-sm text-white drop-shadow-sm">
+                  {t('pages.prayerTimes.dailyInspiration')}
+                </span>
               </div>
 
             </LocalizedLink>
@@ -356,21 +356,16 @@ function CalculationPanel() {
           <label className="block font-label-sm text-label-sm text-stone mb-2">{t('pages.prayerTimes.method')}</label>
 
           <select
-
             value={calculationMethod}
-
+            title={CALCULATION_METHODS.find((m) => m.id === calculationMethod)?.name}
             onChange={(e) => updateSettings({ calculationMethod: Number(e.target.value) })}
-
-            className="w-full bg-transparent border-0 border-b border-hairline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-ink-black"
-
+            className="w-full min-w-0 max-w-full bg-transparent border-0 border-b border-hairline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-ink-black truncate"
           >
-
             {CALCULATION_METHODS.map((m) => (
-
-              <option key={m.id} value={m.id}>{m.name}</option>
-
+              <option key={m.id} value={m.id}>
+                {m.name}
+              </option>
             ))}
-
           </select>
 
         </div>

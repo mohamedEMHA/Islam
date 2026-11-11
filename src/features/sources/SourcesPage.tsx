@@ -86,7 +86,7 @@ function SourceTile({
     <HoverCard
       className={cn(
         'p-6 flex flex-col h-full dark:bg-dark-surface dark:border-dark-border',
-        layout === 'grid' ? 'w-full min-h-[280px]' : 'w-[300px] sm:w-[340px] shrink-0',
+        layout === 'grid' ? 'w-full min-h-[300px]' : 'w-[300px] sm:w-[340px] shrink-0',
       )}
     >
       <div className="flex items-start justify-between gap-3 mb-4">
@@ -98,14 +98,7 @@ function SourceTile({
         </span>
       </div>
 
-      <span
-        className="material-symbols-outlined text-secondary/35 dark:text-dark-green/35 text-4xl leading-none mb-2"
-        aria-hidden
-      >
-        format_quote
-      </span>
-
-      <blockquote className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary leading-relaxed grow line-clamp-5">
+      <blockquote className="min-h-0 font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary leading-relaxed grow line-clamp-4">
         {quote}
       </blockquote>
 
@@ -198,7 +191,7 @@ export function SourcesPage() {
             return (
               <div
                 key={`${source.id}-${index}`}
-                className="h-[280px]"
+                className="h-[300px]"
                 aria-hidden={index >= SOURCES.length ? true : undefined}
               >
                 <SourceTile

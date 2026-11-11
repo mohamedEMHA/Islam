@@ -132,7 +132,9 @@ function surahCopy(surah: SurahMeta, locale: LocaleCode, mode: 'quran' | 'tafsir
   }
   const prefix = isTafsir ? 'Tafsir of ' : 'Surah '
   return {
-    title: `${prefix}${surah.nameLatin} (${surah.nameArabic})`,
+    title: isTafsir
+      ? `Tafsir Surah ${surah.nameLatin}, Meaning and Explanation | islam.house`
+      : `Surah ${surah.nameLatin} Arabic and English Translation | islam.house`,
     description: `${prefix}${surah.nameLatin}, ${surah.translationEn}. ${surah.ayahs} ayahs, ${surah.revelation}. Read Arabic text and translation on islam.house.`,
     h1: `${prefix}${surah.nameLatin}`,
     body: `${surah.nameArabic} · ${surah.translationEn} · ${surah.ayahs} verses · ${surah.revelation}`,
@@ -217,8 +219,8 @@ function hadithEntryCopy(name: string, hadithId: string, locale: LocaleCode): Pa
     }
   }
   return {
-    title: `Hadith ${hadithId}, ${name}`,
-    description: `Read hadith ${hadithId} from ${name} with Arabic and translation.`,
+    title: `${name} Hadith ${hadithId}, Arabic and English | islam.house`,
+    description: `Read hadith ${hadithId} from ${name} with Arabic and translation on islam.house.`,
     h1: `${name}, Hadith ${hadithId}`,
     body: `Authenticated hadith from ${name}.`,
   }
@@ -227,41 +229,41 @@ function hadithEntryCopy(name: string, hadithId: string, locale: LocaleCode): Pa
 function cityPrayerCopy(city: SeoCity, locale: LocaleCode): PageSeoCopy {
   if (locale === 'ar') {
     return {
-      title: `مواقيت الصلاة في ${city.nameEn}`,
-      description: `مواقيت الصلوات اليومية في ${city.nameEn} (${city.country}) مع جدول شهري واتجاه القبلة.`,
+      title: `مواقيت الصلاة اليوم في ${city.nameEn} | islam.house`,
+      description: `مواقيت الصلوات اليومية في ${city.nameEn} (${city.country}) مع اتجاه القبلة وطريقة الحساب.`,
       h1: `مواقيت الصلاة في ${city.nameEn}`,
-      body: `فجر وظهر وعصر ومغرب وعشاء لـ ${city.nameEn}.`,
+      body: `فجر وظهر وعصر ومغرب وعشاء لـ ${city.nameEn} اليوم.`,
     }
   }
   if (locale === 'fr') {
     return {
-      title: `Horaires de prière à ${city.nameEn}`,
-      description: `Horaires de salat quotidiens à ${city.nameEn} (${city.country}), calendrier mensuel et qibla.`,
+      title: `Horaires de prière aujourd'hui à ${city.nameEn} | islam.house`,
+      description: `Horaires de salat quotidiens à ${city.nameEn} (${city.country}), qibla et méthode de calcul.`,
       h1: `Horaires de prière à ${city.nameEn}`,
-      body: `Fajr, Dhuhr, Asr, Maghrib et Isha pour ${city.nameEn}.`,
+      body: `Fajr, Dhuhr, Asr, Maghrib et Isha pour ${city.nameEn} aujourd'hui.`,
     }
   }
   if (locale === 'id') {
     return {
-      title: `Jadwal sholat ${city.nameEn}`,
-      description: `Waktu sholat harian di ${city.nameEn} (${city.country}), jadwal bulanan, dan kiblat.`,
+      title: `Jadwal sholat hari ini ${city.nameEn} | islam.house`,
+      description: `Waktu sholat harian di ${city.nameEn} (${city.country}), kiblat, dan metode perhitungan.`,
       h1: `Jadwal sholat ${city.nameEn}`,
-      body: `Subuh, Zuhur, Asar, Magrib, dan Isya untuk ${city.nameEn}.`,
+      body: `Subuh, Zuhur, Asar, Magrib, dan Isya untuk ${city.nameEn} hari ini.`,
     }
   }
   if (locale === 'ur') {
     return {
-      title: `${city.nameEn} میں نماز کے اوقات`,
-      description: `${city.nameEn} (${city.country}) کے روزانہ نماز کے اوقات، ماہانہ شیڈول اور قبلہ۔`,
+      title: `${city.nameEn} آج نماز کے اوقات | islam.house`,
+      description: `${city.nameEn} (${city.country}) کے روزانہ نماز کے اوقات، قبلہ اور حساب کا طریقہ۔`,
       h1: `${city.nameEn} میں نماز کے اوقات`,
-      body: `${city.nameEn} کے لیے فجر، ظہر، عصر، مغرب اور عشاء۔`,
+      body: `${city.nameEn} کے لیے آج فجر، ظہر، عصر، مغرب اور عشاء۔`,
     }
   }
   return {
-    title: `Prayer times in ${city.nameEn}`,
-    description: `Daily salah times for ${city.nameEn} (${city.country}) with monthly schedule and qibla direction.`,
+    title: `${city.nameEn} Prayer Times Today, Fajr to Isha | islam.house`,
+    description: `Today's salah timetable for ${city.nameEn} (${city.country}): Fajr to Isha, qibla direction, and calculation method.`,
     h1: `Prayer times in ${city.nameEn}`,
-    body: `Fajr, Dhuhr, Asr, Maghrib, and Isha for ${city.nameEn}.`,
+    body: `Fajr, Dhuhr, Asr, Maghrib, and Isha for ${city.nameEn} today.`,
   }
 }
 

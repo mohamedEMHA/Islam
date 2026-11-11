@@ -46,11 +46,11 @@ type StaticRouteKey =
 
 const EN: Record<StaticRouteKey, PageSeoCopy> = {
   home: {
-    title: 'Islam, Grounded Daily Practice',
+    title: 'islam.house, Grounded Daily Practice',
     description:
-      'Accurate prayer times, the full Quran, authenticated hadith, and daily duas, sourced transparently and free.',
+      'Accurate prayer times, the full Quran, authenticated hadith, and daily duas on islam.house. Ad free and source transparent.',
     h1: 'Islam, Grounded Daily Practice',
-    body: 'Prayer times, Quran, hadith, duas, qibla, zakat, and more. Ad free and source transparent.',
+    body: 'islam.house offers prayer times, Quran, hadith, duas, qibla, zakat, and more. Ad free and source transparent.',
   },
   get_app: {
     title: 'Get the App',
@@ -59,11 +59,11 @@ const EN: Record<StaticRouteKey, PageSeoCopy> = {
     body: 'Add Islam to your home screen for quick access to prayer times, Quran, and hadith.',
   },
   sources: {
-    title: 'Sources and Methodology',
+    title: 'Sources and Methodology | islam.house',
     description:
       'Transparent list of Quran, hadith, prayer time sources and the islam.house methodology.',
     h1: 'Sources and Methodology',
-    body: 'Every feature cites its upstream sources so you can verify authenticity. Brand: islam.house.',
+    body: 'This site is islam.house. Every feature cites its upstream sources so you can verify authenticity.',
   },
   privacy: {
     title: 'Privacy Policy',

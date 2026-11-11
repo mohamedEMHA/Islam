@@ -67,6 +67,9 @@ export function CityPrayerPage() {
             <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary">
               {t('pages.cityPrayer.qibla', { degrees: bearing })}
             </p>
+            <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary">
+              {t('pages.cityPrayer.method')}
+            </p>
             <div className="flex flex-wrap gap-3 font-label-sm text-label-sm">
               <LocalizedLink to={`/qibla/${city.slug}`} className="text-secondary dark:text-dark-green underline">
                 {t('pages.cityPrayer.linkQibla')}

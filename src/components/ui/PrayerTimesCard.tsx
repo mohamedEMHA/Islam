@@ -107,11 +107,7 @@ export function PrayerTimesCard({ variant = 'hero', className }: PrayerTimesCard
         className,
       )}
     >
-      <div className="absolute top-0 end-0 p-4 opacity-5 pointer-events-none">
-        <span className="material-symbols-outlined text-9xl fill">mosque</span>
-      </div>
-
-      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-end mb-2 relative z-10">
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-end mb-2">
         <div>
           <p className="font-label-sm text-label-sm text-stone dark:text-dark-text-secondary uppercase tracking-widest mb-1">
             {t('common.nextPrayer')}
@@ -129,7 +125,7 @@ export function PrayerTimesCard({ variant = 'hero', className }: PrayerTimesCard
       </div>
 
       <p
-        className="font-label-sm text-label-sm text-secondary dark:text-dark-green tabular-nums mb-2 relative z-10"
+        className="font-label-sm text-label-sm text-secondary dark:text-dark-green tabular-nums mb-2"
         aria-hidden="true"
       >
         {t('common.remaining')}: {countdown}
@@ -138,18 +134,18 @@ export function PrayerTimesCard({ variant = 'hero', className }: PrayerTimesCard
         {t('common.remaining')}: {ariaCountdown || countdown}
       </span>
 
-      <p className="font-label-sm text-label-sm text-stone dark:text-dark-text-secondary mb-6 relative z-10">
+      <p className="font-label-sm text-label-sm text-stone dark:text-dark-text-secondary mb-6">
         {hijriLabel} AH
       </p>
 
-      <div className="w-full bg-surface-container-high dark:bg-dark-bg h-1 rounded-full mb-8 relative z-10">
+      <div className="relative w-full bg-surface-container-high dark:bg-dark-bg h-1 rounded-full mb-8">
         <div
           className="absolute top-0 start-0 h-full bg-secondary dark:bg-dark-green rounded-full transition-[width] duration-500"
           style={{ width: `${progressPct}%` }}
         />
       </div>
 
-      <div className="space-y-4 relative z-10">
+      <div className="space-y-4">
         {displayPrayers.map((prayer) => {
           const isCurrent = prayer === current
           const time = data.timings[prayer]
@@ -180,7 +176,7 @@ export function PrayerTimesCard({ variant = 'hero', className }: PrayerTimesCard
         })}
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 relative z-10">
+      <div className="mt-6 flex flex-col gap-3">
         <div className="flex justify-between items-center bg-surface dark:bg-dark-bg p-4 rounded-lg border border-hairline dark:border-dark-border">
           <div className="flex items-center gap-3 min-w-0">
             <span className="material-symbols-outlined text-stone dark:text-dark-text-secondary shrink-0">location_on</span>

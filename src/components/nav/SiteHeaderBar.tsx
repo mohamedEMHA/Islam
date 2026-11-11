@@ -88,7 +88,13 @@ export function SiteHeaderBar({
                 {langLabel}
               </LocalizedLink>
             ) : null}
-            <ButtonLink to="/get_app" size="sm" className="inline-flex shrink-0" onClick={onNavigate}>
+            <ButtonLink
+              to="/get_app"
+              variant="secondary"
+              size="sm"
+              className="inline-flex shrink-0"
+              onClick={onNavigate}
+            >
               {t('common.getApp')}
             </ButtonLink>
             <button

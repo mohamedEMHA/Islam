@@ -7,13 +7,13 @@ import {
   validateUmmahPost,
   type ProxyRoute,
 } from './allowlist'
-import { apexRedirectUrl } from './redirect'
+import { apexRedirectUrl, httpsRedirectUrl } from './redirect'
 import {
   buildSecurityHeaders,
   SECURITY_HEADERS,
   type SecurityHeaderOptions,
 } from './securityHeaders'
-import { enrichHadithSeo, enrichSurahSeo } from './seo/enrich'
+import { enrichHadithSeo, enrichPrayerCitySeo, enrichSurahSeo } from './seo/enrich'
 import { parseSeoFlags, shouldInjectRichHtml } from './seo/flags'
 import { injectSeo } from './seo/inject'
 import { INDEXNOW_KEY, indexNowKeyPath } from './seo/indexNow'
@@ -59,6 +59,7 @@ export {
   matchProxyRoute,
   validateUmmahPost,
   apexRedirectUrl,
+  httpsRedirectUrl,
 }
 export { SECURITY_HEADERS, buildSecurityHeaders }
 
@@ -220,6 +221,8 @@ async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
       seo = await enrichSurahSeo(seo, { fullExcerpt: true })
     } else if (seo.kind === 'hadith_entry') {
       seo = await enrichHadithWithLimit(seo, request, env)
+    } else if (seo.kind === 'prayer_city') {
+      seo = await enrichPrayerCitySeo(seo)
     }
     return withSecurityHeaders(
       new Response(seoToMarkdown(seo), {
@@ -239,6 +242,8 @@ async function buildSeoDocument(request: Request, env: Env): Promise<Response> {
     seo = await enrichSurahSeo(seo, { fullExcerpt: richForCrawler })
   } else if (seo.kind === 'hadith_entry') {
     seo = await enrichHadithWithLimit(seo, request, env)
+  } else if (seo.kind === 'prayer_city') {
+    seo = await enrichPrayerCitySeo(seo)
   }
 
   // Fresh nonce per response; do not cache the final HTML (nonce must stay unique).
@@ -284,6 +289,11 @@ async function handleSeoDocument(request: Request, env: Env): Promise<Response> 
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    const httpsTarget = httpsRedirectUrl(request.url)
+    if (httpsTarget) {
+      return Response.redirect(httpsTarget, 301)
+    }
+
     const apexTarget = apexRedirectUrl(request.url)
     if (apexTarget) {
       return Response.redirect(apexTarget, 301)

@@ -7,3 +7,14 @@ export function apexRedirectUrl(requestUrl: string): string | null {
   if (url.hostname !== WWW_HOST) return null
   return `https://${APEX_HOST}${url.pathname}${url.search}`
 }
+
+/**
+ * Pure helper for http → https 301 on production hosts.
+ * http www goes straight to https apex (one hop).
+ */
+export function httpsRedirectUrl(requestUrl: string): string | null {
+  const url = new URL(requestUrl)
+  if (url.protocol !== 'http:') return null
+  if (url.hostname !== APEX_HOST && url.hostname !== WWW_HOST) return null
+  return `https://${APEX_HOST}${url.pathname}${url.search}`
+}

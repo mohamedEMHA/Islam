@@ -995,6 +995,7 @@
       "title": "Jadwal sholat {{city}}",
       "subtitle": "Sholat harian untuk {{city}} ({{country}}) dengan kiblat.",
       "qibla": "Kiblat dari {{city}} sekitar {{degrees}}° dari utara.",
+      "method": "Waktu memakai AlAdhan metode 2 (ISNA) dengan Asar standar (madzhab 0). Konfirmasi dengan masjid setempat bila perlu.",
       "linkQibla": "Kiblat kota ini",
       "linkRamadan": "Jadwal Ramadan 2027",
       "linkLive": "Gunakan lokasi saya"

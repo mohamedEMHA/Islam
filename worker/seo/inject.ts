@@ -23,7 +23,7 @@ export function buildHeadExtras(seo: ResolvedSeo, nonce?: string): string {
   return [
     `<meta name="description" content="${escapeHtml(seo.description)}" />`,
     `<meta name="robots" content="${robots}" />`,
-    `<link rel="canonical" href="${escapeHtml(seo.canonicalUrl)}" />`,
+    seo.noIndex ? '' : `<link rel="canonical" href="${escapeHtml(seo.canonicalUrl)}" />`,
     links,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="islam.house" />`,
@@ -76,7 +76,12 @@ export function buildRootContent(seo: ResolvedSeo, options: BuildRootOptions = {
             next ? `<li><a href="${escapeHtml(next)}">Next surah</a></li>` : '',
           ].join('')
         })()
-      : ''
+      : seo.kind === 'prayer_city' && seo.city
+        ? [
+            `<li><a href="${escapeHtml(localizedPath(`/qibla/${seo.city.slug}`, seo.locale))}">Qibla for ${escapeHtml(seo.city.nameEn)}</a></li>`,
+            `<li><a href="${escapeHtml(localizedPath(`/ramadan/2027/${seo.city.slug}`, seo.locale))}">Ramadan 2027 in ${escapeHtml(seo.city.nameEn)}</a></li>`,
+          ].join('')
+        : ''
 
   return [
     `<main id="seo-content" style="${mainStyle}">`,

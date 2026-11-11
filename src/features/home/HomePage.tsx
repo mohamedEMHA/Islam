@@ -5,7 +5,7 @@ import { m as motion, useReducedMotion } from 'framer-motion'
 import { PrayerTimesCard } from '@/components/ui/PrayerTimesCard'
 import { ButtonLink } from '@/components/ui/Button'
 import { BentoTile } from '@/components/ui/BentoTile'
-import { StaggerChildren, StaggerItem } from '@/components/motion/FadeInSection'
+import { StaggerList, StaggerListItem } from '@/components/motion/StaggerList'
 import { TrustStrip } from '@/components/home/TrustStrip'
 import { ContinueReadingSection } from '@/components/home/ContinueReadingSection'
 import { SeasonalBanner } from '@/components/home/SeasonalBanner'
@@ -145,8 +145,8 @@ export function HomePage() {
             <h2 className="font-heading-h2 text-heading-h2 text-ink-black dark:text-dark-text mb-3">{t('home.bentoTitle')}</h2>
             <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary">{t('home.bentoSubtitle')}</p>
           </div>
-          <StaggerChildren className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[minmax(168px,auto)] md:auto-rows-[minmax(188px,auto)]">
-            <StaggerItem className="col-span-1 min-[400px]:col-span-2 md:col-span-2 row-span-2">
+          <StaggerList className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[minmax(168px,auto)] md:auto-rows-[minmax(188px,auto)]">
+            <StaggerListItem className="col-span-1 min-[400px]:col-span-2 md:col-span-2 row-span-2">
               <BentoTile
                 to="/quran"
                 title={t('home.quranTileTitle')}
@@ -165,29 +165,29 @@ export function HomePage() {
                   </div>
                 </div>
               </BentoTile>
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/prayer_times" title={t('home.prayerTileTitle')} description={t('home.prayerTileDesc')} icon="schedule" />
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/duas" title={t('home.duasTileTitle')} description={t('home.duasTileDesc')} icon="volunteer_activism" />
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/qibla" title={t('home.qiblaTileTitle')} description={t('home.qiblaTileDesc')} icon="explore" />
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/shahada" title={t('home.shahadaTileTitle')} description={t('home.shahadaTileDesc')} icon="verified" />
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/adhan" title={t('home.adhanTileTitle')} description={t('home.adhanTileDesc')} icon="notifications_active" />
-            </StaggerItem>
-            <StaggerItem>
+            </StaggerListItem>
+            <StaggerListItem>
               <BentoTile to="/hadith" title={t('home.hadithTileTitle')} description={t('home.hadithTileDesc')} icon="library_books" variant="primary" />
-            </StaggerItem>
-            <StaggerItem className="col-span-1 min-[400px]:col-span-2 md:col-span-2">
+            </StaggerListItem>
+            <StaggerListItem className="col-span-1 min-[400px]:col-span-2 md:col-span-2">
               <BentoTile to="/zakat" title={t('home.zakatTileTitle')} description={t('home.zakatTileDesc')} icon="calculate" />
-            </StaggerItem>
-          </StaggerChildren>
+            </StaggerListItem>
+          </StaggerList>
         </section>
 
       <section className="px-margin-mobile md:px-margin-desktop py-section-y max-w-screen-2xl mx-auto border-t border-hairline dark:border-dark-border">
@@ -195,9 +195,9 @@ export function HomePage() {
             <h2 className="font-heading-h2 text-heading-h2 text-ink-black dark:text-dark-text mb-3">{t('home.discoveryTitle')}</h2>
             <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary">{t('home.discoverySubtitle')}</p>
           </div>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <StaggerList className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {DISCOVERY_LINKS.map((item) => (
-              <StaggerItem key={item.to}>
+              <StaggerListItem key={item.to}>
                 <Link
                   to={item.to}
                   className="group block p-5 rounded-xl border border-hairline dark:border-dark-border bg-paper-white dark:bg-dark-surface hover:border-secondary dark:hover:border-dark-green transition-colors"
@@ -208,9 +208,9 @@ export function HomePage() {
                   </h3>
                   <p className="font-body-md text-body-md text-ink-soft dark:text-dark-text-secondary">{t(item.descKey)}</p>
                 </Link>
-              </StaggerItem>
+              </StaggerListItem>
             ))}
-          </StaggerChildren>
+          </StaggerList>
         </section>
 
       <DailySpiritualSection />

@@ -229,8 +229,8 @@
   .text-display-h1-mobile { font-size: 2.5rem; }
   .text-arabic-quran { font-size: clamp(1.25rem, 4vw, 1.5rem); line-height: 1.9; }
 
-  .px-margin-mobile { padding-left: var(--spacing-margin-mobile); padding-right: var(--spacing-margin-mobile); }
-  .px-margin-desktop { padding-left: var(--spacing-margin-desktop); padding-right: var(--spacing-margin-desktop); }
+  /* px-margin-* / py-section-gap come from @theme --spacing-* (Tailwind).
+     Do not redefine .px-margin-mobile here: it overrides md:px-margin-desktop and breaks full-bleed negative margins. */
   .py-section-gap { padding-top: var(--spacing-section-gap); padding-bottom: var(--spacing-section-gap); }
 
   .pb-safe { padding-bottom: var(--safe-bottom); }

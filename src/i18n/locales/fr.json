@@ -995,6 +995,7 @@
       "title": "Horaires de prière à {{city}}",
       "subtitle": "Salat quotidienne pour {{city}} ({{country}}) avec référence qibla.",
       "qibla": "La qibla depuis {{city}} est environ {{degrees}}° depuis le nord.",
+      "method": "Horaires via AlAdhan méthode 2 (ISNA), Asr standard (école 0). Confirmez avec votre mosquée si besoin.",
       "linkQibla": "Qibla pour cette ville",
       "linkRamadan": "Calendrier Ramadan 2027",
       "linkLive": "Utiliser ma position"

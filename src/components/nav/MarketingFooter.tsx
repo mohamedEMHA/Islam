@@ -47,7 +47,12 @@ export function MarketingFooter() {
                   </p>
                 </div>
               </div>
-              <ButtonLink to="/get_app" size="sm" className="self-start lg:self-auto shrink-0">
+              <ButtonLink
+                to="/get_app"
+                variant="secondary"
+                size="sm"
+                className="self-start lg:self-auto shrink-0"
+              >
                 {t('common.getApp')}
               </ButtonLink>
             </div>

@@ -20,16 +20,16 @@ export function InstallCtaSection() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <LocalizedLink
-              to="/get_app"
+              to="/prayer_times"
               className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:opacity-90 transition-opacity"
             >
-              {t('pages.getApp.comingSoon')}
+              {t('common.openApp')}
             </LocalizedLink>
             <LocalizedLink
-              to="/prayer_times"
+              to="/get_app"
               className="inline-flex items-center justify-center h-12 px-6 rounded-lg border border-hairline dark:border-dark-border font-label-sm text-label-sm text-ink-soft dark:text-dark-text-secondary hover:border-secondary dark:hover:border-dark-green transition-colors"
             >
-              {t('common.openApp')}
+              {t('pages.getApp.comingSoon')}
             </LocalizedLink>
           </div>
         </div>

@@ -116,33 +116,6 @@ export function ShareCardPage() {
   return (
     <PageShell title={t('pages.share.title')} subtitle={t('pages.share.subtitle')}>
       <div className="max-w-lg mx-auto space-y-6">
-        <HoverCard className="p-0 shadow-sm overflow-hidden">
-          <div ref={cardRef} className="p-8 text-center bg-paper-white dark:bg-dark-surface">
-          <p className="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">
-            {t('pages.share.brand')}
-          </p>
-          {loadingAyah ? (
-            <p className="font-body-md text-body-md text-stone">{t('common.loading')}</p>
-          ) : (
-            <>
-              {arabic && (
-                <p dir="rtl" className="font-arabic-quran text-arabic-quran text-primary mb-6">
-                  {arabic}
-                </p>
-              )}
-              <p className="font-heading-h3 text-heading-h3 text-ink-black leading-relaxed mb-4">
-                &ldquo;{text}&rdquo;
-              </p>
-              <p className="font-body-md text-body-md text-stone">{reference}</p>
-            </>
-          )}
-          </div>
-        </HoverCard>
-        {exportError && (
-          <p role="alert" className="text-center font-body-md text-body-md text-error">
-            {exportError}
-          </p>
-        )}
         <div className="flex flex-wrap gap-4 justify-center">
           <Button onClick={downloadImage} disabled={loadingAyah || !text}>
             {t('common.downloadPng')}
@@ -151,6 +124,33 @@ export function ShareCardPage() {
             {t('common.share')}
           </Button>
         </div>
+        {exportError && (
+          <p role="alert" className="text-center font-body-md text-body-md text-error">
+            {exportError}
+          </p>
+        )}
+        <HoverCard className="p-0 shadow-sm overflow-hidden">
+          <div ref={cardRef} className="p-8 text-center bg-paper-white dark:bg-dark-surface">
+            <p className="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4">
+              {t('pages.share.brand')}
+            </p>
+            {loadingAyah ? (
+              <p className="font-body-md text-body-md text-stone">{t('common.loading')}</p>
+            ) : (
+              <>
+                {arabic && (
+                  <p dir="rtl" className="font-arabic-quran text-arabic-quran text-primary mb-6">
+                    {arabic}
+                  </p>
+                )}
+                <p className="font-heading-h3 text-heading-h3 text-ink-black leading-relaxed mb-4">
+                  &ldquo;{text}&rdquo;
+                </p>
+                <p className="font-body-md text-body-md text-stone">{reference}</p>
+              </>
+            )}
+          </div>
+        </HoverCard>
       </div>
     </PageShell>
   )
