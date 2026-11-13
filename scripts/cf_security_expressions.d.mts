@@ -21,6 +21,11 @@ export function buildRateLimitExpression(config: {
   excludePathPrefixes: string[]
 }): string
 
+export function buildHeavyAssetBotExpression(config: {
+  pathContains: string
+  userAgents: string[]
+}): string
+
 export interface OwnedRule {
   action: string
   description: string
@@ -37,6 +42,10 @@ export function buildOwnedRules(config: {
   chromeStable: number
   staleChromeLookback: number
   staleChromeMin: number
+  heavyAssetBotBlock: {
+    pathContains: string
+    userAgents: string[]
+  }
 }): OwnedRule[]
 
 export function mergeCustomRules(

@@ -8,6 +8,7 @@ import {
   buildAiTrainingExpression,
   buildBadClientsExpression,
   buildDatacenterExpression,
+  buildHeavyAssetBotExpression,
   buildOwnedRules,
   buildRateLimitExpression,
   buildStaleBrowserExpression,
@@ -65,5 +66,20 @@ describe('cf_security_expressions', () => {
     )
     expect(merged[0].ref).toBe(AI_RULE_REF)
     expect(merged.slice(1).map((r) => r.ref)).toEqual(owned.map((r) => r.ref))
+  })
+
+  it('blocks icon font only for SEO tool bots, not Googlebot', () => {
+    const expr = buildHeavyAssetBotExpression(config.heavyAssetBotBlock)
+    expect(expr).toContain('/fonts/material_symbols')
+    expect(expr).toContain('AhrefsBot')
+    expect(expr).toContain('DotBot')
+    expect(expr).not.toContain('Googlebot')
+    expect(expr).not.toContain('Bingbot')
+    expect(expr.length).toBeLessThanOrEqual(EXPR_MAX_LEN)
+
+    const owned = buildOwnedRules(config)
+    const fontRule = owned.find((r) => r.ref === 'islam_house_block_heavy_asset_bots')
+    expect(fontRule?.action).toBe('block')
+    expect(fontRule?.expression).toBe(expr)
   })
 })

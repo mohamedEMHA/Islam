@@ -6,6 +6,7 @@ export const OWNED_REFS = [
   'islam_house_block_bad_clients',
   'islam_house_challenge_datacenter',
   'islam_house_challenge_stale_browsers',
+  'islam_house_block_heavy_asset_bots',
 ]
 
 export function assertSafeExpression(expression, label = 'expression') {
@@ -91,6 +92,15 @@ export function buildRateLimitExpression({ excludePathPrefixes }) {
   return assertSafeExpression(`(not cf.client.bot) ${excludes}`.replace(/\s+/g, ' ').trim(), 'rate_limit')
 }
 
+/** Block heavy icon font for SEO tool crawlers (Ahrefs etc). Humans + Google/Bing untouched. */
+export function buildHeavyAssetBotExpression({ pathContains, userAgents }) {
+  const uas = userAgents.map((u) => `(http.user_agent contains "${u}")`).join(' or ')
+  return assertSafeExpression(
+    `(http.request.uri.path contains "${pathContains}") and (${uas})`,
+    'heavy_asset_bots',
+  )
+}
+
 export function buildOwnedRules(config) {
   return [
     {
@@ -113,6 +123,13 @@ export function buildOwnedRules(config) {
       enabled: true,
       expression: buildStaleBrowserExpression(config),
       ref: 'islam_house_challenge_stale_browsers',
+    },
+    {
+      action: 'block',
+      description: 'Block icon font for SEO tool bots (bandwidth)',
+      enabled: true,
+      expression: buildHeavyAssetBotExpression(config.heavyAssetBotBlock),
+      ref: 'islam_house_block_heavy_asset_bots',
     },
   ]
 }

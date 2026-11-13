@@ -4,7 +4,7 @@
 
 1. Open [Security Events](https://dash.cloudflare.com/?to=/:account/islam.house/security/events) for the last 24h.
 2. Group by ASN, User Agent, Path, Country. Find the common attribute.
-3. Use **custom rule slot 5** (kept empty on purpose): managed challenge first, never hard block until confirmed.
+3. Slot 5 is `islam_house_block_heavy_asset_bots` (icon font for SEO tools). For a live attack: managed challenge via temp edit of that rule or Security Level → **I'm Under Attack**, never hard-block country-wide until confirmed.
 4. If the attack is live and origin/Worker is drowning: Security Level → **I'm Under Attack** for the duration only, then OFF.
 5. After 7 days of clean signals, promote lasting filters into `security/cloudflare_security.json` and clear rule 5.
 6. Rollback: restore rules from `security/backup_2026_10_22_pre_phase1.json` or re-run `node scripts/cf_security_sync.mjs --apply` from a known-good commit.

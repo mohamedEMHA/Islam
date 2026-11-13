@@ -33,6 +33,14 @@
     "Scrapy", "HeadlessChrome", "PhantomJS", "masscan", "zgrab", "nikto", "sqlmap"
   ],
   "previewBotAllowlist": ["TelegramBot", "Discordbot", "Chrome-Lighthouse"],
+  "heavyAssetBotBlock": {
+    "pathContains": "/fonts/material_symbols",
+    "userAgents": [
+      "AhrefsBot", "SemrushBot", "DotBot", "MJ12bot", "MauiBot",
+      "DataForSeoBot", "BLEXBot", "SeznamBot", "PetalBot"
+    ],
+    "note": "Icon font only. Googlebot/Bingbot intentionally omitted."
+  },
   "rateLimit": {
     "requestsPerPeriod": 50,
     "period": 10,
